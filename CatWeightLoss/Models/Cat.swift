@@ -119,4 +119,35 @@ final class Cat {
         guard dailyActivityMinutes > 0 else { return 0 }
         return min(1.0, Double(todayActivityMinutes) / Double(dailyActivityMinutes))
     }
+
+    // MARK: - Weight Entry Management
+
+    /// Logs a weight entry, overwriting any existing entry for the same calendar day.
+    /// This ensures only one weight entry per day exists.
+    /// - Returns: The entry that was created or updated
+    @discardableResult
+    func logWeight(_ weight: Double, on date: Date = Date(), notes: String? = nil) -> WeightEntry {
+        let calendar = Calendar.current
+
+        // Find existing entry for this calendar day
+        if let existingEntry = weightEntries.first(where: { calendar.isDate($0.date, inSameDayAs: date) }) {
+            // Update existing entry
+            existingEntry.weight = weight
+            existingEntry.date = date
+            existingEntry.notes = notes
+            return existingEntry
+        } else {
+            // Create new entry
+            let newEntry = WeightEntry(weight: weight, date: date, notes: notes)
+            newEntry.cat = self
+            weightEntries.append(newEntry)
+            return newEntry
+        }
+    }
+
+    /// Returns the weight entry for a specific date, if one exists
+    func weightEntry(for date: Date) -> WeightEntry? {
+        let calendar = Calendar.current
+        return weightEntries.first { calendar.isDate($0.date, inSameDayAs: date) }
+    }
 }
