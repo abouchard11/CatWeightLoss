@@ -93,13 +93,29 @@ struct WeightLogView: View {
     private func saveEntry() {
         guard let weightValue = Double(weight) else { return }
 
-        let entry = WeightEntry(
-            weight: weightValue,
-            date: date,
-            notes: notes.isEmpty ? nil : notes
-        )
-        entry.cat = cat
-        cat.weightEntries.append(entry)
+        // Check if there's already an entry for this day — overwrite if so
+        let calendar = Calendar.current
+        let existingEntry = cat.weightEntries.first { entry in
+            calendar.isDate(entry.date, inSameDayAs: date)
+        }
+
+        let entry: WeightEntry
+        if let existing = existingEntry {
+            // Update existing entry for this day
+            existing.weight = weightValue
+            existing.date = date
+            existing.notes = notes.isEmpty ? nil : notes
+            entry = existing
+        } else {
+            // Create new entry
+            entry = WeightEntry(
+                weight: weightValue,
+                date: date,
+                notes: notes.isEmpty ? nil : notes
+            )
+            entry.cat = cat
+            cat.weightEntries.append(entry)
+        }
 
         // Record weight logged metric
         if let config = brandConfig {
