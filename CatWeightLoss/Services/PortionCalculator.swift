@@ -33,18 +33,18 @@ struct PortionCalculator {
 
         // Minimum calories (never go below RER)
         let rer = restingEnergyRequirement(weightKg: currentWeightKg)
-        let safeCalories = max(targetCalories, rer)
+        let adjustedCalories = max(targetCalories, rer)
 
         return DailyCalorieRecommendation(
-            calories: safeCalories,
+            calories: adjustedCalories,
             mer: mer,
             rer: rer,
             reductionPercentage: (1 - reductionFactor) * 100
         )
     }
 
-    /// Validate target weight is within safe bounds
-    /// Max 30% total loss, target must be less than current
+    /// Validate target weight is within valid bounds
+    /// Max 30% total change, target must be less than current
     static func validateTargetWeight(current: Double, target: Double) -> Bool {
         let maxLoss = current * 0.30
         return target >= (current - maxLoss) && target < current && target > 0
@@ -56,7 +56,9 @@ struct PortionCalculator {
         mealsPerDay: Int,
         foodType: FoodType
     ) -> PortionRecommendation {
-        let caloriesPerMeal = dailyCalories / Double(mealsPerDay)
+        // Guard against division by zero
+        let effectiveMeals = max(1, mealsPerDay)
+        let caloriesPerMeal = dailyCalories / Double(effectiveMeals)
         let gramsPerMeal = caloriesPerMeal / foodType.averageCaloriesPerGram
 
         return PortionRecommendation(

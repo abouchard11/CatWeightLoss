@@ -36,7 +36,7 @@ struct QuickSetupView: View {
         }
 
         if target >= current {
-            return "Target should be less than current weight"
+            return "Target must be less than current weight"
         }
 
         let maxLoss = current * 0.30
@@ -174,7 +174,7 @@ struct QuickSetupView: View {
         )
 
         // Set calorie goal based on brand SKU
-        if let sku = brandConfig.defaultSKU {
+        if brandConfig.defaultSKU != nil {
             let weightKg = weightUnit == .kg ? current : current / 2.20462
             let targetKg = weightUnit == .kg ? target : target / 2.20462
             let recommendation = PortionCalculator.weightLossCalories(
@@ -194,6 +194,14 @@ struct QuickSetupView: View {
         cat.weightEntries.append(initialEntry)
 
         modelContext.insert(cat)
+
+        // Record setup completion metric
+        MetricsAggregator.shared.recordSetupCompleted(
+            brandId: brandConfig.brandId,
+            skuId: brandConfig.defaultSKUId,
+            in: modelContext
+        )
+
         onComplete(cat)
     }
 }

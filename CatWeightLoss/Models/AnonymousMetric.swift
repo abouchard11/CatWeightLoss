@@ -1,6 +1,7 @@
 import Foundation
 import SwiftData
 import UIKit
+import CryptoKit
 
 /// Anonymous aggregated metrics for brand analytics
 /// No PII is stored - all data is anonymized
@@ -90,24 +91,22 @@ struct AggregatedMetricsReport: Codable {
 // MARK: - Device Hashing
 
 extension AnonymousMetric {
-    /// Generate anonymous device hash (not reversible)
+    /// Generate anonymous device hash using SHA-256 (cryptographically secure, not reversible)
     static func generateDeviceHash() -> String {
-        // Use identifierForVendor hashed with SHA256
+        // Use identifierForVendor hashed with SHA-256
         // This changes if app is uninstalled, providing additional privacy
         guard let vendorId = UIDevice.current.identifierForVendor?.uuidString else {
-            return UUID().uuidString // Fallback
+            // Fallback: generate random hash for this session
+            let randomData = Data((0..<32).map { _ in UInt8.random(in: 0...255) })
+            let fallbackHash = SHA256.hash(data: randomData)
+            return fallbackHash.compactMap { String(format: "%02x", $0) }.joined().prefix(16).description
         }
 
-        // Simple hash using built-in methods
+        // SHA-256 hash of vendor ID (true cryptographic one-way hash)
         let data = Data(vendorId.utf8)
-        var hash = [UInt8](repeating: 0, count: 32)
-        data.withUnsafeBytes { buffer in
-            // Simple XOR-based obfuscation (not cryptographic, but sufficient for anonymization)
-            for (index, byte) in buffer.enumerated() {
-                hash[index % 32] ^= byte
-            }
-        }
+        let hash = SHA256.hash(data: data)
 
-        return hash.map { String(format: "%02x", $0) }.joined().prefix(16).description
+        // Return first 16 hex characters (64 bits of entropy - sufficient for anonymization)
+        return hash.compactMap { String(format: "%02x", $0) }.joined().prefix(16).description
     }
 }

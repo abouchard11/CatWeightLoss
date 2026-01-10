@@ -97,6 +97,15 @@ struct RootView: View {
         if activeCat == nil {
             activeCat = cats.first
         }
+
+        // Record app open metric
+        if let config = brandService.activeBrandConfig ?? brandConfigs.first {
+            MetricsAggregator.shared.recordAppOpen(
+                brandId: config.brandId,
+                skuId: config.defaultSKUId,
+                in: modelContext
+            )
+        }
     }
 
     private func handleIncomingURL(_ url: URL) {
@@ -105,8 +114,8 @@ struct RootView: View {
             return
         }
 
-        // Activate brand
-        let config = brandService.activateBrand(params: params, in: modelContext)
+        // Activate brand (metrics recorded inside activateBrand)
+        _ = brandService.activateBrand(params: params, in: modelContext)
 
         // Show splash for new brand activation
         showingSplash = true

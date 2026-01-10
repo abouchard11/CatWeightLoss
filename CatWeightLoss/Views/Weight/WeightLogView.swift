@@ -4,6 +4,7 @@ import SwiftData
 struct WeightLogView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.brandConfig) private var brandConfig
 
     @Bindable var cat: Cat
 
@@ -99,6 +100,42 @@ struct WeightLogView: View {
         )
         entry.cat = cat
         cat.weightEntries.append(entry)
+
+        // Record weight logged metric
+        if let config = brandConfig {
+            let skuId = config.defaultSKUId
+            // Calculate days since last log
+            let lastEntry = cat.weightEntries
+                .filter { $0.id != entry.id }
+                .sorted { $0.date > $1.date }
+                .first
+            let daysSinceLast = lastEntry.map { entry in
+                Calendar.current.dateComponents([.day], from: entry.date, to: date).day ?? 0
+            } ?? 0
+
+            MetricsAggregator.shared.recordWeightLogged(
+                brandId: config.brandId,
+                skuId: skuId,
+                daysSinceLastLog: daysSinceLast,
+                in: modelContext
+            )
+
+            // Record progress percentage
+            MetricsAggregator.shared.recordProgress(
+                brandId: config.brandId,
+                skuId: skuId,
+                progressPercentage: cat.progressPercentage,
+                in: modelContext
+            )
+
+            // Record entries count
+            MetricsAggregator.shared.recordEntriesCount(
+                brandId: config.brandId,
+                skuId: skuId,
+                count: cat.weightEntries.count,
+                in: modelContext
+            )
+        }
 
         dismiss()
     }

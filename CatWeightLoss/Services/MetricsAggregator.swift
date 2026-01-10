@@ -138,7 +138,13 @@ class MetricsAggregator {
             }
         )
 
-        guard let metrics = try? context.fetch(descriptor) else {
+        let metrics: [AnonymousMetric]
+        do {
+            metrics = try context.fetch(descriptor)
+        } catch {
+            #if DEBUG
+            print("[MetricsAggregator] Failed to fetch metrics: \(error.localizedDescription)")
+            #endif
             return nil
         }
 
@@ -190,10 +196,15 @@ class MetricsAggregator {
             predicate: #Predicate { $0.recordedAt < cutoffDate }
         )
 
-        if let oldMetrics = try? context.fetch(descriptor) {
+        do {
+            let oldMetrics = try context.fetch(descriptor)
             for metric in oldMetrics {
                 context.delete(metric)
             }
+        } catch {
+            #if DEBUG
+            print("[MetricsAggregator] Failed to cleanup old metrics: \(error.localizedDescription)")
+            #endif
         }
     }
 }

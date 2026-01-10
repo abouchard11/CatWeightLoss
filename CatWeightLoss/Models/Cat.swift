@@ -68,11 +68,16 @@ final class Cat {
             .sorted { $0.date > $1.date }
             .prefix(5)
 
-        guard recentEntries.count >= 2 else { return .insufficient }
+        // Need at least 3 entries to calculate trend (compare recent vs older)
+        guard recentEntries.count >= 3 else { return .insufficient }
 
         let weights = recentEntries.map { $0.weight }
         let avgRecent = weights.prefix(2).reduce(0, +) / 2
-        let avgOlder = weights.suffix(from: 2).reduce(0, +) / Double(weights.count - 2)
+
+        // Safe division: only calculate if we have older entries
+        let olderWeights = Array(weights.suffix(from: 2))
+        guard !olderWeights.isEmpty else { return .insufficient }
+        let avgOlder = olderWeights.reduce(0, +) / Double(olderWeights.count)
 
         let difference = avgRecent - avgOlder
         let threshold = 0.1 // 0.1 kg or lbs threshold

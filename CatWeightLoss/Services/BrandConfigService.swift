@@ -41,7 +41,17 @@ class BrandConfigService {
             predicate: #Predicate { $0.brandId == brandId }
         )
 
-        if let existing = try? context.fetch(descriptor).first {
+        let existingConfigs: [BrandConfiguration]
+        do {
+            existingConfigs = try context.fetch(descriptor)
+        } catch {
+            #if DEBUG
+            print("[BrandConfigService] Failed to fetch existing brand config: \(error.localizedDescription)")
+            #endif
+            existingConfigs = []
+        }
+
+        if let existing = existingConfigs.first {
             // Update existing
             existing.lastUsedAt = Date()
 
@@ -86,6 +96,13 @@ class BrandConfigService {
         context.insert(config)
         activeBrandConfig = config
 
+        // Record activation metric
+        MetricsAggregator.shared.recordActivation(
+            brandId: config.brandId,
+            skuId: params.skuId,
+            in: context
+        )
+
         // Clear pending
         pendingActivation = nil
 
@@ -101,9 +118,15 @@ class BrandConfigService {
             sortBy: [SortDescriptor(\.lastUsedAt, order: .reverse)]
         )
 
-        if let config = try? context.fetch(descriptor).first {
-            activeBrandConfig = config
-            config.lastUsedAt = Date()
+        do {
+            if let config = try context.fetch(descriptor).first {
+                activeBrandConfig = config
+                config.lastUsedAt = Date()
+            }
+        } catch {
+            #if DEBUG
+            print("[BrandConfigService] Failed to load active brand: \(error.localizedDescription)")
+            #endif
         }
     }
 
