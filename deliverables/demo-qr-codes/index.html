@@ -115,9 +115,35 @@
             cursor: pointer;
         }
         .print-btn:hover { background: #0077ed; }
+        .btn-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .download-btn, .sim-link {
+            flex: 1;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 13px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+        }
+        .download-btn {
+            background: #34c759;
+            color: white;
+            border: none;
+        }
+        .download-btn:hover { background: #2db84d; }
+        .sim-link {
+            background: #f5f5f7;
+            color: #1d1d1f;
+            border: 1px solid #e5e5e5;
+        }
+        .sim-link:hover { background: #e5e5e5; }
         @media print {
             body { background: white; }
-            .print-btn, .instructions { display: none; }
+            .print-btn, .instructions, .btn-row, .url-preview { display: none; }
             .card { break-inside: avoid; box-shadow: none; border: 1px solid #e5e5e5; }
         }
     </style>
@@ -151,6 +177,10 @@
                 </div>
             </div>
             <div class="url-preview" id="url-acmepet"></div>
+            <div class="btn-row">
+                <button class="download-btn" onclick="downloadQR('acmepet')">Download PNG</button>
+                <a class="sim-link" id="link-acmepet" href="#">Open in Simulator</a>
+            </div>
         </div>
 
         <div class="card">
@@ -177,6 +207,10 @@
                 </div>
             </div>
             <div class="url-preview" id="url-nutricat"></div>
+            <div class="btn-row">
+                <button class="download-btn" onclick="downloadQR('nutricat')">Download PNG</button>
+                <a class="sim-link" id="link-nutricat" href="#">Open in Simulator</a>
+            </div>
         </div>
 
         <div class="card">
@@ -203,6 +237,10 @@
                 </div>
             </div>
             <div class="url-preview" id="url-royalfeline"></div>
+            <div class="btn-row">
+                <button class="download-btn" onclick="downloadQR('royalfeline')">Download PNG</button>
+                <a class="sim-link" id="link-royalfeline" href="#">Open in Simulator</a>
+            </div>
         </div>
 
         <div class="card">
@@ -229,22 +267,28 @@
                 </div>
             </div>
             <div class="url-preview" id="url-hillsdemo"></div>
+            <div class="btn-row">
+                <button class="download-btn" onclick="downloadQR('hillsdemo')">Download PNG</button>
+                <a class="sim-link" id="link-hillsdemo" href="#">Open in Simulator</a>
+            </div>
         </div>
     </div>
 
     <button class="print-btn" onclick="window.print()">Print QR Codes</button>
 
     <div class="instructions">
-        <h2>Testing Instructions</h2>
+        <h2>How to Demo</h2>
         <ol>
-            <li><strong>Install the app</strong> on an iOS device or simulator</li>
-            <li><strong>Scan a QR code</strong> with the device camera</li>
-            <li><strong>Tap the notification</strong> to open the app with brand theming</li>
-            <li><strong>Complete setup</strong> to see the branded dashboard</li>
+            <li><strong>Install the app first:</strong> Double-click <code>CatWeightLoss.xcodeproj</code> in project root → Press ⌘R to build and run on simulator or connected iPhone</li>
+            <li><strong>Scan a QR code:</strong> Use iPhone Camera app to scan a QR code above (or click "Open in Simulator" for simulator testing)</li>
+            <li><strong>Tap the banner:</strong> When iOS shows a notification banner, tap it to open the app with brand theming</li>
+            <li><strong>Complete setup:</strong> Enter cat details to see the branded dashboard</li>
         </ol>
         <p style="margin-top: 20px; color: #86868b;">
-            <strong>Note:</strong> If the app isn't installed, iOS will show an error.
-            Install the app first, then scan the QR code.
+            <strong>Note:</strong> The app must be installed BEFORE scanning. If you see "Cannot open page" error, install the app first via Xcode.
+        </p>
+        <p style="margin-top: 10px; color: #86868b;">
+            <strong>Simulator users:</strong> Simulators can't scan QR codes. Click "Open in Simulator" to trigger the deep link directly.
         </p>
     </div>
 
@@ -271,6 +315,7 @@
         demoBrands.forEach(function(brand) {
             var canvas = document.getElementById("qr-" + brand.id);
             var urlDiv = document.getElementById("url-" + brand.id);
+            var simLink = document.getElementById("link-" + brand.id);
 
             QRCode.toCanvas(canvas, brand.url, {
                 width: 200,
@@ -279,7 +324,17 @@
             });
 
             urlDiv.textContent = brand.url;
+            simLink.href = brand.url;
         });
+
+        function downloadQR(brandId) {
+            var canvas = document.getElementById("qr-" + brandId);
+            var brand = demoBrands.find(function(b) { return b.id === brandId; });
+            var link = document.createElement("a");
+            link.download = "qr-" + brandId + ".png";
+            link.href = canvas.toDataURL("image/png");
+            link.click();
+        }
     </script>
 </body>
 </html>
