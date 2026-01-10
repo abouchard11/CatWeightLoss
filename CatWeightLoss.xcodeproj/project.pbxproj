@@ -1,0 +1,512 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		17749D069276486385764283 /* PortionCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD603BE224595B63568FECFB /* PortionCalculator.swift */; };
+		17FD0CAAA8DB393F96B803DA /* AddCatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EEE1CB3322DE39CAC7498A /* AddCatView.swift */; };
+		1AAAB9ED2C30C0C48A90DADC /* ActivityHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF932E784289EC04B755212 /* ActivityHistoryView.swift */; };
+		272D38949B8C41491A7AA538 /* ActivitySession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7450F1D65498198AD0B8B8F7 /* ActivitySession.swift */; };
+		350BA9D3BBC067F20A0B006D /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13010F0D741D052478CA2069 /* NotificationService.swift */; };
+		3704029EC126CC989D329E6B /* BrandSplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4BECA82F6C6719D7226D8 /* BrandSplashView.swift */; };
+		3BA5ACDFBC1E1F6C3C812B0B /* CatCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12D2BAECD9F7A7C87310966 /* CatCard.swift */; };
+		48EFEF236FE3266C660D418A /* StatCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A4B2B4AE58000B2D8667C /* StatCard.swift */; };
+		49F3D250C843C82547B79E7C /* CatDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE753AB985E15A339BAD7C5 /* CatDetailView.swift */; };
+		604B9F705E105A910B36B32D /* BrandConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD44C49B4CBF637A06CBD070 /* BrandConfiguration.swift */; };
+		6B4B3D477215503102302043 /* AnonymousMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD4D371D2037F775E614F21 /* AnonymousMetric.swift */; };
+		75617A34CD43B05A29493BE6 /* Cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7506E9F2586DE967B4328744 /* Cat.swift */; };
+		7B095C263BC13129FD9113B3 /* QuickSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2B32D62D94C6C686AC87E6 /* QuickSetupView.swift */; };
+		7E0CA0BF0A3BA0D61C6D1A95 /* FeedingSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8A8ED42B05F4738BC8D6F9 /* FeedingSchedule.swift */; };
+		7F7813F6985D42EB67220674 /* ActivityLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F26D164434411BDCF654B6 /* ActivityLogView.swift */; };
+		89C8085AAD79798A66D2CC04 /* CatWeightLossApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B911CFAE8B28CDC4D5C778D5 /* CatWeightLossApp.swift */; };
+		8A1BB0BCC849F1B76DADDE2F /* CatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAACC0DF99E97EB985F985ED /* CatListView.swift */; };
+		92914C87D6F759E541CEC603 /* WeightTrendIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02677A0ABD6F050D60D67BE2 /* WeightTrendIndicator.swift */; };
+		9BD34A1F502DD68EFD7E6087 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171E684AD5B0DF895C89B2F9 /* Enums.swift */; };
+		A27838F488E118A6A7FED429 /* WeightHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329911AE9966A1FB69973795 /* WeightHistoryView.swift */; };
+		A682144AA75ABBD8D3078688 /* ProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839B0D4F02271B400A10D7B3 /* ProgressRing.swift */; };
+		A9A754D1398BE14512FE7D85 /* FoodSKU.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5277E209FCD71803BE7BB86 /* FoodSKU.swift */; };
+		ADC329558B1F8568CC9E1F21 /* FeedingPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C73EB961BE3E4C15CB0987 /* FeedingPlanView.swift */; };
+		BAB7C0F800B7BF5C0C3C394A /* WeightEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B122CAFB3264DBCAD69ABF /* WeightEntry.swift */; };
+		CC59D9EE7489BA847FF05918 /* PortionCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73E85C43A9D366598DA75D7 /* PortionCalculatorView.swift */; };
+		DC3B15FB1716CED8DCE31B37 /* WeightChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37374614D6001E15D3988D72 /* WeightChartView.swift */; };
+		EB4716863F7E7C94F6EFF325 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F24D6CE4EEA788E90CAED3B /* Assets.xcassets */; };
+		EF40AFAB64F5BDA50219FE09 /* MetricsAggregator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9F11D7A92004DB83BB7221 /* MetricsAggregator.swift */; };
+		F00044275E89D501DE4894DD /* BrandConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D03BDFE2641262C8C79825 /* BrandConfigService.swift */; };
+		F10ABFAD27893B452EA1645E /* WeightLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B763D5237CDC1F7F4F7FB32A /* WeightLogView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		02677A0ABD6F050D60D67BE2 /* WeightTrendIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightTrendIndicator.swift; sourceTree = "<group>"; };
+		0CE753AB985E15A339BAD7C5 /* CatDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDetailView.swift; sourceTree = "<group>"; };
+		10C4BECA82F6C6719D7226D8 /* BrandSplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandSplashView.swift; sourceTree = "<group>"; };
+		13010F0D741D052478CA2069 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		171E684AD5B0DF895C89B2F9 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		329911AE9966A1FB69973795 /* WeightHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightHistoryView.swift; sourceTree = "<group>"; };
+		34F26D164434411BDCF654B6 /* ActivityLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLogView.swift; sourceTree = "<group>"; };
+		36EEE1CB3322DE39CAC7498A /* AddCatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCatView.swift; sourceTree = "<group>"; };
+		37374614D6001E15D3988D72 /* WeightChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightChartView.swift; sourceTree = "<group>"; };
+		55C73EB961BE3E4C15CB0987 /* FeedingPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedingPlanView.swift; sourceTree = "<group>"; };
+		6BD4D371D2037F775E614F21 /* AnonymousMetric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnonymousMetric.swift; sourceTree = "<group>"; };
+		6E2B32D62D94C6C686AC87E6 /* QuickSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSetupView.swift; sourceTree = "<group>"; };
+		6F24D6CE4EEA788E90CAED3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7450F1D65498198AD0B8B8F7 /* ActivitySession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySession.swift; sourceTree = "<group>"; };
+		7506E9F2586DE967B4328744 /* Cat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cat.swift; sourceTree = "<group>"; };
+		839B0D4F02271B400A10D7B3 /* ProgressRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRing.swift; sourceTree = "<group>"; };
+		93294A5299207FF59DC1FD8F /* CatWeightLoss.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = CatWeightLoss.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E8A8ED42B05F4738BC8D6F9 /* FeedingSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedingSchedule.swift; sourceTree = "<group>"; };
+		AE9F11D7A92004DB83BB7221 /* MetricsAggregator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsAggregator.swift; sourceTree = "<group>"; };
+		B763D5237CDC1F7F4F7FB32A /* WeightLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightLogView.swift; sourceTree = "<group>"; };
+		B911CFAE8B28CDC4D5C778D5 /* CatWeightLossApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatWeightLossApp.swift; sourceTree = "<group>"; };
+		BA8A4B2B4AE58000B2D8667C /* StatCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatCard.swift; sourceTree = "<group>"; };
+		BBF932E784289EC04B755212 /* ActivityHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityHistoryView.swift; sourceTree = "<group>"; };
+		BD603BE224595B63568FECFB /* PortionCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortionCalculator.swift; sourceTree = "<group>"; };
+		C12D2BAECD9F7A7C87310966 /* CatCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatCard.swift; sourceTree = "<group>"; };
+		CD44C49B4CBF637A06CBD070 /* BrandConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandConfiguration.swift; sourceTree = "<group>"; };
+		CE5548CB266784BF6759F01A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D0B122CAFB3264DBCAD69ABF /* WeightEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightEntry.swift; sourceTree = "<group>"; };
+		D73E85C43A9D366598DA75D7 /* PortionCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortionCalculatorView.swift; sourceTree = "<group>"; };
+		DAACC0DF99E97EB985F985ED /* CatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatListView.swift; sourceTree = "<group>"; };
+		F3D03BDFE2641262C8C79825 /* BrandConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandConfigService.swift; sourceTree = "<group>"; };
+		F5277E209FCD71803BE7BB86 /* FoodSKU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSKU.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		1E12AAD9F4ECC8D15CEC9940 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7450F1D65498198AD0B8B8F7 /* ActivitySession.swift */,
+				6BD4D371D2037F775E614F21 /* AnonymousMetric.swift */,
+				CD44C49B4CBF637A06CBD070 /* BrandConfiguration.swift */,
+				7506E9F2586DE967B4328744 /* Cat.swift */,
+				171E684AD5B0DF895C89B2F9 /* Enums.swift */,
+				9E8A8ED42B05F4738BC8D6F9 /* FeedingSchedule.swift */,
+				F5277E209FCD71803BE7BB86 /* FoodSKU.swift */,
+				D0B122CAFB3264DBCAD69ABF /* WeightEntry.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2883A7AC21BBECD88B71174A /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		322F2C74147CDE4511BBCFAA /* CatWeightLoss */ = {
+			isa = PBXGroup;
+			children = (
+				B911CFAE8B28CDC4D5C778D5 /* CatWeightLossApp.swift */,
+				CE5548CB266784BF6759F01A /* Info.plist */,
+				F094EEA5202BEB1CDFCC4812 /* Components */,
+				1E12AAD9F4ECC8D15CEC9940 /* Models */,
+				C383DBD5AB33671C6E6A522B /* Resources */,
+				66458074C1F020D84B9A7C31 /* Services */,
+				F9ADFE43BE9CFB178433B1D2 /* ViewModels */,
+				360F5860E2CBA50D5B5AD7C5 /* Views */,
+			);
+			path = CatWeightLoss;
+			sourceTree = "<group>";
+		};
+		360F5860E2CBA50D5B5AD7C5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				36EEE1CB3322DE39CAC7498A /* AddCatView.swift */,
+				0CE753AB985E15A339BAD7C5 /* CatDetailView.swift */,
+				DAACC0DF99E97EB985F985ED /* CatListView.swift */,
+				CC4EE09A0149988759F88A03 /* Activity */,
+				FE9DA4CC664DCC2B01A0070A /* Feeding */,
+				54B58AD4DDF20EF251FD4841 /* Onboarding */,
+				2883A7AC21BBECD88B71174A /* Settings */,
+				77775001076A856FE49DCAA5 /* Weight */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		54B58AD4DDF20EF251FD4841 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				10C4BECA82F6C6719D7226D8 /* BrandSplashView.swift */,
+				6E2B32D62D94C6C686AC87E6 /* QuickSetupView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		66458074C1F020D84B9A7C31 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F3D03BDFE2641262C8C79825 /* BrandConfigService.swift */,
+				AE9F11D7A92004DB83BB7221 /* MetricsAggregator.swift */,
+				13010F0D741D052478CA2069 /* NotificationService.swift */,
+				BD603BE224595B63568FECFB /* PortionCalculator.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		77775001076A856FE49DCAA5 /* Weight */ = {
+			isa = PBXGroup;
+			children = (
+				37374614D6001E15D3988D72 /* WeightChartView.swift */,
+				329911AE9966A1FB69973795 /* WeightHistoryView.swift */,
+				B763D5237CDC1F7F4F7FB32A /* WeightLogView.swift */,
+			);
+			path = Weight;
+			sourceTree = "<group>";
+		};
+		87CB3EF6E29CC21E154C7044 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				93294A5299207FF59DC1FD8F /* CatWeightLoss.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C383DBD5AB33671C6E6A522B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6F24D6CE4EEA788E90CAED3B /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C9CB4F86A8BE0986BDF4856B = {
+			isa = PBXGroup;
+			children = (
+				322F2C74147CDE4511BBCFAA /* CatWeightLoss */,
+				87CB3EF6E29CC21E154C7044 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CC4EE09A0149988759F88A03 /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				BBF932E784289EC04B755212 /* ActivityHistoryView.swift */,
+				34F26D164434411BDCF654B6 /* ActivityLogView.swift */,
+			);
+			path = Activity;
+			sourceTree = "<group>";
+		};
+		F094EEA5202BEB1CDFCC4812 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C12D2BAECD9F7A7C87310966 /* CatCard.swift */,
+				839B0D4F02271B400A10D7B3 /* ProgressRing.swift */,
+				BA8A4B2B4AE58000B2D8667C /* StatCard.swift */,
+				02677A0ABD6F050D60D67BE2 /* WeightTrendIndicator.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		F9ADFE43BE9CFB178433B1D2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		FE9DA4CC664DCC2B01A0070A /* Feeding */ = {
+			isa = PBXGroup;
+			children = (
+				55C73EB961BE3E4C15CB0987 /* FeedingPlanView.swift */,
+				D73E85C43A9D366598DA75D7 /* PortionCalculatorView.swift */,
+			);
+			path = Feeding;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		699F0D6FBABCA3EAD0B1DDFC /* CatWeightLoss */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00767DABDC48D99D69C227B7 /* Build configuration list for PBXNativeTarget "CatWeightLoss" */;
+			buildPhases = (
+				48C67BCB75FC6D7E8769DEB1 /* Sources */,
+				CAC6B65A860E7B9E88EBCC68 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CatWeightLoss;
+			packageProductDependencies = (
+			);
+			productName = CatWeightLoss;
+			productReference = 93294A5299207FF59DC1FD8F /* CatWeightLoss.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		52A4286902BBB2EF28215798 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					699F0D6FBABCA3EAD0B1DDFC = {
+						DevelopmentTeam = "";
+					};
+				};
+			};
+			buildConfigurationList = 94AD92CFE00E9BD8D0004FA6 /* Build configuration list for PBXProject "CatWeightLoss" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = C9CB4F86A8BE0986BDF4856B;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				699F0D6FBABCA3EAD0B1DDFC /* CatWeightLoss */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CAC6B65A860E7B9E88EBCC68 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB4716863F7E7C94F6EFF325 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		48C67BCB75FC6D7E8769DEB1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AAAB9ED2C30C0C48A90DADC /* ActivityHistoryView.swift in Sources */,
+				7F7813F6985D42EB67220674 /* ActivityLogView.swift in Sources */,
+				272D38949B8C41491A7AA538 /* ActivitySession.swift in Sources */,
+				17FD0CAAA8DB393F96B803DA /* AddCatView.swift in Sources */,
+				6B4B3D477215503102302043 /* AnonymousMetric.swift in Sources */,
+				F00044275E89D501DE4894DD /* BrandConfigService.swift in Sources */,
+				604B9F705E105A910B36B32D /* BrandConfiguration.swift in Sources */,
+				3704029EC126CC989D329E6B /* BrandSplashView.swift in Sources */,
+				75617A34CD43B05A29493BE6 /* Cat.swift in Sources */,
+				3BA5ACDFBC1E1F6C3C812B0B /* CatCard.swift in Sources */,
+				49F3D250C843C82547B79E7C /* CatDetailView.swift in Sources */,
+				8A1BB0BCC849F1B76DADDE2F /* CatListView.swift in Sources */,
+				89C8085AAD79798A66D2CC04 /* CatWeightLossApp.swift in Sources */,
+				9BD34A1F502DD68EFD7E6087 /* Enums.swift in Sources */,
+				ADC329558B1F8568CC9E1F21 /* FeedingPlanView.swift in Sources */,
+				7E0CA0BF0A3BA0D61C6D1A95 /* FeedingSchedule.swift in Sources */,
+				A9A754D1398BE14512FE7D85 /* FoodSKU.swift in Sources */,
+				EF40AFAB64F5BDA50219FE09 /* MetricsAggregator.swift in Sources */,
+				350BA9D3BBC067F20A0B006D /* NotificationService.swift in Sources */,
+				17749D069276486385764283 /* PortionCalculator.swift in Sources */,
+				CC59D9EE7489BA847FF05918 /* PortionCalculatorView.swift in Sources */,
+				A682144AA75ABBD8D3078688 /* ProgressRing.swift in Sources */,
+				7B095C263BC13129FD9113B3 /* QuickSetupView.swift in Sources */,
+				48EFEF236FE3266C660D418A /* StatCard.swift in Sources */,
+				DC3B15FB1716CED8DCE31B37 /* WeightChartView.swift in Sources */,
+				BAB7C0F800B7BF5C0C3C394A /* WeightEntry.swift in Sources */,
+				A27838F488E118A6A7FED429 /* WeightHistoryView.swift in Sources */,
+				F10ABFAD27893B452EA1645E /* WeightLogView.swift in Sources */,
+				92914C87D6F759E541CEC603 /* WeightTrendIndicator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1DB78A2A195F93558E98EEB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = CatWeightLoss/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.catweightloss.app;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2026A70536DD15720618A799 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+		653F5D0F72222633C813F44A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		B2EA0E6864A63C23117AD2D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = CatWeightLoss/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.catweightloss.app;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		00767DABDC48D99D69C227B7 /* Build configuration list for PBXNativeTarget "CatWeightLoss" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DB78A2A195F93558E98EEB5 /* Debug */,
+				B2EA0E6864A63C23117AD2D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		94AD92CFE00E9BD8D0004FA6 /* Build configuration list for PBXProject "CatWeightLoss" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				653F5D0F72222633C813F44A /* Debug */,
+				2026A70536DD15720618A799 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 52A4286902BBB2EF28215798 /* Project object */;
+}
