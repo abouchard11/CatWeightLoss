@@ -70,10 +70,16 @@ The app must be installed BEFORE scanning. Install via Xcode first (Step 1).
 - Check that the URL scheme is `catweighttracker://` (not `catweight://`)
 
 ### Simulator can't scan QR codes
-Simulators don't have cameras. For simulator testing:
-1. Open Safari in simulator
-2. Navigate to: `catweighttracker://activate?brand=acmepet&name=AcmePet%20Foods&sku=wm-chicken-01&skuname=Weight%20Management%20Chicken&cal=3.5&serving=35&color=FF6B35&accent=004E64`
-3. Tap "Open" when prompted
+Simulators don't have cameras. Use the Terminal command instead:
+1. Build and run app in simulator (⌘R in Xcode)
+2. Click "Copy Simulator Command" button on the QR card
+3. Open Terminal and paste the command
+4. Press Enter — the app opens with brand theming
+
+**Example command:**
+```bash
+xcrun simctl openurl booted "catweighttracker://activate?brand=acmepet&name=AcmePet%20Foods&sku=wm-chicken-01&skuname=Weight%20Management%20Chicken&cal=3.5&serving=35&color=FF6B35&accent=004E64"
+```
 
 ---
 
