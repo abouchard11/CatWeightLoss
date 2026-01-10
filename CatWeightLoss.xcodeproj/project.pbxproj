@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A2B3C4D5E6F0001DATEFORM /* DateFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F0002DATEFORM /* DateFormatting.swift */; };
+		2B3C4D5E6F7A0001VIEWMODS /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3C4D5E6F7A0002VIEWMODS /* ViewModifiers.swift */; };
+		3C4D5E6F7A8B0001ACTBUTTN /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4D5E6F7A8B0002ACTBUTTN /* ActionButton.swift */; };
 		17749D069276486385764283 /* PortionCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD603BE224595B63568FECFB /* PortionCalculator.swift */; };
 		1AAAB9ED2C30C0C48A90DADC /* ActivityHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF932E784289EC04B755212 /* ActivityHistoryView.swift */; };
 		272D38949B8C41491A7AA538 /* ActivitySession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7450F1D65498198AD0B8B8F7 /* ActivitySession.swift */; };
@@ -38,6 +41,9 @@
 
 /* Begin PBXFileReference section */
 		02677A0ABD6F050D60D67BE2 /* WeightTrendIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightTrendIndicator.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F0002DATEFORM /* DateFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatting.swift; sourceTree = "<group>"; };
+		2B3C4D5E6F7A0002VIEWMODS /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
+		3C4D5E6F7A8B0002ACTBUTTN /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		0CE753AB985E15A339BAD7C5 /* CatDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDetailView.swift; sourceTree = "<group>"; };
 		10C4BECA82F6C6719D7226D8 /* BrandSplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandSplashView.swift; sourceTree = "<group>"; };
 		171E684AD5B0DF895C89B2F9 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
@@ -132,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				F3D03BDFE2641262C8C79825 /* BrandConfigService.swift */,
+				1A2B3C4D5E6F0002DATEFORM /* DateFormatting.swift */,
 				AE9F11D7A92004DB83BB7221 /* MetricsAggregator.swift */,
 				BD603BE224595B63568FECFB /* PortionCalculator.swift */,
 			);
@@ -184,9 +191,11 @@
 		F094EEA5202BEB1CDFCC4812 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				3C4D5E6F7A8B0002ACTBUTTN /* ActionButton.swift */,
 				C12D2BAECD9F7A7C87310966 /* CatCard.swift */,
 				839B0D4F02271B400A10D7B3 /* ProgressRing.swift */,
 				BA8A4B2B4AE58000B2D8667C /* StatCard.swift */,
+				2B3C4D5E6F7A0002VIEWMODS /* ViewModifiers.swift */,
 				02677A0ABD6F050D60D67BE2 /* WeightTrendIndicator.swift */,
 			);
 			path = Components;
@@ -280,6 +289,7 @@
 			files = (
 				1AAAB9ED2C30C0C48A90DADC /* ActivityHistoryView.swift in Sources */,
 				7F7813F6985D42EB67220674 /* ActivityLogView.swift in Sources */,
+				3C4D5E6F7A8B0001ACTBUTTN /* ActionButton.swift in Sources */,
 				272D38949B8C41491A7AA538 /* ActivitySession.swift in Sources */,
 				6B4B3D477215503102302043 /* AnonymousMetric.swift in Sources */,
 				F00044275E89D501DE4894DD /* BrandConfigService.swift in Sources */,
@@ -289,6 +299,7 @@
 				3BA5ACDFBC1E1F6C3C812B0B /* CatCard.swift in Sources */,
 				49F3D250C843C82547B79E7C /* CatDetailView.swift in Sources */,
 				89C8085AAD79798A66D2CC04 /* CatWeightLossApp.swift in Sources */,
+				1A2B3C4D5E6F0001DATEFORM /* DateFormatting.swift in Sources */,
 				9BD34A1F502DD68EFD7E6087 /* Enums.swift in Sources */,
 				ADC329558B1F8568CC9E1F21 /* FeedingPlanView.swift in Sources */,
 				7E0CA0BF0A3BA0D61C6D1A95 /* FeedingSchedule.swift in Sources */,
@@ -299,6 +310,7 @@
 				A682144AA75ABBD8D3078688 /* ProgressRing.swift in Sources */,
 				7B095C263BC13129FD9113B3 /* QuickSetupView.swift in Sources */,
 				48EFEF236FE3266C660D418A /* StatCard.swift in Sources */,
+				2B3C4D5E6F7A0001VIEWMODS /* ViewModifiers.swift in Sources */,
 				DC3B15FB1716CED8DCE31B37 /* WeightChartView.swift in Sources */,
 				BAB7C0F800B7BF5C0C3C394A /* WeightEntry.swift in Sources */,
 				A27838F488E118A6A7FED429 /* WeightHistoryView.swift in Sources */,

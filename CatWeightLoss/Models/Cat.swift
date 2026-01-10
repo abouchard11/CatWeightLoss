@@ -33,14 +33,20 @@ final class Cat {
         weightUnit: WeightUnit = .lbs,
         dailyActivityMinutes: Int = 15
     ) {
+        // Validation: weights must be positive
+        assert(startWeight > 0, "Start weight must be positive")
+        assert(targetWeight > 0, "Target weight must be positive")
+        assert(!name.trimmingCharacters(in: .whitespaces).isEmpty, "Name cannot be empty")
+
         self.id = UUID()
-        self.name = name
-        self.breed = breed
+        self.name = name.trimmingCharacters(in: .whitespaces)
+        self.breed = breed?.trimmingCharacters(in: .whitespaces)
         self.birthDate = birthDate
-        self.startWeight = startWeight
-        self.targetWeight = targetWeight
+        // Coerce to valid range (safety fallback for release builds)
+        self.startWeight = max(0.1, startWeight)
+        self.targetWeight = max(0.1, targetWeight)
         self.weightUnit = weightUnit
-        self.dailyActivityMinutes = dailyActivityMinutes
+        self.dailyActivityMinutes = max(0, dailyActivityMinutes)
         self.createdAt = Date()
     }
 

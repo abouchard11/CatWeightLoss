@@ -238,29 +238,6 @@ struct CatDetailView: View {
     }
 }
 
-struct ActionButton: View {
-    let title: String
-    let icon: String
-    let color: Color
-    let action: () -> Void
-
-    var body: some View {
-        Button(action: action) {
-            HStack {
-                Image(systemName: icon)
-                    .font(.title3)
-                Text(title)
-                    .fontWeight(.medium)
-            }
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, 14)
-            .background(color.opacity(0.15))
-            .foregroundColor(color)
-            .cornerRadius(12)
-        }
-    }
-}
-
 #Preview {
     NavigationStack {
         CatDetailView(cat: Cat(

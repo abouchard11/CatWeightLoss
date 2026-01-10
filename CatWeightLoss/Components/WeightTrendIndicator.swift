@@ -21,10 +21,10 @@ struct WeightTrendIndicator: View {
                     .fontWeight(.medium)
             }
         }
-        .foregroundColor(trendColor)
+        .foregroundColor(trend.color)
         .padding(.horizontal, 12)
         .padding(.vertical, 6)
-        .background(trendColor.opacity(0.15))
+        .background(trend.color.opacity(0.15))
         .cornerRadius(20)
     }
 
@@ -35,16 +35,6 @@ struct WeightTrendIndicator: View {
         case .stable: return "Steady"
         case .increasing: return "Up"
         case .insufficient: return "—"
-        }
-    }
-
-    // Neutral colors - no judgment
-    private var trendColor: Color {
-        switch trend {
-        case .decreasing: return .blue
-        case .stable: return .gray
-        case .increasing: return .gray
-        case .insufficient: return .gray
         }
     }
 }

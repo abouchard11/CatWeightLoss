@@ -10,17 +10,18 @@ final class WeightEntry {
     var cat: Cat?
 
     init(weight: Double, date: Date = Date(), notes: String? = nil) {
+        // Validation: weight must be positive
+        assert(weight > 0, "Weight must be positive")
+
         self.id = UUID()
-        self.weight = weight
+        // Coerce to valid range (safety fallback for release builds)
+        self.weight = max(0.1, weight)
         self.date = date
-        self.notes = notes
+        self.notes = notes?.trimmingCharacters(in: .whitespaces)
     }
 
     var formattedDate: String {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .none
-        return formatter.string(from: date)
+        DateFormatting.formatDate(date)
     }
 
     var formattedWeight: String {

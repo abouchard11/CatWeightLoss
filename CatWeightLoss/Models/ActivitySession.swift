@@ -18,12 +18,16 @@ final class ActivitySession {
         intensityLevel: Int = 3,
         notes: String? = nil
     ) {
+        // Validation: duration must be positive
+        assert(durationMinutes > 0, "Duration must be positive")
+
         self.id = UUID()
         self.date = date
-        self.durationMinutes = durationMinutes
+        // Coerce to valid range (safety fallback for release builds)
+        self.durationMinutes = max(1, durationMinutes)
         self.activityType = activityType
         self.intensityLevel = min(5, max(1, intensityLevel))
-        self.notes = notes
+        self.notes = notes?.trimmingCharacters(in: .whitespaces)
     }
 
     var estimatedCaloriesBurned: Double {
@@ -33,18 +37,10 @@ final class ActivitySession {
     }
 
     var formattedDate: String {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .short
-        return formatter.string(from: date)
+        DateFormatting.formatDateTime(date)
     }
 
     var formattedDuration: String {
-        if durationMinutes >= 60 {
-            let hours = durationMinutes / 60
-            let mins = durationMinutes % 60
-            return mins > 0 ? "\(hours)h \(mins)m" : "\(hours)h"
-        }
-        return "\(durationMinutes) min"
+        DurationFormatting.format(minutes: durationMinutes)
     }
 }

@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 
 enum WeightUnit: String, Codable, CaseIterable {
     case kg = "kg"
@@ -99,12 +100,12 @@ enum WeightTrend {
     }
 
     // Neutral colors - no judgment implied
-    var color: String {
+    var color: Color {
         switch self {
-        case .decreasing: return "blue"
-        case .stable: return "gray"
-        case .increasing: return "gray"
-        case .insufficient: return "gray"
+        case .decreasing: return .blue
+        case .stable: return .gray
+        case .increasing: return .gray
+        case .insufficient: return .gray
         }
     }
 }
