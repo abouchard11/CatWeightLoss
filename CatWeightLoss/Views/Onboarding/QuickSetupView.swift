@@ -184,8 +184,9 @@ struct QuickSetupView: View {
             cat.dailyCalorieGoal = recommendation.calories
         }
 
-        // Create initial weight entry using Cat's logWeight method
-        cat.logWeight(current, on: Date(), notes: nil)
+        // Create initial weight entry
+        let initialEntry = WeightEntry(weight: current, date: Date(), notes: nil)
+        cat.addWeightEntry(initialEntry)
 
         modelContext.insert(cat)
 

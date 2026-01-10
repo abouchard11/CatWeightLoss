@@ -28,3 +28,7 @@ Carthage/Build/
 # Secrets
 *.env
 *.local
+
+# PowerPoint files
+*.pptx
+~$*

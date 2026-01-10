@@ -93,8 +93,18 @@ struct WeightLogView: View {
     private func saveEntry() {
         guard let weightValue = Double(weight) else { return }
 
-        // Use Cat's logWeight method — automatically handles one-entry-per-day
-        let entry = cat.logWeight(weightValue, on: date, notes: notes.isEmpty ? nil : notes)
+        // Delete existing entry for this day (if any) — one entry per day rule
+        if let existingEntry = cat.existingEntry(for: date) {
+            modelContext.delete(existingEntry)
+        }
+
+        // Create new entry
+        let entry = WeightEntry(
+            weight: weightValue,
+            date: date,
+            notes: notes.isEmpty ? nil : notes
+        )
+        cat.addWeightEntry(entry)
 
         // Record weight logged metric
         if let config = brandConfig {
