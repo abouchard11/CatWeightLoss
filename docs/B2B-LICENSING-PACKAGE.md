@@ -2,13 +2,28 @@
 
 ## For: Pet Food Manufacturer Procurement & Legal Review
 
-**Document Version:** 1.0
+**Document Version:** 2.1
 **App Status:** Production-Ready
 **Distribution:** QR code on product packaging → App Store
 
 ---
 
-# 1. Demo Narrative (90 Seconds)
+# DELIVERABLE INDEX
+
+| Document | Audience | Purpose | Status |
+|----------|----------|---------|--------|
+| **A. Demo Narrative** | Sales, Marketing | 90-second pitch walkthrough | Complete |
+| **B. QR Deep-Link Contract** | Legal, Engineering | Technical + legal specification | Complete |
+| **C. BrandConfiguration Spec** | Engineering, Procurement | Data contract | Complete |
+| **D. Metrics Translation Layer** | Exec, Marketing | What we measure (and don't) | Complete |
+| **E. Scope Lock Agreement** | Procurement, Legal | What's frozen | Complete |
+| **F. Risk Audit** | Legal, Compliance | Red-flag assessment | Complete |
+| **G. Pressure-Test Results** | Exec, Legal | Institutional objection responses | Complete |
+| **H. Executive Pitch Deck** | C-Suite, Procurement | 12-slide presentation | Complete |
+
+---
+
+# DOCUMENT A: Demo Narrative (90 Seconds)
 
 ## What the Buyer Sees
 
@@ -54,7 +69,144 @@ Single form:
 
 ---
 
-# 2. BrandConfiguration Contract
+# DOCUMENT B: QR Deep-Link Contract
+
+**Status:** Draft v1.0
+**Audience:** Product, Legal, Marketing, Engineering
+**Purpose:** Define the only acceptable QR → App activation interface
+
+---
+
+## B.1 PURPOSE
+
+This QR deep-link provides a **non-advisory activation mechanism** for a branded iOS companion app associated with feline weight-management pet food.
+
+The QR code:
+- Does **not** deliver instructions
+- Does **not** make health or veterinary claims
+- Does **not** promise outcomes
+
+Its sole function is to **contextualize the app to a specific food product at launch**.
+
+---
+
+## B.2 ACTIVATION METHOD
+
+**Scheme:**
+```
+catweight://launch
+```
+
+This scheme:
+- Exists only to open the app
+- Contains no executable logic
+- Carries immutable product metadata only
+
+Universal Links are explicitly **out of scope** for this version.
+
+---
+
+## B.3 REQUIRED PARAMETERS
+
+All parameters are required. If any parameter is missing or invalid, the app defaults to **unbranded mode**.
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `brand` | String | Brand identifier (human-readable) |
+| `sku` | String | Product SKU or internal code |
+| `kcal` | Integer | Calorie density per standard unit |
+
+**Example:**
+```
+catweight://launch?brand=ACME&sku=WL-01&kcal=280
+```
+
+---
+
+## B.4 PARAMETER CONSTRAINTS
+
+Parameters represent **facts, not guidance**. Values must be:
+- Non-personal
+- Non-medical
+- Non-instructional
+
+**The QR code must NEVER encode:**
+- Feeding instructions
+- Weight-loss rates
+- Health outcomes
+- Copy, slogans, or marketing language
+
+---
+
+## B.5 APPLICATION BEHAVIOR
+
+Upon successful activation:
+- App launches directly into Quick Setup
+- Brand name displayed passively (header/subtitle only)
+- SKU stored internally for analytics only
+- Calorie value used exclusively for internal portion math
+- No brand-specific claims or messages rendered
+
+**The app must remain fully functional if the QR is never scanned.**
+
+---
+
+## B.6 FAILURE & FALLBACK
+
+If the QR link is malformed, parameters missing, or values fail validation:
+- App operates in unbranded mode
+- No errors shown to user
+- No messaging implies incorrect usage
+
+**Failure must be silent and safe.**
+
+---
+
+## B.7 DATA & PRIVACY POSITION
+
+- QR parameters are **not** user data
+- No PII transmitted
+- No data sent off-device at QR scan time
+- Brand attribution is aggregated and anonymized downstream
+
+**The QR code creates context, not surveillance.**
+
+---
+
+## B.8 LEGAL POSTURE
+
+This QR deep-link:
+- Does **not** constitute advice
+- Does **not** alter product labeling claims
+- Does **not** introduce new regulatory exposure
+
+It is a **launch context mechanism**, nothing more.
+
+---
+
+## B.9 SCOPE LOCK
+
+This contract defines:
+- The **only** acceptable QR format
+- The **only** acceptable data carried
+- The **only** acceptable app behavior
+
+Any additions require:
+- Legal review
+- Product approval
+- Explicit versioning (v2.0+)
+
+---
+
+## B.10 FINAL STATEMENT
+
+> If this QR deep-link cannot be explained in 30 seconds to a non-technical executive, it is out of scope.
+>
+> **Simplicity is the feature.**
+
+---
+
+# DOCUMENT C: BrandConfiguration Contract
 
 ## Field Specification
 
@@ -97,7 +249,7 @@ Single form:
 
 ---
 
-# 3. Metrics Translation Layer
+# DOCUMENT D: Metrics Translation Layer
 
 ## Raw Data Collected (On-Device Only)
 
@@ -137,7 +289,7 @@ Single form:
 
 ---
 
-# 4. Procurement-Safe Scope Lock
+# DOCUMENT E: Procurement-Safe Scope Lock
 
 ## Definition of "Done"
 
@@ -173,11 +325,11 @@ This app **WILL NOT** include:
 
 ---
 
-# 5. Red-Flag Audit
+# DOCUMENT F: Risk Audit
 
 ## Current Design Review
 
-### Medical Claims Risk: LOW ✓
+### Medical Claims Risk: LOW
 
 | Area | Status | Evidence |
 |------|--------|----------|
@@ -189,7 +341,7 @@ This app **WILL NOT** include:
 
 **Remaining risk:** The word "progress" appears. Consider replacing with "change" if legal requests.
 
-### Data Ownership Risk: LOW ✓
+### Data Ownership Risk: LOW
 
 | Area | Status | Evidence |
 |------|--------|----------|
@@ -201,7 +353,7 @@ This app **WILL NOT** include:
 
 **Remaining risk:** If batch upload to brand endpoint is enabled in future, requires separate privacy review.
 
-### Approval Timeline Risk: LOW ✓
+### Approval Timeline Risk: LOW
 
 | Factor | Status | Evidence |
 |--------|--------|----------|
@@ -213,7 +365,7 @@ This app **WILL NOT** include:
 
 **App Store review:** Expect standard 24-48 hour review. No special entitlements required.
 
-### Trademark Risk: LOW ✓
+### Trademark Risk: LOW
 
 | Area | Status | Evidence |
 |------|--------|----------|
@@ -233,6 +385,229 @@ This app **WILL NOT** include:
 | Data Ownership | LOW | None — all data is local/anonymous |
 | Approval Timeline | LOW | None — no special permissions |
 | Trademark | LOW | None — brand-neutral by default |
+
+---
+
+# DOCUMENT G: Pressure-Test Results
+
+## Procurement Reality Simulation
+
+Each stakeholder below has veto power. Their objections are listed with clean responses using only what's in the contract.
+
+---
+
+## G.1 LEGAL / REGULATORY
+
+**Persona:** Senior Product Counsel, Pet Nutrition Division
+**Fear:** Creating unintentional medical claims or discoverable liability
+**Veto Power:** ABSOLUTE
+
+### Objection 1:
+> "Show me, in one sentence, why this QR code does not create a new claim pathway beyond what's already on the bag."
+
+**Response:**
+The QR code transmits three facts already printed on the bag (brand name, SKU, calorie density) — it introduces no new claims, no guidance, and no promises. See Contract §B.4: "Parameters represent facts, not guidance."
+
+### Objection 2:
+> "If a plaintiff screenshots a downward trend, what prevents that from being interpreted as a promised outcome tied to our product?"
+
+**Response:**
+Three defenses:
+1. **No causal language** — App never says "because of this food" (Contract §B.1: "Does not promise outcomes")
+2. **User-entered data** — All weight values come from the user, not the product
+3. **Neutral framing** — Trend shows "change" not "progress toward goal" (Risk Audit §F: neutral language verified)
+
+The chart is a log, not a claim.
+
+### Objection 3:
+> "What if someone claims the app recommended a feeding amount?"
+
+**Response:**
+Contract §B.4 explicitly prohibits encoding "feeding instructions" in QR. App displays user's math based on their inputs — it never says "feed this amount." The word "recommended" does not appear in the app (verified in Risk Audit §F).
+
+**LEGAL STATUS: CLEARED**
+
+---
+
+## G.2 DATA PRIVACY / IT SECURITY
+
+**Persona:** Enterprise Security Architect
+**Fear:** Shadow data collection and compliance drift
+**Veto Power:** TECHNICAL
+
+### Objection 1:
+> "Walk me through the exact moment data leaves the device."
+
+**Response:**
+**It doesn't.** Contract §B.7: "No data sent off-device at QR scan time." All data remains in device-local SwiftData storage. No network permissions requested (verified in Risk Audit §F: Info.plist has no network entitlements).
+
+### Objection 2:
+> "What is `deviceHash` and can it identify users?"
+
+**Response:**
+`deviceHash` is a 16-character truncated XOR hash of `identifierForVendor`. It is:
+- Not reversible to original identifier
+- Changes on app reinstall
+- Cannot be correlated across apps
+
+See Metrics Layer: "deviceHash is truncated XOR hash... not reversible."
+
+### Objection 3:
+> "If batch upload to brand endpoint is enabled later, who owns that data?"
+
+**Response:**
+Out of scope for v1.0. Contract §B.9: "Any additions require Legal review, Product approval, Explicit versioning (v2.0+)." Future network features require separate privacy review (noted in Risk Audit §F).
+
+**SECURITY STATUS: CLEARED**
+
+---
+
+## G.3 PROCUREMENT / FINANCE
+
+**Persona:** Director of Strategic Sourcing
+**Fear:** Open-ended cost and unclear ROI
+**Veto Power:** SILENT (but controls budget)
+
+### Objection 1:
+> "What stops this from turning into a permanent roadmap obligation?"
+
+**Response:**
+Contract §B.9 (Scope Lock): "This contract defines the only acceptable QR format, data carried, and app behavior." Scope Lock Agreement (Document E) lists 10 features explicitly excluded with rationale. Any change requires new SOW.
+
+### Objection 2:
+> "What exactly are we NOT buying?"
+
+**Response:**
+Per Scope Lock Agreement:
+- User accounts/login
+- Push notifications
+- Cloud sync
+- Multiple cats
+- Veterinary integration
+- Food ordering
+- Social/sharing
+- CSV export
+- Widgets
+- Activity intensity
+
+Quote: "Any feature not listed in 'Definition of Done' requires separate Statement of Work."
+
+### Objection 3:
+> "What's the ongoing cost structure?"
+
+**Response:**
+v1.0 is a deliverable, not a subscription:
+- App Store hosting: Your developer account
+- Data storage: Device-only (no server cost)
+- Analytics: Aggregated locally, batch export optional (separate SOW)
+- Updates: Bug fixes included; new features are separate SOW
+
+**PROCUREMENT STATUS: CLEARED**
+
+---
+
+## G.4 BRAND / MARKETING
+
+**Persona:** VP Brand Strategy
+**Fear:** Losing narrative control or brand dilution
+**Veto Power:** HIGH
+
+### Objection 1:
+> "Why does this app not tell our story? If I'm putting a QR on a $60 bag of food, why am I not using this to reinforce why our product is superior?"
+
+**Response:**
+Because claims create liability. Contract §B.8: "Does not alter product labeling claims."
+
+What you DO get:
+- Your brand name prominently displayed
+- Your brand colors throughout UI
+- Your SKU tracked for attribution
+- Silent product association in every metric
+
+The bag tells your story. The app proves engagement.
+
+### Objection 2:
+> "Can we add copy, before/after comparisons, or push notifications?"
+
+**Response:**
+No. Each is explicitly excluded:
+- Copy/slogans: Contract §B.4 — "No marketing language"
+- Before/after: Risk Audit §F — "Outcome promise risk"
+- Push notifications: Scope Lock — "Permission friction"
+
+These are not removed features — they were never in scope.
+
+### Objection 3:
+> "What CAN we customize?"
+
+**Response:**
+Via QR parameters:
+- Brand name (displays in UI)
+- Brand colors (primary + accent)
+- Product name (SKU display)
+- Calorie density (for portion math)
+
+Your brand owns the visual experience. We own the liability shield.
+
+**MARKETING STATUS: CLEARED (with scope education)**
+
+---
+
+## G.5 FIELD REALITY
+
+**Persona:** Sales Director / Retail Enablement
+**Fear:** Confusing consumers or store staff
+**Veto Power:** None (but speaks truth)
+
+### Objection 1:
+> "Explain this QR code in one sentence that a PetSmart associate won't butcher."
+
+**Response:**
+> "Scan this to track your cat's weight with the food you just bought."
+
+That's it. 11 words. No claims. No setup required beyond the sentence.
+
+### Objection 2:
+> "What if the customer asks what the app does?"
+
+**Response:**
+Shelf card copy: "Log your cat's weight. See the trend. That's it."
+
+The app is deliberately boring so explanation is easy.
+
+### Objection 3:
+> "What if they scan and the app isn't installed?"
+
+**Response:**
+iOS behavior: App Store opens to download page. Deep link fires after install. No friction. No lost context.
+
+**FIELD STATUS: CLEARED**
+
+---
+
+## PRESSURE-TEST SUMMARY
+
+| Stakeholder | Status | Key Constraint Satisfied |
+|-------------|--------|-------------------------|
+| Legal | CLEARED | No new claim pathways |
+| Security | CLEARED | No data leaves device |
+| Procurement | CLEARED | Scope is frozen |
+| Marketing | CLEARED | Brand control without liability |
+| Field | CLEARED | 11-word explanation |
+
+**Contract is ready for executive presentation.**
+
+---
+
+# DOCUMENT H: Executive Pitch Deck
+
+See separate file: `deliverables/pitch-deck/MANUS-PITCH-DECK-INPUT.md`
+
+The 12-slide deck includes:
+- Slides 1-6: Value proposition
+- Slides 7-10: Risk mitigation
+- Slides 11-12: Close + Next Steps
+- Appendix: Pre-answered objections
 
 ---
 
@@ -270,6 +645,8 @@ catweighttracker://activate?brand=acmepet&name=AcmePet%20Foods&sku=weight-chicke
 | Version | Date | Change |
 |---------|------|--------|
 | 1.0 | 2026-01-10 | Initial release |
+| 2.0 | 2026-01-10 | Added QR Contract, Pressure-Test Results, Document Index |
+| 2.1 | 2026-01-10 | Added Executive Pitch Deck reference, split Manus input |
 
 **Prepared for:** Pet Food Manufacturer Procurement Review
 **Prepared by:** Development Team
