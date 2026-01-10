@@ -4,7 +4,7 @@ A SwiftUI + SwiftData iOS app for managing cat weight-loss programs.
 
 ## Features
 
-- **Multi-Cat Support**: Track multiple cats in one app
+- **Single Cat Focus**: Optimized for tracking one cat's weight journey
 - **Weight Tracking**: Log weights, view progress charts, track trends
 - **Portion Calculator**: Science-based calorie calculations using RER/MER formulas
 - **Feeding Scheduler**: Set meal times with notification reminders

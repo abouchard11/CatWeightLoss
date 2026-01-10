@@ -114,7 +114,7 @@ All parameters are required. If any parameter is missing or invalid, the app def
 |-----------|------|-------------|
 | `brand` | String | Brand identifier (human-readable) |
 | `sku` | String | Product SKU or internal code |
-| `cal` | Double | Calories per gram |
+| `cal` | Double | Kilocalories per gram (kcal/g). Typical: dry ~3.5, wet ~1.0 |
 
 **Example:**
 ```
@@ -216,8 +216,10 @@ Any additions require:
 | `brandName` | String | QR code | No | Trademark display |
 | `primaryColorHex` | String | QR code | No | Brand consistency |
 | `accentColorHex` | String | QR code | No | Brand consistency |
-| `logoData` | Data? | Not implemented | N/A | Future: trademark compliance |
+| `logoData` | Data? | v2.0 feature | N/A | Future: trademark compliance |
 | `defaultSKUId` | String | QR code | No | Product attribution |
+
+> **Note:** Logo customization via QR is a v2.0 feature. The app displays a brand-colored cat icon as the default splash screen logo.
 
 ## FoodSKU Fields (per product)
 
@@ -631,7 +633,7 @@ catweighttracker://activate?brand=acmepet&name=AcmePet%20Foods&sku=weight-chicke
 |-----------|----------|-------------|
 | `brand` | Yes | Unique brand identifier |
 | `sku` | Yes | Product SKU identifier |
-| `cal` | Yes | Calories per gram |
+| `cal` | Yes | Kilocalories per gram (kcal/g) |
 | `name` | No | Display name (defaults to brand) |
 | `skuname` | No | Product display name (defaults to sku) |
 | `serving` | No | Serving size in grams (defaults to 35) |
