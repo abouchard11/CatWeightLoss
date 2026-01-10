@@ -114,13 +114,11 @@ struct FeedingPlanView: View {
 
     private func toggleSchedule(_ schedule: FeedingSchedule) {
         schedule.isEnabled.toggle()
-        NotificationService.shared.updateFeedingReminders(for: cat)
     }
 
     private func deleteSchedules(at offsets: IndexSet) {
         for index in offsets {
             let schedule = sortedSchedules[index]
-            NotificationService.shared.cancelFeedingReminder(for: schedule)
             modelContext.delete(schedule)
         }
     }
@@ -171,7 +169,6 @@ struct AddMealView: View {
     @State private var mealTime = Date()
     @State private var portionGrams = "50"
     @State private var foodType: FoodType = .dry
-    @State private var notificationEnabled = true
 
     var isValid: Bool {
         !mealName.isEmpty && Double(portionGrams) != nil
@@ -216,10 +213,6 @@ struct AddMealView: View {
                             .foregroundColor(.secondary)
                     }
                 }
-
-                Section {
-                    Toggle("Reminder Notification", isOn: $notificationEnabled)
-                }
             }
             .navigationTitle("Add Meal")
             .navigationBarTitleDisplayMode(.inline)
@@ -246,21 +239,10 @@ struct AddMealView: View {
             mealName: mealName,
             mealTime: mealTime,
             portionGrams: grams,
-            foodType: foodType,
-            notificationEnabled: notificationEnabled
+            foodType: foodType
         )
         schedule.cat = cat
         cat.feedingSchedules.append(schedule)
-
-        if notificationEnabled {
-            Task {
-                let granted = await NotificationService.shared.requestAuthorization()
-                if granted {
-                    NotificationService.shared.scheduleFeedingReminder(for: schedule, catName: cat.name)
-                }
-            }
-        }
-
         dismiss()
     }
 }

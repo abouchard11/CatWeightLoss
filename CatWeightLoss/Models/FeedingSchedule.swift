@@ -10,7 +10,6 @@ final class FeedingSchedule {
     var foodType: FoodType
     var caloriesPerPortion: Double
     var isEnabled: Bool
-    var notificationEnabled: Bool
     var cat: Cat?
 
     init(
@@ -19,8 +18,7 @@ final class FeedingSchedule {
         portionGrams: Double,
         foodType: FoodType = .dry,
         caloriesPerPortion: Double? = nil,
-        isEnabled: Bool = true,
-        notificationEnabled: Bool = true
+        isEnabled: Bool = true
     ) {
         self.id = UUID()
         self.mealName = mealName
@@ -29,7 +27,6 @@ final class FeedingSchedule {
         self.foodType = foodType
         self.caloriesPerPortion = caloriesPerPortion ?? (portionGrams * foodType.averageCaloriesPerGram)
         self.isEnabled = isEnabled
-        self.notificationEnabled = notificationEnabled
     }
 
     var formattedTime: String {

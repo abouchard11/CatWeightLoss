@@ -8,10 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		17749D069276486385764283 /* PortionCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD603BE224595B63568FECFB /* PortionCalculator.swift */; };
-		17FD0CAAA8DB393F96B803DA /* AddCatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EEE1CB3322DE39CAC7498A /* AddCatView.swift */; };
 		1AAAB9ED2C30C0C48A90DADC /* ActivityHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF932E784289EC04B755212 /* ActivityHistoryView.swift */; };
 		272D38949B8C41491A7AA538 /* ActivitySession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7450F1D65498198AD0B8B8F7 /* ActivitySession.swift */; };
-		350BA9D3BBC067F20A0B006D /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13010F0D741D052478CA2069 /* NotificationService.swift */; };
 		3704029EC126CC989D329E6B /* BrandSplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4BECA82F6C6719D7226D8 /* BrandSplashView.swift */; };
 		3BA5ACDFBC1E1F6C3C812B0B /* CatCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12D2BAECD9F7A7C87310966 /* CatCard.swift */; };
 		48EFEF236FE3266C660D418A /* StatCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A4B2B4AE58000B2D8667C /* StatCard.swift */; };
@@ -23,7 +21,6 @@
 		7E0CA0BF0A3BA0D61C6D1A95 /* FeedingSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8A8ED42B05F4738BC8D6F9 /* FeedingSchedule.swift */; };
 		7F7813F6985D42EB67220674 /* ActivityLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F26D164434411BDCF654B6 /* ActivityLogView.swift */; };
 		89C8085AAD79798A66D2CC04 /* CatWeightLossApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B911CFAE8B28CDC4D5C778D5 /* CatWeightLossApp.swift */; };
-		8A1BB0BCC849F1B76DADDE2F /* CatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAACC0DF99E97EB985F985ED /* CatListView.swift */; };
 		92914C87D6F759E541CEC603 /* WeightTrendIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02677A0ABD6F050D60D67BE2 /* WeightTrendIndicator.swift */; };
 		9BD34A1F502DD68EFD7E6087 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171E684AD5B0DF895C89B2F9 /* Enums.swift */; };
 		A27838F488E118A6A7FED429 /* WeightHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329911AE9966A1FB69973795 /* WeightHistoryView.swift */; };
@@ -43,11 +40,9 @@
 		02677A0ABD6F050D60D67BE2 /* WeightTrendIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightTrendIndicator.swift; sourceTree = "<group>"; };
 		0CE753AB985E15A339BAD7C5 /* CatDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDetailView.swift; sourceTree = "<group>"; };
 		10C4BECA82F6C6719D7226D8 /* BrandSplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandSplashView.swift; sourceTree = "<group>"; };
-		13010F0D741D052478CA2069 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		171E684AD5B0DF895C89B2F9 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		329911AE9966A1FB69973795 /* WeightHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightHistoryView.swift; sourceTree = "<group>"; };
 		34F26D164434411BDCF654B6 /* ActivityLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLogView.swift; sourceTree = "<group>"; };
-		36EEE1CB3322DE39CAC7498A /* AddCatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCatView.swift; sourceTree = "<group>"; };
 		37374614D6001E15D3988D72 /* WeightChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightChartView.swift; sourceTree = "<group>"; };
 		55C73EB961BE3E4C15CB0987 /* FeedingPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedingPlanView.swift; sourceTree = "<group>"; };
 		6BD4D371D2037F775E614F21 /* AnonymousMetric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnonymousMetric.swift; sourceTree = "<group>"; };
@@ -69,7 +64,6 @@
 		CE5548CB266784BF6759F01A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D0B122CAFB3264DBCAD69ABF /* WeightEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightEntry.swift; sourceTree = "<group>"; };
 		D73E85C43A9D366598DA75D7 /* PortionCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortionCalculatorView.swift; sourceTree = "<group>"; };
-		DAACC0DF99E97EB985F985ED /* CatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatListView.swift; sourceTree = "<group>"; };
 		F3D03BDFE2641262C8C79825 /* BrandConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandConfigService.swift; sourceTree = "<group>"; };
 		F5277E209FCD71803BE7BB86 /* FoodSKU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSKU.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,9 +109,7 @@
 		360F5860E2CBA50D5B5AD7C5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				36EEE1CB3322DE39CAC7498A /* AddCatView.swift */,
 				0CE753AB985E15A339BAD7C5 /* CatDetailView.swift */,
-				DAACC0DF99E97EB985F985ED /* CatListView.swift */,
 				CC4EE09A0149988759F88A03 /* Activity */,
 				FE9DA4CC664DCC2B01A0070A /* Feeding */,
 				54B58AD4DDF20EF251FD4841 /* Onboarding */,
@@ -141,7 +133,6 @@
 			children = (
 				F3D03BDFE2641262C8C79825 /* BrandConfigService.swift */,
 				AE9F11D7A92004DB83BB7221 /* MetricsAggregator.swift */,
-				13010F0D741D052478CA2069 /* NotificationService.swift */,
 				BD603BE224595B63568FECFB /* PortionCalculator.swift */,
 			);
 			path = Services;
@@ -290,7 +281,6 @@
 				1AAAB9ED2C30C0C48A90DADC /* ActivityHistoryView.swift in Sources */,
 				7F7813F6985D42EB67220674 /* ActivityLogView.swift in Sources */,
 				272D38949B8C41491A7AA538 /* ActivitySession.swift in Sources */,
-				17FD0CAAA8DB393F96B803DA /* AddCatView.swift in Sources */,
 				6B4B3D477215503102302043 /* AnonymousMetric.swift in Sources */,
 				F00044275E89D501DE4894DD /* BrandConfigService.swift in Sources */,
 				604B9F705E105A910B36B32D /* BrandConfiguration.swift in Sources */,
@@ -298,14 +288,12 @@
 				75617A34CD43B05A29493BE6 /* Cat.swift in Sources */,
 				3BA5ACDFBC1E1F6C3C812B0B /* CatCard.swift in Sources */,
 				49F3D250C843C82547B79E7C /* CatDetailView.swift in Sources */,
-				8A1BB0BCC849F1B76DADDE2F /* CatListView.swift in Sources */,
 				89C8085AAD79798A66D2CC04 /* CatWeightLossApp.swift in Sources */,
 				9BD34A1F502DD68EFD7E6087 /* Enums.swift in Sources */,
 				ADC329558B1F8568CC9E1F21 /* FeedingPlanView.swift in Sources */,
 				7E0CA0BF0A3BA0D61C6D1A95 /* FeedingSchedule.swift in Sources */,
 				A9A754D1398BE14512FE7D85 /* FoodSKU.swift in Sources */,
 				EF40AFAB64F5BDA50219FE09 /* MetricsAggregator.swift in Sources */,
-				350BA9D3BBC067F20A0B006D /* NotificationService.swift in Sources */,
 				17749D069276486385764283 /* PortionCalculator.swift in Sources */,
 				CC59D9EE7489BA847FF05918 /* PortionCalculatorView.swift in Sources */,
 				A682144AA75ABBD8D3078688 /* ProgressRing.swift in Sources */,
