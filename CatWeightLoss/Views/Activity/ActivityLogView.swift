@@ -4,6 +4,7 @@ import SwiftData
 struct ActivityLogView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.brandConfig) private var brandConfig
 
     @Bindable var cat: Cat
 
@@ -135,7 +136,7 @@ struct ActivityLogView: View {
 
                     HStack {
                         Image(systemName: "figure.run")
-                            .foregroundColor(.blue)
+                            .foregroundColor(brandConfig?.primaryColor ?? .accentColor)
                         Text("Today's total")
                         Spacer()
                         Text("\(cat.todayActivityMinutes + durationMinutes) / \(cat.dailyActivityMinutes) min")

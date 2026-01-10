@@ -5,6 +5,7 @@ import Charts
 struct CatDetailView: View {
     @Bindable var cat: Cat
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.brandConfig) private var brandConfig
 
     @State private var showingWeightLog = false
     @State private var showingFeedingPlan = false
@@ -86,7 +87,7 @@ struct CatDetailView: View {
             ProgressRingWithLabel(
                 progress: cat.progressPercentage / 100,
                 label: "\(Int(cat.progressPercentage))%",
-                foregroundColor: .green
+                foregroundColor: brandConfig?.accentColor ?? .green
             )
         }
         .padding()
@@ -101,14 +102,14 @@ struct CatDetailView: View {
                 value: String(format: "%.1f %@", cat.currentWeight, cat.weightUnit.rawValue),
                 subtitle: String(format: "%.1f to go", cat.weightToLose),
                 icon: "scalemass",
-                color: .blue
+                color: brandConfig?.primaryColor ?? .accentColor
             )
 
             StatCard(
                 title: "Target",
                 value: String(format: "%.1f %@", cat.targetWeight, cat.weightUnit.rawValue),
                 icon: "flag.fill",
-                color: .green
+                color: brandConfig?.accentColor ?? .green
             )
         }
     }
@@ -148,7 +149,7 @@ struct CatDetailView: View {
                 ActionButton(
                     title: "Log Weight",
                     icon: "scalemass.fill",
-                    color: .blue
+                    color: brandConfig?.primaryColor ?? .accentColor
                 ) {
                     showingWeightLog = true
                 }
@@ -174,7 +175,7 @@ struct CatDetailView: View {
                 ActionButton(
                     title: "Calculator",
                     icon: "function",
-                    color: .green
+                    color: brandConfig?.accentColor ?? .green
                 ) {
                     showingPortionCalculator = true
                 }
@@ -206,7 +207,7 @@ struct CatDetailView: View {
 
                 if cat.activityGoalProgress >= 1.0 {
                     Label("Goal Met!", systemImage: "checkmark.circle.fill")
-                        .foregroundColor(.green)
+                        .foregroundColor(brandConfig?.accentColor ?? .green)
                         .font(.subheadline)
                 }
             }

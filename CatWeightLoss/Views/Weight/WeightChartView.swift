@@ -2,6 +2,8 @@ import SwiftUI
 import Charts
 
 struct WeightChartView: View {
+    @Environment(\.brandConfig) private var brandConfig
+
     let cat: Cat
     var height: CGFloat = 200
     var showTarget: Bool = true
@@ -26,28 +28,28 @@ struct WeightChartView: View {
                     x: .value("Date", entry.date),
                     y: .value("Weight", entry.weight)
                 )
-                .foregroundStyle(Color.blue.gradient)
+                .foregroundStyle((brandConfig?.primaryColor ?? .accentColor).gradient)
                 .interpolationMethod(.catmullRom)
 
                 PointMark(
                     x: .value("Date", entry.date),
                     y: .value("Weight", entry.weight)
                 )
-                .foregroundStyle(Color.blue)
+                .foregroundStyle(brandConfig?.primaryColor ?? .accentColor)
                 .symbolSize(40)
             }
 
             // Target weight line
             if showTarget {
                 RuleMark(y: .value("Target", cat.targetWeight))
-                    .foregroundStyle(Color.green.opacity(0.7))
+                    .foregroundStyle((brandConfig?.accentColor ?? .green).opacity(0.7))
                     .lineStyle(StrokeStyle(lineWidth: 2, dash: [5, 5]))
                     .annotation(position: .top, alignment: .trailing) {
                         Text("Target")
                             .font(.caption2)
-                            .foregroundColor(.green)
+                            .foregroundColor(brandConfig?.accentColor ?? .green)
                             .padding(.horizontal, 4)
-                            .background(Color.green.opacity(0.1))
+                            .background((brandConfig?.accentColor ?? .green).opacity(0.1))
                             .cornerRadius(4)
                     }
             }
@@ -60,7 +62,7 @@ struct WeightChartView: View {
                 )
                 .foregroundStyle(
                     LinearGradient(
-                        colors: [Color.blue.opacity(0.3), Color.blue.opacity(0.05)],
+                        colors: [(brandConfig?.primaryColor ?? .accentColor).opacity(0.3), (brandConfig?.primaryColor ?? .accentColor).opacity(0.05)],
                         startPoint: .top,
                         endPoint: .bottom
                     )
@@ -91,6 +93,8 @@ struct WeightChartView: View {
 }
 
 struct WeightChartViewCompact: View {
+    @Environment(\.brandConfig) private var brandConfig
+
     let cat: Cat
 
     private var sortedEntries: [WeightEntry] {
@@ -104,7 +108,7 @@ struct WeightChartViewCompact: View {
                     x: .value("Date", entry.date),
                     y: .value("Weight", entry.weight)
                 )
-                .foregroundStyle(Color.blue)
+                .foregroundStyle(brandConfig?.primaryColor ?? .accentColor)
                 .interpolationMethod(.catmullRom)
             }
         }

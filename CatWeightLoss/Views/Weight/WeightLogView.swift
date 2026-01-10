@@ -45,7 +45,7 @@ struct WeightLogView: View {
                         let change = weightValue - cat.currentWeight
                         HStack {
                             Image(systemName: change < 0 ? "arrow.down.circle.fill" : change > 0 ? "arrow.up.circle.fill" : "minus.circle.fill")
-                                .foregroundColor(change < 0 ? .blue : .secondary)
+                                .foregroundColor(change < 0 ? (brandConfig?.primaryColor ?? .accentColor) : .secondary)
 
                             Text(change < 0 ? "Down" : change > 0 ? "Up" : "No change")
 
@@ -53,13 +53,13 @@ struct WeightLogView: View {
 
                             Text(String(format: "%.2f \(cat.weightUnit.rawValue)", abs(change)))
                                 .fontWeight(.medium)
-                                .foregroundColor(change < 0 ? .blue : .secondary)
+                                .foregroundColor(change < 0 ? (brandConfig?.primaryColor ?? .accentColor) : .secondary)
                         }
 
                         if weightValue <= cat.targetWeight {
                             HStack {
                                 Image(systemName: "checkmark.circle.fill")
-                                    .foregroundColor(.blue)
+                                    .foregroundColor(brandConfig?.accentColor ?? .green)
                                 Text("Target reached")
                                     .fontWeight(.medium)
                                     .foregroundColor(.primary)

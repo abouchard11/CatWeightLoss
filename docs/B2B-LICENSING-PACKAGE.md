@@ -94,7 +94,7 @@ Its sole function is to **contextualize the app to a specific food product at la
 
 **Scheme:**
 ```
-catweight://launch
+catweighttracker://activate
 ```
 
 This scheme:
@@ -114,11 +114,11 @@ All parameters are required. If any parameter is missing or invalid, the app def
 |-----------|------|-------------|
 | `brand` | String | Brand identifier (human-readable) |
 | `sku` | String | Product SKU or internal code |
-| `kcal` | Integer | Calorie density per standard unit |
+| `cal` | Double | Calories per gram |
 
 **Example:**
 ```
-catweight://launch?brand=ACME&sku=WL-01&kcal=280
+catweighttracker://activate?brand=ACME&sku=WL-01&cal=3.2
 ```
 
 ---
