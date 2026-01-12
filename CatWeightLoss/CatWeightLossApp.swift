@@ -4,8 +4,30 @@ import SwiftData
 @main
 struct CatWeightLossApp: App {
     @State private var brandService = BrandConfigService.shared
+    @State private var sharedModelContainer: ModelContainer?
+    @State private var databaseError: Error?
 
-    var sharedModelContainer: ModelContainer = {
+    var body: some Scene {
+        WindowGroup {
+            if let error = databaseError {
+                DatabaseErrorView(
+                    error: error,
+                    onRetry: { initializeDatabase() },
+                    onReset: { resetDatabase() }
+                )
+            } else if let container = sharedModelContainer {
+                RootView()
+                    .environment(brandService)
+                    .modelContainer(container)
+            } else {
+                ProgressView("Loading...")
+                    .onAppear { initializeDatabase() }
+            }
+        }
+        .handlesExternalEvents(matching: ["catweighttracker"])
+    }
+
+    private func initializeDatabase() {
         let schema = Schema([
             Cat.self,
             WeightEntry.self,
@@ -21,19 +43,34 @@ struct CatWeightLossApp: App {
         )
 
         do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
+            sharedModelContainer = try ModelContainer(for: schema, configurations: [modelConfiguration])
+            databaseError = nil
         } catch {
-            fatalError("Could not create ModelContainer: \(error)")
+            databaseError = error
+            sharedModelContainer = nil
         }
-    }()
+    }
 
-    var body: some Scene {
-        WindowGroup {
-            RootView()
-                .environment(brandService)
+    private func resetDatabase() {
+        // Get the default store URL and delete it
+        let url = URL.applicationSupportDirectory
+            .appending(path: "default.store")
+
+        do {
+            if FileManager.default.fileExists(atPath: url.path) {
+                try FileManager.default.removeItem(at: url)
+            }
+            // Also remove WAL and SHM files if they exist
+            let walURL = url.appendingPathExtension("wal")
+            let shmURL = url.appendingPathExtension("shm")
+            try? FileManager.default.removeItem(at: walURL)
+            try? FileManager.default.removeItem(at: shmURL)
+        } catch {
+            // If we can't delete, at least try to reinitialize
+            print("Failed to delete database: \(error)")
         }
-        .modelContainer(sharedModelContainer)
-        .handlesExternalEvents(matching: ["catweighttracker"])
+
+        initializeDatabase()
     }
 }
 
