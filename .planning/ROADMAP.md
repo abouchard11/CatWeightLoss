@@ -10,7 +10,7 @@ None
 
 ## Phases
 
-- [ ] **Phase 1: Foundation** - Fix critical fatalError, set up XCTest infrastructure
+- [x] **Phase 1: Foundation** - Fix critical fatalError, set up XCTest infrastructure
 - [ ] **Phase 2: Core Tests** - Unit tests for PortionCalculator and weight trend algorithm
 - [ ] **Phase 3: Polish** - URL parsing tests, device hash caching fix
 
@@ -24,7 +24,7 @@ None
 
 Plans:
 - [x] 01-01: Replace fatalError with graceful error recovery in ModelContainer init
-- [ ] 01-02: Add CatWeightLossTests target to project.yml
+- [x] 01-02: Add CatWeightLossTests target to project.yml
 
 ### Phase 2: Core Tests
 **Goal**: Test coverage for health-critical calorie calculations and weight trend algorithm
@@ -50,6 +50,6 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 1/2 | In progress | - |
+| 1. Foundation | 2/2 | Complete | 2026-01-12 |
 | 2. Core Tests | 0/2 | Not started | - |
 | 3. Polish | 0/2 | Not started | - |
