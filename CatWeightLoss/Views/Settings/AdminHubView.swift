@@ -67,6 +67,25 @@ struct AdminHubView: View {
                     Text("Manage white-label brand configurations for demo purposes.")
                 }
 
+                // Demo Data
+                Section {
+                    Button {
+                        MetricsAggregator.shared.seedDemoMetrics(in: modelContext)
+                    } label: {
+                        Label("Seed Demo Analytics Data", systemImage: "chart.line.uptrend.xyaxis")
+                    }
+
+                    Button(role: .destructive) {
+                        MetricsAggregator.shared.clearDemoMetrics(in: modelContext)
+                    } label: {
+                        Label("Clear Demo Metrics", systemImage: "trash")
+                    }
+                } header: {
+                    Text("Demo Data")
+                } footer: {
+                    Text("Seed realistic analytics data spanning 30 days for dashboard demos.")
+                }
+
                 // B2B Tools
                 Section {
                     Button {

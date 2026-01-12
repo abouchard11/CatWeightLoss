@@ -228,6 +228,177 @@ class MetricsAggregator {
         )
     }
 
+    // MARK: - Demo Data Seeding (DEBUG only)
+
+    #if DEBUG
+    /// Seed demo metrics for analytics dashboard demos
+    /// Creates realistic-looking data spanning the last 30 days
+    func seedDemoMetrics(in context: ModelContext) {
+        let calendar = Calendar.current
+
+        // Generate demo device hashes (simulates multiple users)
+        let demoDevices = (1...12).map { "demo_device_\($0)_\(UUID().uuidString.prefix(8))" }
+
+        // Seed metrics for each demo brand
+        for brand in BrandSeeds.all {
+            let brandId = brand.brandId
+            let skuId = brand.skus.first?.skuId ?? "\(brandId)-sku"
+
+            // Distribute users across brands (not evenly - some brands more popular)
+            let brandPopularity: Double = {
+                switch brandId {
+                case "felinecare": return 1.0
+                case "sciencenutrition": return 0.8
+                case "probalance": return 0.6
+                case "bluewellness": return 0.9
+                default: return 0.5
+                }
+            }()
+
+            let brandDevices = demoDevices.filter { _ in Double.random(in: 0...1) < brandPopularity }
+
+            for deviceHash in brandDevices {
+                // Random activation date in last 30 days
+                let activationDaysAgo = Int.random(in: 3...28)
+                let activationDate = calendar.date(byAdding: .day, value: -activationDaysAgo, to: Date()) ?? Date()
+
+                // Activation metric
+                insertDemoMetric(
+                    brandId: brandId,
+                    skuId: skuId,
+                    type: .appActivation,
+                    value: 1,
+                    deviceHash: deviceHash,
+                    date: activationDate,
+                    in: context
+                )
+
+                // Setup completion (90% complete setup)
+                if Double.random(in: 0...1) < 0.9 {
+                    insertDemoMetric(
+                        brandId: brandId,
+                        skuId: skuId,
+                        type: .setupCompleted,
+                        value: 1,
+                        deviceHash: deviceHash,
+                        date: activationDate.addingTimeInterval(300), // 5 min later
+                        in: context
+                    )
+                }
+
+                // Weight logs over time (engagement varies)
+                let engagementLevel = Double.random(in: 0.3...1.0)
+                let daysSinceActivation = activationDaysAgo
+
+                for dayOffset in 0..<daysSinceActivation {
+                    let logDate = calendar.date(byAdding: .day, value: -dayOffset, to: Date()) ?? Date()
+
+                    // More engaged users log more frequently
+                    if Double.random(in: 0...1) < engagementLevel * 0.7 {
+                        insertDemoMetric(
+                            brandId: brandId,
+                            skuId: skuId,
+                            type: .weightLogged,
+                            value: 1,
+                            deviceHash: deviceHash,
+                            date: logDate,
+                            in: context
+                        )
+                    }
+
+                    // App opens (more frequent than logs)
+                    if Double.random(in: 0...1) < engagementLevel {
+                        insertDemoMetric(
+                            brandId: brandId,
+                            skuId: skuId,
+                            type: .appOpen,
+                            value: 1,
+                            deviceHash: deviceHash,
+                            date: logDate,
+                            in: context
+                        )
+                    }
+                }
+
+                // Reorder funnel (view → click conversion)
+                let reorderViews = Int.random(in: 1...5)
+                for viewOffset in 0..<reorderViews {
+                    let viewDate = calendar.date(byAdding: .day, value: -Int.random(in: 1...activationDaysAgo), to: Date()) ?? Date()
+
+                    insertDemoMetric(
+                        brandId: brandId,
+                        skuId: skuId,
+                        type: .reorderViewed,
+                        value: 1,
+                        deviceHash: deviceHash,
+                        date: viewDate,
+                        in: context
+                    )
+
+                    // 25-40% click through rate
+                    if Double.random(in: 0...1) < 0.32 {
+                        insertDemoMetric(
+                            brandId: brandId,
+                            skuId: skuId,
+                            type: .reorderClick,
+                            value: 1,
+                            deviceHash: deviceHash,
+                            date: viewDate.addingTimeInterval(Double.random(in: 10...120)),
+                            in: context
+                        )
+                    }
+                }
+            }
+        }
+
+        #if DEBUG
+        print("[MetricsAggregator] Seeded demo metrics for \(BrandSeeds.all.count) brands")
+        #endif
+    }
+
+    private func insertDemoMetric(
+        brandId: String,
+        skuId: String,
+        type: MetricType,
+        value: Double,
+        deviceHash: String,
+        date: Date,
+        in context: ModelContext
+    ) {
+        let metric = AnonymousMetric(
+            brandId: brandId,
+            skuId: skuId,
+            metricType: type,
+            value: value,
+            deviceHash: deviceHash
+        )
+        // Manually set the date for demo data
+        metric.recordedAt = date
+        context.insert(metric)
+    }
+
+    /// Clear all demo metrics (for reset)
+    func clearDemoMetrics(in context: ModelContext) {
+        let descriptor = FetchDescriptor<AnonymousMetric>(
+            predicate: #Predicate { $0.deviceHash.contains("demo_device_") }
+        )
+
+        do {
+            let demoMetrics = try context.fetch(descriptor)
+            for metric in demoMetrics {
+                context.delete(metric)
+            }
+            #if DEBUG
+            print("[MetricsAggregator] Cleared \(demoMetrics.count) demo metrics")
+            #endif
+        } catch {
+            #if DEBUG
+            print("[MetricsAggregator] Failed to clear demo metrics: \(error.localizedDescription)")
+            #endif
+        }
+    }
+    #endif
+
     // MARK: - Cleanup
 
     /// Remove old metrics (privacy-preserving cleanup)
