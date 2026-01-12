@@ -33,7 +33,7 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 02-01: PortionCalculator unit tests (RER, MER, weightLossCalories, validateTargetWeight)
+- [x] 02-01: PortionCalculator unit tests (RER, MER, weightLossCalories, validateTargetWeight)
 - [ ] 02-02: Cat.weightTrend and Cat.progressPercentage tests
 
 ### Phase 3: Polish
@@ -51,5 +51,5 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 2/2 | Complete | 2026-01-12 |
-| 2. Core Tests | 0/2 | Not started | - |
+| 2. Core Tests | 1/2 | In progress | - |
 | 3. Polish | 0/2 | Not started | - |
