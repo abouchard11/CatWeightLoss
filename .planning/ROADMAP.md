@@ -11,7 +11,7 @@ None
 ## Phases
 
 - [x] **Phase 1: Foundation** - Fix critical fatalError, set up XCTest infrastructure
-- [ ] **Phase 2: Core Tests** - Unit tests for PortionCalculator and weight trend algorithm
+- [x] **Phase 2: Core Tests** - Unit tests for PortionCalculator and weight trend algorithm
 - [ ] **Phase 3: Polish** - URL parsing tests, device hash caching fix
 
 ## Phase Details
@@ -34,7 +34,7 @@ Plans:
 
 Plans:
 - [x] 02-01: PortionCalculator unit tests (RER, MER, weightLossCalories, validateTargetWeight)
-- [ ] 02-02: Cat.weightTrend and Cat.progressPercentage tests
+- [x] 02-02: Cat.weightTrend and Cat.progressPercentage tests
 
 ### Phase 3: Polish
 **Goal**: Complete test coverage, fix device hash consistency
@@ -51,5 +51,5 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 2/2 | Complete | 2026-01-12 |
-| 2. Core Tests | 1/2 | In progress | - |
+| 2. Core Tests | 2/2 | Complete | 2026-01-12 |
 | 3. Polish | 0/2 | Not started | - |
