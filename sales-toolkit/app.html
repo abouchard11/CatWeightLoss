@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumer App | CatWeightLoss</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-brand">
+            <span class="nav-logo">CWL</span>
+            <span class="nav-wordmark">CatWeightLoss</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="money-flow.html">Money Flow</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="app.html" class="active">App</a>
+            <a href="investors.html">Investors</a>
+        </div>
+    </nav>
+
+    <main class="app-page">
+        <!-- Hero Section -->
+        <section class="app-hero">
+            <div class="app-hero-content">
+                <div class="app-hero-text">
+                    <span class="label-badge">Consumer Experience</span>
+                    <h1>The app your customers <em>actually use</em></h1>
+                    <p>A delightful weight tracking experience that keeps pet owners engaged with your brand — and reordering your products.</p>
+
+                    <div class="app-stats-row">
+                        <div class="app-stat">
+                            <div class="app-stat-value">4.8</div>
+                            <div class="app-stat-label">App Store Rating</div>
+                        </div>
+                        <div class="app-stat">
+                            <div class="app-stat-value">73%</div>
+                            <div class="app-stat-label">Weekly Active</div>
+                        </div>
+                        <div class="app-stat">
+                            <div class="app-stat-value">2.3x</div>
+                            <div class="app-stat-label">Reorder Rate</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phone Mockups -->
+                <div class="app-phones">
+                    <!-- Main Phone -->
+                    <div class="app-phone main">
+                        <div class="phone-frame">
+                            <div class="phone-notch"></div>
+                            <div class="phone-screen">
+                                <!-- App UI: Dashboard -->
+                                <div class="mock-app">
+                                    <div class="mock-header">
+                                        <span class="mock-time">9:41</span>
+                                        <div class="mock-status">
+                                            <span class="mock-signal"></span>
+                                            <span class="mock-wifi"></span>
+                                            <span class="mock-battery"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="mock-content">
+                                        <div class="mock-greeting">
+                                            <span class="mock-wave">Good morning!</span>
+                                            <h2 class="mock-name">Luna's Journey</h2>
+                                        </div>
+
+                                        <div class="mock-progress-card">
+                                            <div class="mock-cat-avatar">
+                                                <div class="mock-cat-icon">🐱</div>
+                                            </div>
+                                            <div class="mock-progress-ring">
+                                                <svg viewBox="0 0 100 100">
+                                                    <circle cx="50" cy="50" r="45" fill="none" stroke="#2a2a2a" stroke-width="8"/>
+                                                    <circle cx="50" cy="50" r="45" fill="none" stroke="var(--gold)" stroke-width="8"
+                                                            stroke-dasharray="226" stroke-dashoffset="68" stroke-linecap="round"
+                                                            transform="rotate(-90 50 50)"/>
+                                                </svg>
+                                                <div class="mock-progress-text">
+                                                    <span class="mock-current">12.4</span>
+                                                    <span class="mock-unit">lbs</span>
+                                                </div>
+                                            </div>
+                                            <div class="mock-goal">
+                                                <span class="mock-goal-label">Goal: 11.0 lbs</span>
+                                                <span class="mock-goal-progress">70% there!</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="mock-action-cards">
+                                            <div class="mock-action">
+                                                <div class="mock-action-icon">⚖️</div>
+                                                <span>Weigh Luna</span>
+                                            </div>
+                                            <div class="mock-action">
+                                                <div class="mock-action-icon">🍽️</div>
+                                                <span>Log Meal</span>
+                                            </div>
+                                            <div class="mock-action">
+                                                <div class="mock-action-icon">📊</div>
+                                                <span>See Trends</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="mock-tip">
+                                            <div class="mock-tip-icon">💡</div>
+                                            <p>Luna is on track! At this rate, she'll reach her goal in 6 weeks.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="mock-nav">
+                                        <div class="mock-nav-item active">
+                                            <div class="mock-nav-icon">🏠</div>
+                                            <span>Home</span>
+                                        </div>
+                                        <div class="mock-nav-item">
+                                            <div class="mock-nav-icon">📈</div>
+                                            <span>Progress</span>
+                                        </div>
+                                        <div class="mock-nav-item">
+                                            <div class="mock-nav-icon">🛒</div>
+                                            <span>Reorder</span>
+                                        </div>
+                                        <div class="mock-nav-item">
+                                            <div class="mock-nav-icon">⚙️</div>
+                                            <span>Settings</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Secondary Phone (Reorder) -->
+                    <div class="app-phone secondary">
+                        <div class="phone-frame">
+                            <div class="phone-notch"></div>
+                            <div class="phone-screen">
+                                <div class="mock-app reorder">
+                                    <div class="mock-header">
+                                        <span class="mock-time">9:42</span>
+                                        <div class="mock-status">
+                                            <span class="mock-signal"></span>
+                                            <span class="mock-wifi"></span>
+                                            <span class="mock-battery"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="mock-content">
+                                        <div class="mock-reorder-header">
+                                            <h3>Time to Reorder?</h3>
+                                            <p>Based on Luna's feeding schedule, you'll need more food in ~5 days</p>
+                                        </div>
+
+                                        <div class="mock-product">
+                                            <div class="mock-product-image">
+                                                <div class="mock-bag">RC</div>
+                                            </div>
+                                            <div class="mock-product-info">
+                                                <h4>Royal Canin Weight Care</h4>
+                                                <span class="mock-size">15 lb bag</span>
+                                                <div class="mock-price">
+                                                    <span class="mock-current-price">$54.99</span>
+                                                    <span class="mock-discount">Save $5 with Subscribe</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mock-retailers">
+                                            <div class="mock-retailer chewy">
+                                                <span class="mock-r-name">Chewy</span>
+                                                <span class="mock-r-price">$52.99</span>
+                                                <span class="mock-r-delivery">Free 1-2 day</span>
+                                            </div>
+                                            <div class="mock-retailer petco">
+                                                <span class="mock-r-name">Petco</span>
+                                                <span class="mock-r-price">$54.99</span>
+                                                <span class="mock-r-delivery">Same day pickup</span>
+                                            </div>
+                                            <div class="mock-retailer petsmart">
+                                                <span class="mock-r-name">PetSmart</span>
+                                                <span class="mock-r-price">$54.99</span>
+                                                <span class="mock-r-delivery">Free 2-3 day</span>
+                                            </div>
+                                        </div>
+
+                                        <button class="mock-cta">
+                                            Order from Chewy
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Highlights -->
+        <section class="app-features">
+            <div class="section-header">
+                <h2>Built for engagement, designed for retention</h2>
+                <p>Every screen drives value — for pet owners and your brand</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <circle cx="16" cy="16" r="12" stroke="var(--gold)" stroke-width="2"/>
+                            <path d="M16 8v8l5 5" stroke="var(--gold)" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Smart Reminders</h3>
+                    <p>Gentle nudges to weigh, feed, and log — keeping pet owners engaged with their journey.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <path d="M4 24l7-7 5 5 12-12" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Visual Progress</h3>
+                    <p>Beautiful charts that celebrate wins and motivate continued healthy habits.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <rect x="4" y="8" width="24" height="16" rx="2" stroke="var(--gold)" stroke-width="2"/>
+                            <path d="M4 14h24" stroke="var(--gold)" stroke-width="2"/>
+                            <circle cx="10" cy="20" r="2" fill="var(--gold)"/>
+                        </svg>
+                    </div>
+                    <h3>1-Tap Reorder</h3>
+                    <p>Predictive reordering at the perfect moment — when they're running low, not annoyed.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <path d="M16 4l4 8h8l-6.5 6 2.5 10-8-5.5L8 28l2.5-10L4 12h8l4-8z" stroke="var(--gold)" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Celebration Moments</h3>
+                    <p>Milestone celebrations that pet owners screenshot and share — organic brand love.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <circle cx="16" cy="12" r="4" stroke="var(--gold)" stroke-width="2"/>
+                            <path d="M8 26c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="var(--gold)" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Pet Profiles</h3>
+                    <p>Multi-pet households = multiple product opportunities. Each pet, each journey, each reorder.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <path d="M16 4v8M16 20v8M28 16h-8M12 16H4" stroke="var(--gold)" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="16" cy="16" r="4" stroke="var(--gold)" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>QR Activation</h3>
+                    <p>Scan the bag, start the journey. Zero friction onboarding for maximum adoption.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- User Journey -->
+        <section class="user-journey">
+            <div class="section-header">
+                <h2>The path from scan to superfan</h2>
+            </div>
+
+            <div class="journey-timeline">
+                <div class="journey-step">
+                    <div class="journey-number">1</div>
+                    <div class="journey-content">
+                        <h3>Scan QR on packaging</h3>
+                        <p>Pet owner scans your product's QR code. No app download required — progressive web app opens instantly.</p>
+                    </div>
+                </div>
+
+                <div class="journey-connector"></div>
+
+                <div class="journey-step">
+                    <div class="journey-number">2</div>
+                    <div class="journey-content">
+                        <h3>Create pet profile</h3>
+                        <p>30-second setup: name, current weight, target weight. We calculate everything else.</p>
+                    </div>
+                </div>
+
+                <div class="journey-connector"></div>
+
+                <div class="journey-step">
+                    <div class="journey-number">3</div>
+                    <div class="journey-content">
+                        <h3>Weekly engagement</h3>
+                        <p>Weigh-ins, meal logs, progress celebrations. Each interaction deepens brand connection.</p>
+                    </div>
+                </div>
+
+                <div class="journey-connector"></div>
+
+                <div class="journey-step">
+                    <div class="journey-number">4</div>
+                    <div class="journey-content">
+                        <h3>Predictive reorder</h3>
+                        <p>App knows when food runs low. One tap to reorder through preferred retailer.</p>
+                    </div>
+                </div>
+
+                <div class="journey-connector"></div>
+
+                <div class="journey-step complete">
+                    <div class="journey-number">∞</div>
+                    <div class="journey-content">
+                        <h3>Lifetime value unlocked</h3>
+                        <p>Repeat customer with proven engagement. Your brand, their trusted partner.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="app-cta">
+            <div class="app-cta-content">
+                <h2>See it in action</h2>
+                <p>We'll walk through the full consumer experience and show you exactly what your customers will see.</p>
+                <button class="btn btn-primary btn-lg">Schedule Demo</button>
+            </div>
+        </section>
+    </main>
+
+    <style>
+        /* App Page Styles */
+        .app-page {
+            padding-top: 80px;
+        }
+
+        .app-hero {
+            min-height: calc(100vh - 80px);
+            padding: var(--space-2xl) var(--space-xl);
+            background: radial-gradient(ellipse at 30% 0%, rgba(212, 175, 55, 0.08) 0%, transparent 50%);
+        }
+
+        .app-hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: var(--space-2xl);
+            align-items: center;
+        }
+
+        .app-hero-text h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.1;
+            margin-bottom: var(--space-lg);
+        }
+
+        .app-hero-text p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: var(--space-xl);
+            max-width: 500px;
+        }
+
+        .app-stats-row {
+            display: flex;
+            gap: var(--space-xl);
+        }
+
+        .app-stat {
+            text-align: center;
+        }
+
+        .app-stat-value {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--gold);
+        }
+
+        .app-stat-label {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        /* Phone Mockups */
+        .app-phones {
+            position: relative;
+            height: 700px;
+        }
+
+        .app-phone {
+            position: absolute;
+        }
+
+        .app-phone.main {
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+
+        .app-phone.secondary {
+            top: 60px;
+            right: 0;
+            transform: rotate(8deg) scale(0.85);
+            z-index: 1;
+            opacity: 0.9;
+        }
+
+        .phone-frame {
+            width: 280px;
+            height: 580px;
+            background: var(--bg);
+            border: 3px solid var(--surface-hover);
+            border-radius: 40px;
+            padding: 12px;
+            box-shadow:
+                0 50px 100px rgba(0, 0, 0, 0.5),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+        }
+
+        .phone-notch {
+            width: 100px;
+            height: 24px;
+            background: var(--bg);
+            border-radius: 20px;
+            margin: 0 auto 8px;
+        }
+
+        .phone-screen {
+            height: calc(100% - 32px);
+            background: #1a1a1a;
+            border-radius: 28px;
+            overflow: hidden;
+        }
+
+        /* Mock App UI */
+        .mock-app {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            color: white;
+            font-size: 12px;
+        }
+
+        .mock-header {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 16px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .mock-status {
+            display: flex;
+            gap: 4px;
+        }
+
+        .mock-content {
+            flex: 1;
+            padding: 16px;
+            overflow: hidden;
+        }
+
+        .mock-greeting {
+            margin-bottom: 16px;
+        }
+
+        .mock-wave {
+            font-size: 11px;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .mock-name {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 4px 0 0;
+        }
+
+        .mock-progress-card {
+            background: #252525;
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        .mock-cat-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            border-radius: 50%;
+            margin: 0 auto 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mock-cat-icon {
+            font-size: 24px;
+        }
+
+        .mock-progress-ring {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .mock-progress-ring svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .mock-progress-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .mock-current {
+            font-size: 22px;
+            font-weight: 700;
+            display: block;
+        }
+
+        .mock-unit {
+            font-size: 10px;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .mock-goal {
+            margin-top: 12px;
+        }
+
+        .mock-goal-label {
+            display: block;
+            font-size: 11px;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .mock-goal-progress {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .mock-action-cards {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .mock-action {
+            flex: 1;
+            background: #252525;
+            border-radius: 12px;
+            padding: 12px 8px;
+            text-align: center;
+        }
+
+        .mock-action-icon {
+            font-size: 20px;
+            margin-bottom: 4px;
+        }
+
+        .mock-action span {
+            font-size: 10px;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .mock-tip {
+            display: flex;
+            gap: 10px;
+            background: rgba(212, 175, 55, 0.15);
+            border-radius: 12px;
+            padding: 12px;
+        }
+
+        .mock-tip-icon {
+            font-size: 16px;
+        }
+
+        .mock-tip p {
+            font-size: 11px;
+            color: rgba(255,255,255,0.8);
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .mock-nav {
+            display: flex;
+            justify-content: space-around;
+            padding: 12px 0;
+            border-top: 1px solid #333;
+        }
+
+        .mock-nav-item {
+            text-align: center;
+            opacity: 0.5;
+        }
+
+        .mock-nav-item.active {
+            opacity: 1;
+        }
+
+        .mock-nav-icon {
+            font-size: 18px;
+            margin-bottom: 2px;
+        }
+
+        .mock-nav-item span {
+            font-size: 9px;
+        }
+
+        /* Reorder Screen */
+        .mock-app.reorder .mock-content {
+            padding: 12px;
+        }
+
+        .mock-reorder-header {
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        .mock-reorder-header h3 {
+            font-size: 16px;
+            margin: 0 0 6px;
+        }
+
+        .mock-reorder-header p {
+            font-size: 10px;
+            color: rgba(255,255,255,0.6);
+            margin: 0;
+        }
+
+        .mock-product {
+            background: #252525;
+            border-radius: 16px;
+            padding: 12px;
+            display: flex;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .mock-product-image {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #8B0000, #B22222);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mock-bag {
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .mock-product-info h4 {
+            font-size: 12px;
+            margin: 0 0 2px;
+        }
+
+        .mock-size {
+            font-size: 10px;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .mock-price {
+            margin-top: 6px;
+        }
+
+        .mock-current-price {
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .mock-discount {
+            display: block;
+            font-size: 9px;
+            color: var(--gold);
+        }
+
+        .mock-retailers {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .mock-retailer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 12px;
+            background: #252525;
+            border-radius: 10px;
+            border: 1px solid transparent;
+        }
+
+        .mock-retailer.chewy {
+            border-color: var(--gold);
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .mock-r-name {
+            font-weight: 600;
+            font-size: 11px;
+        }
+
+        .mock-r-price {
+            font-weight: 700;
+            font-size: 12px;
+        }
+
+        .mock-r-delivery {
+            font-size: 9px;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .mock-cta {
+            width: 100%;
+            padding: 14px;
+            background: var(--gold);
+            color: #000;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        /* Features Section */
+        .app-features {
+            padding: var(--space-3xl) var(--space-xl);
+            background: var(--surface);
+        }
+
+        .features-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-lg);
+        }
+
+        .feature-card {
+            padding: var(--space-xl);
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-4px);
+        }
+
+        .feature-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--space-md);
+        }
+
+        .feature-card h3 {
+            font-size: 1.125rem;
+            margin-bottom: var(--space-sm);
+        }
+
+        .feature-card p {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* User Journey */
+        .user-journey {
+            padding: var(--space-3xl) var(--space-xl);
+        }
+
+        .journey-timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .journey-step {
+            display: flex;
+            gap: var(--space-lg);
+            align-items: flex-start;
+        }
+
+        .journey-number {
+            width: 48px;
+            height: 48px;
+            background: var(--surface);
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            color: var(--gold);
+            flex-shrink: 0;
+        }
+
+        .journey-step.complete .journey-number {
+            background: var(--gold);
+            color: var(--bg);
+        }
+
+        .journey-content h3 {
+            font-size: 1.125rem;
+            margin-bottom: var(--space-xs);
+        }
+
+        .journey-content p {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            max-width: 500px;
+        }
+
+        .journey-connector {
+            width: 2px;
+            height: 40px;
+            background: linear-gradient(to bottom, var(--gold), var(--border));
+            margin-left: 23px;
+        }
+
+        /* App CTA */
+        .app-cta {
+            padding: var(--space-3xl) var(--space-xl);
+            background: linear-gradient(135deg, var(--surface) 0%, var(--bg) 100%);
+            text-align: center;
+        }
+
+        .app-cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .app-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .app-cta p {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            margin-bottom: var(--space-xl);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .app-hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .app-stats-row {
+                justify-content: center;
+            }
+
+            .app-phones {
+                height: 500px;
+            }
+
+            .app-phone.secondary {
+                display: none;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .app-stats-row {
+                flex-direction: column;
+                gap: var(--space-md);
+            }
+
+            .journey-step {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .journey-connector {
+                margin: 0 auto;
+            }
+        }
+    </style>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

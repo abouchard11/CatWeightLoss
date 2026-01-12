@@ -11,6 +11,10 @@ struct CatDetailView: View {
     @State private var showingFeedingPlan = false
     @State private var showingActivityLog = false
     @State private var showingPortionCalculator = false
+    @State private var showingReorder = false
+    #if DEBUG
+    @State private var showingAdminHub = false
+    #endif
 
     var body: some View {
         ScrollView {
@@ -47,6 +51,59 @@ struct CatDetailView: View {
         .sheet(isPresented: $showingPortionCalculator) {
             PortionCalculatorView(cat: cat)
         }
+        .sheet(isPresented: $showingReorder) {
+            if let config = brandConfig {
+                ReorderView(
+                    cat: cat,
+                    brandConfig: config,
+                    prediction: calculateReorderPrediction()
+                )
+            }
+        }
+        #if DEBUG
+        .sheet(isPresented: $showingAdminHub) {
+            AdminHubView()
+        }
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    showingAdminHub = true
+                } label: {
+                    Image(systemName: "gearshape.2")
+                }
+            }
+        }
+        #endif
+    }
+
+    /// Calculate reorder prediction based on feeding schedule data
+    private func calculateReorderPrediction() -> ReorderPrediction? {
+        guard !cat.feedingSchedules.isEmpty,
+              let sku = brandConfig?.defaultSKU else { return nil }
+
+        // Sum all enabled feeding schedules to get daily grams
+        let dailyGrams = cat.feedingSchedules
+            .filter { $0.isEnabled }
+            .reduce(0) { $0 + $1.portionGrams }
+
+        guard dailyGrams > 0 else { return nil }
+
+        let bagSizeGrams = sku.bagSizeGrams
+
+        // Estimate grams used since activation
+        let daysSinceStart = Calendar.current.dateComponents(
+            [.day],
+            from: cat.createdAt,
+            to: Date()
+        ).day ?? 0
+        let estimatedUsed = dailyGrams * Double(daysSinceStart)
+
+        return ReorderPrediction.calculate(
+            dailyGrams: dailyGrams,
+            bagSizeGrams: bagSizeGrams,
+            purchaseDate: cat.createdAt,
+            gramsUsed: estimatedUsed
+        )
     }
 
     private var headerCard: some View {
@@ -180,6 +237,66 @@ struct CatDetailView: View {
                     showingPortionCalculator = true
                 }
             }
+
+            // Reorder CTA - the monetization "toll booth"
+            if brandConfig != nil {
+                reorderButton
+            }
+        }
+    }
+
+    @ViewBuilder
+    private var reorderButton: some View {
+        let prediction = calculateReorderPrediction()
+        let urgencyColor = prediction?.urgency.color ?? .blue
+
+        Button {
+            // Record view metric
+            if let config = brandConfig {
+                MetricsAggregator.shared.recordReorderViewed(
+                    brandId: config.brandId,
+                    skuId: config.defaultSKUId,
+                    in: modelContext
+                )
+            }
+            showingReorder = true
+        } label: {
+            HStack(spacing: 12) {
+                Image(systemName: "shippingbox.fill")
+                    .font(.title2)
+
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("Reorder Food")
+                        .font(.headline)
+
+                    if let prediction = prediction {
+                        Text(prediction.urgency.rawValue)
+                            .font(.caption)
+                            .foregroundColor(urgencyColor.opacity(0.8))
+                    } else {
+                        Text("Buy from your favorite retailer")
+                            .font(.caption)
+                            .foregroundColor(.white.opacity(0.8))
+                    }
+                }
+
+                Spacer()
+
+                Image(systemName: "chevron.right")
+                    .font(.subheadline)
+                    .foregroundColor(.white.opacity(0.6))
+            }
+            .foregroundColor(.white)
+            .padding()
+            .frame(maxWidth: .infinity)
+            .background(
+                LinearGradient(
+                    colors: [urgencyColor, urgencyColor.opacity(0.8)],
+                    startPoint: .leading,
+                    endPoint: .trailing
+                )
+            )
+            .cornerRadius(14)
         }
     }
 

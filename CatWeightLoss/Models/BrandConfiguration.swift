@@ -46,6 +46,71 @@ final class BrandConfiguration {
         Color(hex: accentColorHex) ?? .green
     }
 
+    // MARK: - Asset Catalog Accessors
+
+    /// Returns the asset catalog folder name for this brand
+    private var assetFolderName: String {
+        // Map brandId to asset catalog folder name
+        // Common mappings for known brands
+        switch brandId.lowercased() {
+        case "felinecare", "feline-care", "feline_care":
+            return "FelineCare"
+        case "sciencenutrition", "science-nutrition", "science_nutrition":
+            return "ScienceNutrition"
+        case "probalance", "pro-balance", "pro_balance":
+            return "ProBalance"
+        case "bluewellness", "blue-wellness", "blue_wellness":
+            return "BlueWellness"
+        default:
+            // Convert brandId to PascalCase for asset lookup
+            return brandId.split(separator: "-")
+                .map { $0.prefix(1).uppercased() + $0.dropFirst().lowercased() }
+                .joined()
+        }
+    }
+
+    /// Product image from asset catalog (e.g., cat food bag image)
+    var productImage: Image? {
+        let imageName = "Brands/\(assetFolderName)/ProductImage"
+        if UIImage(named: imageName) != nil {
+            return Image(imageName)
+        }
+        return nil
+    }
+
+    /// Brand logo from asset catalog
+    var logoImage: Image? {
+        let imageName = "Brands/\(assetFolderName)/Logo"
+        if UIImage(named: imageName) != nil {
+            return Image(imageName)
+        }
+        return nil
+    }
+
+    /// Background image from asset catalog
+    var backgroundImage: Image? {
+        let imageName = "Brands/\(assetFolderName)/Background"
+        if UIImage(named: imageName) != nil {
+            return Image(imageName)
+        }
+        return nil
+    }
+
+    /// UIImage version of product image for contexts requiring UIKit
+    var productUIImage: UIImage? {
+        UIImage(named: "Brands/\(assetFolderName)/ProductImage")
+    }
+
+    /// UIImage version of logo for contexts requiring UIKit
+    var logoUIImage: UIImage? {
+        UIImage(named: "Brands/\(assetFolderName)/Logo")
+    }
+
+    /// UIImage version of background for contexts requiring UIKit
+    var backgroundUIImage: UIImage? {
+        UIImage(named: "Brands/\(assetFolderName)/Background")
+    }
+
     // MARK: - SKU Helpers
 
     var defaultSKU: FoodSKU? {

@@ -156,6 +156,76 @@ class BrandConfigService {
         activeBrandConfig = config
         return config
     }
+
+    // MARK: - Demo Brand Seeding
+
+    /// Seed all demo brands (only creates if not already present)
+    @MainActor
+    func seedDemoBrands(in context: ModelContext) {
+        for seed in BrandSeeds.all {
+            let brandId = seed.brandId
+            let descriptor = FetchDescriptor<BrandConfiguration>(
+                predicate: #Predicate { $0.brandId == brandId }
+            )
+
+            do {
+                let existing = try context.fetch(descriptor)
+                if existing.isEmpty {
+                    _ = BrandSeedData.createBrandConfiguration(from: seed, in: context)
+                    #if DEBUG
+                    print("[BrandConfigService] Seeded brand: \(seed.brandName)")
+                    #endif
+                }
+            } catch {
+                #if DEBUG
+                print("[BrandConfigService] Failed to check existing brand \(brandId): \(error.localizedDescription)")
+                #endif
+            }
+        }
+    }
+
+    // MARK: - Brand Switching
+
+    /// Switch to a different brand by ID
+    @MainActor
+    func switchBrand(to brandId: String, in context: ModelContext) -> BrandConfiguration? {
+        let descriptor = FetchDescriptor<BrandConfiguration>(
+            predicate: #Predicate { $0.brandId == brandId }
+        )
+
+        do {
+            if let config = try context.fetch(descriptor).first {
+                config.lastUsedAt = Date()
+                activeBrandConfig = config
+                #if DEBUG
+                print("[BrandConfigService] Switched to brand: \(config.brandName)")
+                #endif
+                return config
+            }
+        } catch {
+            #if DEBUG
+            print("[BrandConfigService] Failed to switch brand: \(error.localizedDescription)")
+            #endif
+        }
+        return nil
+    }
+
+    /// Get all available brand configurations
+    @MainActor
+    func getAllBrands(from context: ModelContext) -> [BrandConfiguration] {
+        let descriptor = FetchDescriptor<BrandConfiguration>(
+            sortBy: [SortDescriptor(\.brandName)]
+        )
+
+        do {
+            return try context.fetch(descriptor)
+        } catch {
+            #if DEBUG
+            print("[BrandConfigService] Failed to fetch brands: \(error.localizedDescription)")
+            #endif
+            return []
+        }
+    }
 }
 
 // MARK: - Environment Key

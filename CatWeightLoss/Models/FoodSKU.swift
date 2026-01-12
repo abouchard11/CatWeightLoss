@@ -8,6 +8,7 @@ final class FoodSKU {
     var displayName: String
     var caloriesPerGram: Double
     var servingSizeGrams: Double
+    var bagSizeGrams: Double  // For reorder prediction (e.g., 3500g for 7.7lb bag)
     var productImageData: Data?
     var createdAt: Date
 
@@ -18,6 +19,7 @@ final class FoodSKU {
         displayName: String,
         caloriesPerGram: Double,
         servingSizeGrams: Double = 35.0,
+        bagSizeGrams: Double = 3500.0,  // Default: ~7.7 lb bag
         productImageData: Data? = nil
     ) {
         self.id = UUID()
@@ -25,6 +27,7 @@ final class FoodSKU {
         self.displayName = displayName
         self.caloriesPerGram = caloriesPerGram
         self.servingSizeGrams = servingSizeGrams
+        self.bagSizeGrams = bagSizeGrams
         self.productImageData = productImageData
         self.createdAt = Date()
     }

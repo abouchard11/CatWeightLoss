@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetFlow | Post-Purchase Engagement Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-brand">
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 40 40" fill="none">
+                        <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 20 L20 12 L28 20 L20 28 Z" fill="currentColor" opacity="0.3"/>
+                        <circle cx="20" cy="20" r="6" fill="currentColor"/>
+                    </svg>
+                </div>
+                <span class="logo-text">PetFlow</span>
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link active">Home</a>
+            <a href="money-flow.html" class="nav-link">How It Works</a>
+            <a href="dashboard.html" class="nav-link">Dashboard</a>
+            <a href="app.html" class="nav-link">The App</a>
+            <a href="investors.html" class="nav-link">Investors</a>
+        </div>
+        <a href="#contact" class="nav-cta">Get Started</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="hero-gradient"></div>
+            <div class="hero-grid"></div>
+            <div class="hero-orb hero-orb-1"></div>
+            <div class="hero-orb hero-orb-2"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                Post-Purchase Engagement
+            </div>
+
+            <h1 class="hero-title">
+                Your bag goes home.<br>
+                <span class="hero-title-accent">Then what?</span>
+            </h1>
+
+            <p class="hero-subtitle">
+                Turn every package into a retention engine. QR-linked engagement that keeps customers
+                in your ecosystem — from first scan to every reorder.
+            </p>
+
+            <div class="hero-cta-group">
+                <a href="#demo" class="btn btn-primary">
+                    <span>See Demo</span>
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="money-flow.html" class="btn btn-secondary">
+                    <span>How It Works</span>
+                </a>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">Customer Acquisition Cost</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <div class="stat-value">51</div>
+                    <div class="stat-label">Validated Tests</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <div class="stat-value">∞</div>
+                    <div class="stat-label">Reorder Potential</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="phone-mockup">
+                <div class="phone-frame">
+                    <div class="phone-notch"></div>
+                    <div class="phone-screen">
+                        <div class="app-header">
+                            <div class="app-logo">🐱</div>
+                            <span>Weight Tracker</span>
+                        </div>
+                        <div class="app-card">
+                            <div class="cat-avatar">
+                                <div class="cat-icon">😺</div>
+                            </div>
+                            <div class="cat-info">
+                                <div class="cat-name">Whiskers</div>
+                                <div class="cat-weight">
+                                    <span class="weight-current">4.2 kg</span>
+                                    <span class="weight-change down">↓ 0.3</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="app-chart">
+                            <svg viewBox="0 0 200 60" class="chart-line">
+                                <path d="M0,40 Q30,45 50,35 T100,30 T150,20 T200,15"
+                                      stroke="url(#chartGradient)"
+                                      stroke-width="3"
+                                      fill="none"/>
+                                <defs>
+                                    <linearGradient id="chartGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" style="stop-color:#D4A574"/>
+                                        <stop offset="100%" style="stop-color:#B8860B"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="app-cta">
+                            <button class="reorder-btn">
+                                <span>Time to Reorder</span>
+                                <div class="reorder-arrow">→</div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="phone-glow"></div>
+            </div>
+
+            <!-- Floating Elements -->
+            <div class="float-card float-card-1">
+                <div class="float-icon">📦</div>
+                <div class="float-text">
+                    <div class="float-label">Scan Rate</div>
+                    <div class="float-value">8.4%</div>
+                </div>
+            </div>
+
+            <div class="float-card float-card-2">
+                <div class="float-icon">🔄</div>
+                <div class="float-text">
+                    <div class="float-label">Reorder Intent</div>
+                    <div class="float-value">34%</div>
+                </div>
+            </div>
+
+            <div class="float-card float-card-3">
+                <div class="float-icon">💰</div>
+                <div class="float-text">
+                    <div class="float-label">Zero CAC</div>
+                    <div class="float-value">$0</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="section-container">
+            <div class="problem-header">
+                <h2 class="section-title">The Post-Purchase Black Hole</h2>
+                <p class="section-subtitle">
+                    Your packaging goes home. Then Amazon, Chewy, and store brands
+                    win the reorder. You've lost the customer at the moment they're ready to buy again.
+                </p>
+            </div>
+
+            <div class="problem-flow">
+                <div class="flow-step">
+                    <div class="flow-icon">🛒</div>
+                    <div class="flow-content">
+                        <h3>Customer Buys</h3>
+                        <p>At retail or online</p>
+                    </div>
+                </div>
+
+                <div class="flow-arrow">
+                    <svg viewBox="0 0 60 24" fill="none">
+                        <path d="M0,12 L50,12 M40,4 L52,12 L40,20" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </div>
+
+                <div class="flow-step">
+                    <div class="flow-icon">🏠</div>
+                    <div class="flow-content">
+                        <h3>Bag Goes Home</h3>
+                        <p>Out of sight, out of mind</p>
+                    </div>
+                </div>
+
+                <div class="flow-arrow">
+                    <svg viewBox="0 0 60 24" fill="none">
+                        <path d="M0,12 L50,12 M40,4 L52,12 L40,20" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </div>
+
+                <div class="flow-step flow-step-problem">
+                    <div class="flow-icon">❓</div>
+                    <div class="flow-content">
+                        <h3>You Disappear</h3>
+                        <p>No engagement, no data</p>
+                    </div>
+                </div>
+
+                <div class="flow-arrow">
+                    <svg viewBox="0 0 60 24" fill="none">
+                        <path d="M0,12 L50,12 M40,4 L52,12 L40,20" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </div>
+
+                <div class="flow-step flow-step-loss">
+                    <div class="flow-icon">💸</div>
+                    <div class="flow-content">
+                        <h3>Competitor Wins</h3>
+                        <p>Amazon gets the reorder</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution">
+        <div class="section-container">
+            <div class="solution-grid">
+                <div class="solution-content">
+                    <div class="solution-badge">The Fix</div>
+                    <h2 class="solution-title">
+                        Own the moment<br>
+                        <span class="accent">between purchases</span>
+                    </h2>
+                    <p class="solution-text">
+                        A QR code on your packaging that launches a branded weight-tracking experience.
+                        No login. No friction. Just engagement that keeps customers in your ecosystem
+                        until they're ready to buy again.
+                    </p>
+
+                    <div class="solution-features">
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                    <path d="M7 7h3v3H7zM14 7h3v3h-3zM7 14h3v3H7zM14 14h3v3h-3z"/>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h4>One-Tap Install</h4>
+                                <p>QR scan to app in seconds. No account required.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Weight Tracking</h4>
+                                <p>Simple, habit-forming engagement around pet health.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M12 6v6l4 2"/>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Predictive Reorder</h4>
+                                <p>Know when the bag runs low. Prompt at the perfect moment.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Your Channels</h4>
+                                <p>Route reorders to DTC, Chewy, or preferred retailers.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="solution-visual">
+                    <div class="qr-demo">
+                        <div class="qr-package">
+                            <div class="package-label">PREMIUM CAT FOOD</div>
+                            <div class="package-brand">Weight Management</div>
+                            <div class="qr-code">
+                                <div class="qr-grid">
+                                    <!-- Stylized QR pattern -->
+                                    <div class="qr-block"></div>
+                                    <div class="qr-block"></div>
+                                    <div class="qr-block"></div>
+                                    <div class="qr-block"></div>
+                                    <div class="qr-block"></div>
+                                    <div class="qr-block"></div>
+                                    <div class="qr-block"></div>
+                                    <div class="qr-block"></div>
+                                    <div class="qr-block"></div>
+                                </div>
+                                <div class="qr-center">
+                                    <span>SCAN</span>
+                                </div>
+                            </div>
+                            <div class="package-cta">Track Your Cat's Health →</div>
+                        </div>
+
+                        <div class="scan-line"></div>
+
+                        <div class="qr-result">
+                            <div class="result-arrow">
+                                <svg viewBox="0 0 24 60" fill="none">
+                                    <path d="M12,0 L12,50 M4,42 L12,54 L20,42" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <div class="result-text">Instant App Experience</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="proof">
+        <div class="section-container">
+            <div class="proof-header">
+                <h2 class="section-title">Built for Enterprise Trust</h2>
+            </div>
+
+            <div class="proof-grid">
+                <div class="proof-card">
+                    <div class="proof-number">51</div>
+                    <div class="proof-label">Validated Tests</div>
+                    <div class="proof-detail">Health-critical calorie calculations verified</div>
+                </div>
+
+                <div class="proof-card">
+                    <div class="proof-number">0</div>
+                    <div class="proof-label">PII Collected</div>
+                    <div class="proof-detail">Anonymous device hashing, zero personal data</div>
+                </div>
+
+                <div class="proof-card">
+                    <div class="proof-number">0</div>
+                    <div class="proof-label">IT Integration</div>
+                    <div class="proof-detail">No servers, no dev resources, no headaches</div>
+                </div>
+
+                <div class="proof-card">
+                    <div class="proof-number">∞</div>
+                    <div class="proof-label">Reorder Loop</div>
+                    <div class="proof-detail">Every bag runs out. Every bag can trigger a reorder.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="contact">
+        <div class="cta-bg">
+            <div class="cta-gradient"></div>
+        </div>
+        <div class="section-container">
+            <div class="cta-content">
+                <h2 class="cta-title">
+                    Ready to own the<br>
+                    <span class="accent">post-purchase moment?</span>
+                </h2>
+                <p class="cta-text">
+                    15-minute demo. See exactly how it works from scan to reorder.
+                </p>
+                <a href="mailto:hello@petflow.io" class="btn btn-primary btn-large">
+                    <span>Schedule Demo</span>
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="section-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <svg viewBox="0 0 40 40" fill="none">
+                                <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2"/>
+                                <path d="M12 20 L20 12 L28 20 L20 28 Z" fill="currentColor" opacity="0.3"/>
+                                <circle cx="20" cy="20" r="6" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span class="logo-text">PetFlow</span>
+                    </div>
+                    <p class="footer-tagline">Post-purchase engagement that actually works.</p>
+                </div>
+
+                <div class="footer-links">
+                    <a href="money-flow.html">How It Works</a>
+                    <a href="dashboard.html">Dashboard</a>
+                    <a href="app.html">The App</a>
+                    <a href="investors.html">Investors</a>
+                </div>
+
+                <div class="footer-legal">
+                    <p>© 2026 PetFlow. Patent Pending.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

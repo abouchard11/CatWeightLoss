@@ -4,67 +4,106 @@
 
 See: .planning/PROJECT.md (updated 2026-01-12)
 
-**Core value:** Production-ready stability with test coverage for health-critical calculations
-**Current focus:** Phase 3 — Polish
+**Core value:** White-label B2B platform for pet food brands
+**Current focus:** Phase 7 — Demo Polish
 
 ## Current Position
 
-Phase: 3 of 3 (Polish)
-Plan: Complete
-Status: Milestone complete
-Last activity: 2026-01-12 — All phases complete
+Milestone: 2 of 2 (B2B Monetization)
+Phase: 7 of 8 (Demo Polish)
+Plan: Not started
+Status: Phase 4-6, 8 complete, Phase 7 remaining
+Last activity: 2026-01-12 — Completed Phase 4, 5, 6, 8 via parallel agents
 
-Progress: ██████████ 100%
+Progress: █████████░ 90% (M1 complete, M2 nearly complete)
 
 ## Performance Metrics
 
-**Velocity:**
+**Milestone 1 (Complete):**
 - Total plans completed: 6
 - Average duration: ~3 min
 - Total execution time: ~18 min
 
-**By Phase:**
-
-| Phase | Plans | Total | Avg/Plan |
-|-------|-------|-------|----------|
-| 01-foundation | 2/2 | ~8 min | ~4 min |
-| 02-core-tests | 2/2 | ~6 min | ~3 min |
-| 03-polish | 2/2 | ~4 min | ~2 min |
-
-**Recent Trend:**
-- Last 6 plans: 01-01, 01-02, 02-01, 02-02, 03-01, 03-02
-- Trend: Accelerating velocity, all phases complete
+**Milestone 2 (Current):**
+- Phases completed: 4/5 (Phase 4, 5, 6, 8)
+- Phases remaining: 1 (Phase 7 - Demo Polish)
 
 ## Accumulated Context
 
 ### Decisions
 
-Decisions are logged in PROJECT.md Key Decisions table.
-Recent decisions affecting current work:
-
 - Fix fatalError first (app crash prevents all other work) ✓
 - XCTest only (zero dependencies philosophy) ✓
-- Use @State for error/container optionals (cleaner SwiftUI)
-- Test Cat model without ModelContext (works with arrays)
+- 4 demo brands covering major aesthetics ✓
+- Affiliate links for monetization (no IAP friction) ✓
+- QR deep link activation for frictionless onboarding ✓
+- Anonymous metrics only (GDPR-compliant) ✓
+- Parallel subagents for concurrent feature development ✓
+- 18 B2B target brands prioritized by strategic fit ✓
+
+### Session Work (Pre-GSD)
+
+Completed outside GSD tracking:
+- BrandConfiguration SwiftData model
+- BrandConfigService (activation, switching)
+- BrandSeedData with 4 demo brands
+- BrandSwitcherView (DEBUG)
+- ReorderView with retailer affiliate links
+- Retailer model with built-in retailers
+- ReorderPrediction urgency system
+- Product images generated via Imagen 4
+
+### Phase 4-8 Completion (via Parallel Agents)
+
+Completed 2026-01-12:
+
+**Phase 4: Brand Assets** ✓
+- Asset Catalog structure: Assets.xcassets/Brands/
+- 4 brand folders: FelineCare, ScienceNutrition, ProBalance, BlueWellness
+- Each with ProductImage, Logo, Background imagesets
+- BrandConfiguration extended with asset catalog accessors
+
+**Phase 5: QR Tooling** ✓
+- QRCodeGeneratorView.swift (CoreImage QR generation)
+- Deep link builder: catweighttracker://activate?brand=...
+- Brand/SKU pickers using BrandSeeds
+- PNG export via UIActivityViewController
+
+**Phase 6: Analytics** ✓
+- AnalyticsDashboardView.swift (SwiftUI Charts)
+- Per-brand filtering, 4 metric cards
+- Reorder funnel visualization (bar chart)
+- Time-series activity chart (line chart)
+- CSV export via ShareLink
+
+**Phase 8: B2B Outreach** ✓
+- B2B_White_Label_Target_Brands_Report.md
+- 18 target brands across 3 priority tiers
+- Tier 1: Smalls, Open Farm, Nulo, Raised Right, Weruva
+- Recommended outreach strategy documented
+
+**AdminHubView** ✓
+- Central hub for all DEBUG admin tools
+- Access to brand switching, QR generator, analytics
 
 ### Deferred Issues
 
-None yet.
+None.
 
 ### Pending Todos
 
-None yet.
+- Phase 7: Demo Polish (demo script validation, splash polish, demo data)
 
 ### Blockers/Concerns
 
-- RESOLVED: fatalError() in app init (fixed in 01-01)
-- RESOLVED: No test target (added in 01-02)
-- RESOLVED: No calorie calculation tests (added in 02-01)
-- RESOLVED: No weight trend tests (added in 02-02)
-- RESOLVED: Device hash inconsistent (fixed in 03-02)
+All resolved:
+- ~~Generated images need to be moved from Downloads to Asset Catalog~~ ✓
+- ~~No QR generation capability yet~~ ✓
+- ~~Analytics view not implemented~~ ✓
+- ~~B2B pitch materials not started~~ ✓
 
 ## Session Continuity
 
 Last session: 2026-01-12
-Stopped at: Phase 2 complete
+Stopped at: Phase 7 (Demo Polish)
 Resume file: None

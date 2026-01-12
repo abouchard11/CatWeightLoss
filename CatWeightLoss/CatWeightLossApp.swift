@@ -188,13 +188,26 @@ struct DemoActivationView: View {
 
             Spacer()
 
-            // Demo mode button (for testing)
+            // Demo mode buttons (for testing)
             #if DEBUG
-            Button("Use Demo Mode") {
-                let _ = brandService.createDemoBrand(in: modelContext)
+            VStack(spacing: 16) {
+                Button("Use Demo Mode") {
+                    let _ = brandService.createDemoBrand(in: modelContext)
+                }
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+
+                Button("Load All Demo Brands") {
+                    brandService.seedDemoBrands(in: modelContext)
+                    // Activate the first one
+                    if let first = brandService.getAllBrands(from: modelContext).first {
+                        brandService.activeBrandConfig = first
+                        first.lastUsedAt = Date()
+                    }
+                }
+                .font(.caption)
+                .foregroundColor(.secondary.opacity(0.7))
             }
-            .font(.subheadline)
-            .foregroundColor(.secondary)
             .padding(.bottom, 40)
             #endif
         }

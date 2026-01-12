@@ -1,55 +1,100 @@
-# Roadmap: CatWeightLoss Stability
+# Roadmap: CatWeightLoss
 
-## Overview
+## Milestone 1: Stability & Testing ✓ COMPLETE
 
-Transform CatWeightLoss from functional prototype to production-ready by fixing the critical database initialization crash, adding test coverage for health-critical calorie calculations, and addressing minor stability issues.
+Transform CatWeightLoss from functional prototype to production-ready by fixing the critical database initialization crash, adding test coverage for health-critical calculations, and addressing minor stability issues.
 
-## Domain Expertise
-
-None
-
-## Phases
+### Phases (All Complete)
 
 - [x] **Phase 1: Foundation** - Fix critical fatalError, set up XCTest infrastructure
 - [x] **Phase 2: Core Tests** - Unit tests for PortionCalculator and weight trend algorithm
-- [ ] **Phase 3: Polish** - URL parsing tests, device hash caching fix
+- [x] **Phase 3: Polish** - URL parsing tests, device hash caching fix
 
-## Phase Details
+**Completed:** 2026-01-12 | **Plans:** 6/6
 
-### Phase 1: Foundation
-**Goal**: Eliminate app crash on database corruption, establish test infrastructure
-**Depends on**: Nothing (first phase)
-**Research**: Unlikely (SwiftData error handling is documented, XCTest is standard)
-**Plans**: 2 plans
+---
 
-Plans:
-- [x] 01-01: Replace fatalError with graceful error recovery in ModelContainer init
-- [x] 01-02: Add CatWeightLossTests target to project.yml
+## Milestone 2: B2B Monetization (CURRENT)
 
-### Phase 2: Core Tests
-**Goal**: Test coverage for health-critical calorie calculations and weight trend algorithm
-**Depends on**: Phase 1 (test infrastructure)
-**Research**: Unlikely (testing pure functions with XCTest)
-**Plans**: 2 plans
+Build the tools and assets needed to pitch CatWeightLoss as a white-label B2B platform for pet food brands.
 
-Plans:
-- [x] 02-01: PortionCalculator unit tests (RER, MER, weightLossCalories, validateTargetWeight)
-- [x] 02-02: Cat.weightTrend and Cat.progressPercentage tests
+### Domain Expertise
 
-### Phase 3: Polish
-**Goal**: Complete test coverage, fix device hash consistency
-**Depends on**: Phase 2
-**Research**: Unlikely (internal patterns)
-**Plans**: 2 plans
+Pet food industry B2B sales, affiliate marketing, brand partnership models
 
-Plans:
-- [x] 03-01: BrandActivationParams URL parsing tests
-- [x] 03-02: Cache device hash fallback in UserDefaults
+### Phases
+
+- [x] **Phase 4: Brand Assets** - Asset Catalog structure with 4 brand folders, accessor methods ✓
+- [x] **Phase 5: QR Tooling** - QRCodeGeneratorView with CoreImage, deep link builder ✓
+- [x] **Phase 6: Analytics** - AnalyticsDashboardView with Charts, CSV export ✓
+- [ ] **Phase 7: Demo Polish** - End-to-end demo flow, splash screens, brand admin docs
+- [x] **Phase 8: B2B Outreach** - 18 target brands report, 3-tier priority system ✓
+
+### Phase Details
+
+#### Phase 4: Brand Assets
+**Goal**: Organize all brand imagery into proper Asset Catalog structure
+**Depends on**: Nothing (starting phase)
+**Research**: Unlikely
+**Plans**: 1 plan
+
+Tasks:
+- Create brand image sets in Assets.xcassets (logo, product, background per brand)
+- Move generated Imagen 4 images into appropriate asset slots
+- Add placeholder images for missing assets
+- Update BrandConfiguration to reference asset catalog
+
+#### Phase 5: QR Tooling
+**Goal**: Enable brands to generate their own QR activation codes
+**Depends on**: Phase 4
+**Research**: Unlikely (CoreImage QR generation is standard)
+**Plans**: 1 plan
+
+Tasks:
+- QRCodeGeneratorView with brand selector
+- Generate catweighttracker:// deep links with brand params
+- Export QR as PNG for print materials
+- Preview activation flow from generated QR
+
+#### Phase 6: Analytics
+**Goal**: Show brands the value they're getting (engagement, reorders)
+**Depends on**: Phase 4
+**Research**: Unlikely (SwiftUI Charts is standard)
+**Plans**: 1-2 plans
+
+Tasks:
+- AnalyticsDashboardView showing per-brand metrics
+- Activation counts, daily active users, reorder clicks
+- Visualize reorder funnel (viewed → clicked → converted)
+- Export metrics as CSV for brand reporting
+
+#### Phase 7: Demo Polish
+**Goal**: Make the app demo-ready for B2B pitches
+**Depends on**: Phase 5, 6
+**Research**: Unlikely
+**Plans**: 1 plan
+
+Tasks:
+- End-to-end demo script validation
+- Brand splash screen polish
+- Demo data seeding improvements
+- Brand admin specification document
+
+#### Phase 8: B2B Outreach
+**Goal**: Identify and prioritize potential brand partners
+**Depends on**: Phase 7
+**Research**: Yes (market research on pet food brands)
+**Plans**: 1 plan
+
+Tasks:
+- Research smaller/mid-tier pet food brands in acquisition mode
+- Identify decision makers (VP Marketing, Digital, etc.)
+- Create target list with contact info
+- Draft initial outreach messaging
 
 ## Progress
 
-| Phase | Plans Complete | Status | Completed |
-|-------|----------------|--------|-----------|
-| 1. Foundation | 2/2 | Complete | 2026-01-12 |
-| 2. Core Tests | 2/2 | Complete | 2026-01-12 |
-| 3. Polish | 2/2 | Complete | 2026-01-12 |
+| Milestone | Phases | Status |
+|-----------|--------|--------|
+| 1. Stability & Testing | 3/3 | ✓ Complete |
+| 2. B2B Monetization | 4/5 | 90% Complete (Phase 7 remaining) |

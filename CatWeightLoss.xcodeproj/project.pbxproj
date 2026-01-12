@@ -7,22 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A2B3C4D5E6F0001DATEFORM /* DateFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F0002DATEFORM /* DateFormatting.swift */; };
-		2B3C4D5E6F7A0001VIEWMODS /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3C4D5E6F7A0002VIEWMODS /* ViewModifiers.swift */; };
-		3C4D5E6F7A8B0001ACTBUTTN /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4D5E6F7A8B0002ACTBUTTN /* ActionButton.swift */; };
+		9D612D1BF954466792B7135A /* AdminHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB502E9D43A498DAD2EA4E7 /* AdminHubView.swift */; };
+		FD4F2FC910AC432FA97A16D4 /* QRCodeGeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0864B2DA3F4F8E85F46C6E /* QRCodeGeneratorView.swift */; };
+		E63A13F534A6416D8D904B2B /* AnalyticsDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94503218F0B04C9FB46AB6B3 /* AnalyticsDashboardView.swift */; };
+		238F5D2FC1A54A459DBC6004 /* BrandSeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AB6D24AED64876A85FA43B /* BrandSeedData.swift */; };
+		4A183D2E26344E1B9CEEDB1B /* BrandSwitcherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3819823577F463BBE1ABD02 /* BrandSwitcherView.swift */; };
+		A1B2C3D4E5F64789ABCD1234 /* AnalyticsDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E5F6A7B8C9D0E1F2A3B4C5 /* AnalyticsDashboardView.swift */; };
+		AB89F06219D74F45A59B2195 /* Retailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB6B7E228A646C0A64C4DBB /* Retailer.swift */; };
+		780B95BB905F49FA9CCE2F16 /* ReorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35089827C47549CBA4E45EAB /* ReorderView.swift */; };
+		0D239C1B547710C4FA954230 /* DateFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EA7AADC3C353E1DD9387FB /* DateFormatting.swift */; };
 		17749D069276486385764283 /* PortionCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD603BE224595B63568FECFB /* PortionCalculator.swift */; };
 		1AAAB9ED2C30C0C48A90DADC /* ActivityHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF932E784289EC04B755212 /* ActivityHistoryView.swift */; };
 		272D38949B8C41491A7AA538 /* ActivitySession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7450F1D65498198AD0B8B8F7 /* ActivitySession.swift */; };
+		34F20DA548963E711345C1EC /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F133E527F53400CD130D9F78 /* ActionButton.swift */; };
 		3704029EC126CC989D329E6B /* BrandSplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4BECA82F6C6719D7226D8 /* BrandSplashView.swift */; };
 		3BA5ACDFBC1E1F6C3C812B0B /* CatCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12D2BAECD9F7A7C87310966 /* CatCard.swift */; };
+		428253AFABC7DC3D89DD9FE9 /* BrandActivationParamsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9046DA2386FA3A8E6F64E7CA /* BrandActivationParamsTests.swift */; };
 		48EFEF236FE3266C660D418A /* StatCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A4B2B4AE58000B2D8667C /* StatCard.swift */; };
 		49F3D250C843C82547B79E7C /* CatDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE753AB985E15A339BAD7C5 /* CatDetailView.swift */; };
+		4A872B9A717C0CB1D3CF8116 /* CatModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6291211E05FA6DE8E2D768C3 /* CatModelTests.swift */; };
+		5382C1C8D883432E3257B11A /* PortionCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790D613F60430339BA83D7B5 /* PortionCalculatorTests.swift */; };
+		596EAC61B8DEDE46A02408A0 /* CatWeightLossTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2810795617DAC3DF5F2156F8 /* CatWeightLossTests.swift */; };
 		604B9F705E105A910B36B32D /* BrandConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD44C49B4CBF637A06CBD070 /* BrandConfiguration.swift */; };
 		6B4B3D477215503102302043 /* AnonymousMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD4D371D2037F775E614F21 /* AnonymousMetric.swift */; };
 		75617A34CD43B05A29493BE6 /* Cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7506E9F2586DE967B4328744 /* Cat.swift */; };
 		7B095C263BC13129FD9113B3 /* QuickSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2B32D62D94C6C686AC87E6 /* QuickSetupView.swift */; };
 		7E0CA0BF0A3BA0D61C6D1A95 /* FeedingSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8A8ED42B05F4738BC8D6F9 /* FeedingSchedule.swift */; };
 		7F7813F6985D42EB67220674 /* ActivityLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F26D164434411BDCF654B6 /* ActivityLogView.swift */; };
+		861DCE475B0B16A9948EF236 /* DatabaseErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118CC865A866409AC112A73F /* DatabaseErrorView.swift */; };
 		89C8085AAD79798A66D2CC04 /* CatWeightLossApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B911CFAE8B28CDC4D5C778D5 /* CatWeightLossApp.swift */; };
 		92914C87D6F759E541CEC603 /* WeightTrendIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02677A0ABD6F050D60D67BE2 /* WeightTrendIndicator.swift */; };
 		9BD34A1F502DD68EFD7E6087 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171E684AD5B0DF895C89B2F9 /* Enums.swift */; };
@@ -30,6 +42,7 @@
 		A682144AA75ABBD8D3078688 /* ProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839B0D4F02271B400A10D7B3 /* ProgressRing.swift */; };
 		A9A754D1398BE14512FE7D85 /* FoodSKU.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5277E209FCD71803BE7BB86 /* FoodSKU.swift */; };
 		ADC329558B1F8568CC9E1F21 /* FeedingPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C73EB961BE3E4C15CB0987 /* FeedingPlanView.swift */; };
+		B255C9952B4F3A37A27CFB2D /* AnonymousMetricTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FA20D9689FC4C04AABAF3C /* AnonymousMetricTests.swift */; };
 		BAB7C0F800B7BF5C0C3C394A /* WeightEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B122CAFB3264DBCAD69ABF /* WeightEntry.swift */; };
 		CC59D9EE7489BA847FF05918 /* PortionCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73E85C43A9D366598DA75D7 /* PortionCalculatorView.swift */; };
 		DC3B15FB1716CED8DCE31B37 /* WeightChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37374614D6001E15D3988D72 /* WeightChartView.swift */; };
@@ -37,29 +50,53 @@
 		EF40AFAB64F5BDA50219FE09 /* MetricsAggregator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9F11D7A92004DB83BB7221 /* MetricsAggregator.swift */; };
 		F00044275E89D501DE4894DD /* BrandConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D03BDFE2641262C8C79825 /* BrandConfigService.swift */; };
 		F10ABFAD27893B452EA1645E /* WeightLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B763D5237CDC1F7F4F7FB32A /* WeightLogView.swift */; };
+		FD43A0DA71C69F782BE19576 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142F7BDCD86E4B59B3D5080 /* ViewModifiers.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		A5BF8E3B041942FA9910A474 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52A4286902BBB2EF28215798 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 699F0D6FBABCA3EAD0B1DDFC;
+			remoteInfo = CatWeightLoss;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		EAB502E9D43A498DAD2EA4E7 /* AdminHubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminHubView.swift; sourceTree = "<group>"; };
+		5E0864B2DA3F4F8E85F46C6E /* QRCodeGeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeGeneratorView.swift; sourceTree = "<group>"; };
+		94503218F0B04C9FB46AB6B3 /* AnalyticsDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsDashboardView.swift; sourceTree = "<group>"; };
+		C6AB6D24AED64876A85FA43B /* BrandSeedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandSeedData.swift; sourceTree = "<group>"; };
+		D4E5F6A7B8C9D0E1F2A3B4C5 /* AnalyticsDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsDashboardView.swift; sourceTree = "<group>"; };
+		E3819823577F463BBE1ABD02 /* BrandSwitcherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandSwitcherView.swift; sourceTree = "<group>"; };
+		0EB6B7E228A646C0A64C4DBB /* Retailer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Retailer.swift; sourceTree = "<group>"; };
+		35089827C47549CBA4E45EAB /* ReorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderView.swift; sourceTree = "<group>"; };
+		0142F7BDCD86E4B59B3D5080 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		02677A0ABD6F050D60D67BE2 /* WeightTrendIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightTrendIndicator.swift; sourceTree = "<group>"; };
-		1A2B3C4D5E6F0002DATEFORM /* DateFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatting.swift; sourceTree = "<group>"; };
-		2B3C4D5E6F7A0002VIEWMODS /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
-		3C4D5E6F7A8B0002ACTBUTTN /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		0CE753AB985E15A339BAD7C5 /* CatDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDetailView.swift; sourceTree = "<group>"; };
 		10C4BECA82F6C6719D7226D8 /* BrandSplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandSplashView.swift; sourceTree = "<group>"; };
+		118CC865A866409AC112A73F /* DatabaseErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseErrorView.swift; sourceTree = "<group>"; };
 		171E684AD5B0DF895C89B2F9 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		2810795617DAC3DF5F2156F8 /* CatWeightLossTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatWeightLossTests.swift; sourceTree = "<group>"; };
 		329911AE9966A1FB69973795 /* WeightHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightHistoryView.swift; sourceTree = "<group>"; };
 		34F26D164434411BDCF654B6 /* ActivityLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLogView.swift; sourceTree = "<group>"; };
 		37374614D6001E15D3988D72 /* WeightChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightChartView.swift; sourceTree = "<group>"; };
 		55C73EB961BE3E4C15CB0987 /* FeedingPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedingPlanView.swift; sourceTree = "<group>"; };
+		6291211E05FA6DE8E2D768C3 /* CatModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatModelTests.swift; sourceTree = "<group>"; };
 		6BD4D371D2037F775E614F21 /* AnonymousMetric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnonymousMetric.swift; sourceTree = "<group>"; };
 		6E2B32D62D94C6C686AC87E6 /* QuickSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSetupView.swift; sourceTree = "<group>"; };
 		6F24D6CE4EEA788E90CAED3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7450F1D65498198AD0B8B8F7 /* ActivitySession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySession.swift; sourceTree = "<group>"; };
 		7506E9F2586DE967B4328744 /* Cat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cat.swift; sourceTree = "<group>"; };
+		790D613F60430339BA83D7B5 /* PortionCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortionCalculatorTests.swift; sourceTree = "<group>"; };
 		839B0D4F02271B400A10D7B3 /* ProgressRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRing.swift; sourceTree = "<group>"; };
+		9046DA2386FA3A8E6F64E7CA /* BrandActivationParamsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandActivationParamsTests.swift; sourceTree = "<group>"; };
 		93294A5299207FF59DC1FD8F /* CatWeightLoss.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = CatWeightLoss.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E8A8ED42B05F4738BC8D6F9 /* FeedingSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedingSchedule.swift; sourceTree = "<group>"; };
+		A0CFA17DCC5EBA9933C3BBFD /* CatWeightLossTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = CatWeightLossTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE9F11D7A92004DB83BB7221 /* MetricsAggregator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsAggregator.swift; sourceTree = "<group>"; };
+		B4EA7AADC3C353E1DD9387FB /* DateFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatting.swift; sourceTree = "<group>"; };
 		B763D5237CDC1F7F4F7FB32A /* WeightLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightLogView.swift; sourceTree = "<group>"; };
 		B911CFAE8B28CDC4D5C778D5 /* CatWeightLossApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatWeightLossApp.swift; sourceTree = "<group>"; };
 		BA8A4B2B4AE58000B2D8667C /* StatCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatCard.swift; sourceTree = "<group>"; };
@@ -69,12 +106,22 @@
 		CD44C49B4CBF637A06CBD070 /* BrandConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandConfiguration.swift; sourceTree = "<group>"; };
 		CE5548CB266784BF6759F01A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D0B122CAFB3264DBCAD69ABF /* WeightEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightEntry.swift; sourceTree = "<group>"; };
+		D0FA20D9689FC4C04AABAF3C /* AnonymousMetricTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnonymousMetricTests.swift; sourceTree = "<group>"; };
 		D73E85C43A9D366598DA75D7 /* PortionCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortionCalculatorView.swift; sourceTree = "<group>"; };
+		F133E527F53400CD130D9F78 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		F3D03BDFE2641262C8C79825 /* BrandConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandConfigService.swift; sourceTree = "<group>"; };
 		F5277E209FCD71803BE7BB86 /* FoodSKU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSKU.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		19547C6C078447A5AB9266D5 /* Reorder */ = {
+			isa = PBXGroup;
+			children = (
+				35089827C47549CBA4E45EAB /* ReorderView.swift */,
+			);
+			path = Reorder;
+			sourceTree = "<group>";
+		};
 		1E12AAD9F4ECC8D15CEC9940 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +133,7 @@
 				9E8A8ED42B05F4738BC8D6F9 /* FeedingSchedule.swift */,
 				F5277E209FCD71803BE7BB86 /* FoodSKU.swift */,
 				D0B122CAFB3264DBCAD69ABF /* WeightEntry.swift */,
+                0EB6B7E228A646C0A64C4DBB /* Retailer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -93,6 +141,11 @@
 		2883A7AC21BBECD88B71174A /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				D4E5F6A7B8C9D0E1F2A3B4C5 /* AnalyticsDashboardView.swift */,
+				E3819823577F463BBE1ABD02 /* BrandSwitcherView.swift */,
+				EAB502E9D43A498DAD2EA4E7 /* AdminHubView.swift */,
+				5E0864B2DA3F4F8E85F46C6E /* QRCodeGeneratorView.swift */,
+				94503218F0B04C9FB46AB6B3 /* AnalyticsDashboardView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -121,6 +174,7 @@
 				54B58AD4DDF20EF251FD4841 /* Onboarding */,
 				2883A7AC21BBECD88B71174A /* Settings */,
 				77775001076A856FE49DCAA5 /* Weight */,
+				19547C6C078447A5AB9266D5 /* Reorder */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -138,11 +192,24 @@
 			isa = PBXGroup;
 			children = (
 				F3D03BDFE2641262C8C79825 /* BrandConfigService.swift */,
-				1A2B3C4D5E6F0002DATEFORM /* DateFormatting.swift */,
+				B4EA7AADC3C353E1DD9387FB /* DateFormatting.swift */,
 				AE9F11D7A92004DB83BB7221 /* MetricsAggregator.swift */,
 				BD603BE224595B63568FECFB /* PortionCalculator.swift */,
+				C6AB6D24AED64876A85FA43B /* BrandSeedData.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		7199B8522BFE4AA169E3D903 /* CatWeightLossTests */ = {
+			isa = PBXGroup;
+			children = (
+				D0FA20D9689FC4C04AABAF3C /* AnonymousMetricTests.swift */,
+				9046DA2386FA3A8E6F64E7CA /* BrandActivationParamsTests.swift */,
+				6291211E05FA6DE8E2D768C3 /* CatModelTests.swift */,
+				2810795617DAC3DF5F2156F8 /* CatWeightLossTests.swift */,
+				790D613F60430339BA83D7B5 /* PortionCalculatorTests.swift */,
+			);
+			path = CatWeightLossTests;
 			sourceTree = "<group>";
 		};
 		77775001076A856FE49DCAA5 /* Weight */ = {
@@ -159,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				93294A5299207FF59DC1FD8F /* CatWeightLoss.app */,
+				A0CFA17DCC5EBA9933C3BBFD /* CatWeightLossTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -175,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				322F2C74147CDE4511BBCFAA /* CatWeightLoss */,
+				7199B8522BFE4AA169E3D903 /* CatWeightLossTests */,
 				87CB3EF6E29CC21E154C7044 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -191,11 +260,12 @@
 		F094EEA5202BEB1CDFCC4812 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				3C4D5E6F7A8B0002ACTBUTTN /* ActionButton.swift */,
+				F133E527F53400CD130D9F78 /* ActionButton.swift */,
 				C12D2BAECD9F7A7C87310966 /* CatCard.swift */,
+				118CC865A866409AC112A73F /* DatabaseErrorView.swift */,
 				839B0D4F02271B400A10D7B3 /* ProgressRing.swift */,
 				BA8A4B2B4AE58000B2D8667C /* StatCard.swift */,
-				2B3C4D5E6F7A0002VIEWMODS /* ViewModifiers.swift */,
+				0142F7BDCD86E4B59B3D5080 /* ViewModifiers.swift */,
 				02677A0ABD6F050D60D67BE2 /* WeightTrendIndicator.swift */,
 			);
 			path = Components;
@@ -220,6 +290,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2149E687C4EDA57CF629554C /* CatWeightLossTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F66725E4992E8E70156A1477 /* Build configuration list for PBXNativeTarget "CatWeightLossTests" */;
+			buildPhases = (
+				BF2286054C4A33A3CC27CC6F /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3FE332D242F7D1B5832C843D /* PBXTargetDependency */,
+			);
+			name = CatWeightLossTests;
+			packageProductDependencies = (
+			);
+			productName = CatWeightLossTests;
+			productReference = A0CFA17DCC5EBA9933C3BBFD /* CatWeightLossTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		699F0D6FBABCA3EAD0B1DDFC /* CatWeightLoss */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00767DABDC48D99D69C227B7 /* Build configuration list for PBXNativeTarget "CatWeightLoss" */;
@@ -247,6 +335,9 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					2149E687C4EDA57CF629554C = {
+						DevelopmentTeam = "";
+					};
 					699F0D6FBABCA3EAD0B1DDFC = {
 						DevelopmentTeam = "";
 					};
@@ -267,6 +358,7 @@
 			projectRoot = "";
 			targets = (
 				699F0D6FBABCA3EAD0B1DDFC /* CatWeightLoss */,
+				2149E687C4EDA57CF629554C /* CatWeightLossTests */,
 			);
 		};
 /* End PBXProject section */
@@ -287,9 +379,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D612D1BF954466792B7135A /* AdminHubView.swift in Sources */,
+				FD4F2FC910AC432FA97A16D4 /* QRCodeGeneratorView.swift in Sources */,
+				E63A13F534A6416D8D904B2B /* AnalyticsDashboardView.swift in Sources */,
+				A1B2C3D4E5F64789ABCD1234 /* AnalyticsDashboardView.swift in Sources */,
+				238F5D2FC1A54A459DBC6004 /* BrandSeedData.swift in Sources */,
+				4A183D2E26344E1B9CEEDB1B /* BrandSwitcherView.swift in Sources */,
+				34F20DA548963E711345C1EC /* ActionButton.swift in Sources */,
 				1AAAB9ED2C30C0C48A90DADC /* ActivityHistoryView.swift in Sources */,
 				7F7813F6985D42EB67220674 /* ActivityLogView.swift in Sources */,
-				3C4D5E6F7A8B0001ACTBUTTN /* ActionButton.swift in Sources */,
 				272D38949B8C41491A7AA538 /* ActivitySession.swift in Sources */,
 				6B4B3D477215503102302043 /* AnonymousMetric.swift in Sources */,
 				F00044275E89D501DE4894DD /* BrandConfigService.swift in Sources */,
@@ -299,7 +397,8 @@
 				3BA5ACDFBC1E1F6C3C812B0B /* CatCard.swift in Sources */,
 				49F3D250C843C82547B79E7C /* CatDetailView.swift in Sources */,
 				89C8085AAD79798A66D2CC04 /* CatWeightLossApp.swift in Sources */,
-				1A2B3C4D5E6F0001DATEFORM /* DateFormatting.swift in Sources */,
+				861DCE475B0B16A9948EF236 /* DatabaseErrorView.swift in Sources */,
+				0D239C1B547710C4FA954230 /* DateFormatting.swift in Sources */,
 				9BD34A1F502DD68EFD7E6087 /* Enums.swift in Sources */,
 				ADC329558B1F8568CC9E1F21 /* FeedingPlanView.swift in Sources */,
 				7E0CA0BF0A3BA0D61C6D1A95 /* FeedingSchedule.swift in Sources */,
@@ -310,16 +409,45 @@
 				A682144AA75ABBD8D3078688 /* ProgressRing.swift in Sources */,
 				7B095C263BC13129FD9113B3 /* QuickSetupView.swift in Sources */,
 				48EFEF236FE3266C660D418A /* StatCard.swift in Sources */,
-				2B3C4D5E6F7A0001VIEWMODS /* ViewModifiers.swift in Sources */,
+				FD43A0DA71C69F782BE19576 /* ViewModifiers.swift in Sources */,
 				DC3B15FB1716CED8DCE31B37 /* WeightChartView.swift in Sources */,
 				BAB7C0F800B7BF5C0C3C394A /* WeightEntry.swift in Sources */,
 				A27838F488E118A6A7FED429 /* WeightHistoryView.swift in Sources */,
 				F10ABFAD27893B452EA1645E /* WeightLogView.swift in Sources */,
 				92914C87D6F759E541CEC603 /* WeightTrendIndicator.swift in Sources */,
+                AB89F06219D74F45A59B2195 /* Retailer.swift in Sources */,
+                780B95BB905F49FA9CCE2F16 /* ReorderView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF2286054C4A33A3CC27CC6F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D612D1BF954466792B7135A /* AdminHubView.swift in Sources */,
+				FD4F2FC910AC432FA97A16D4 /* QRCodeGeneratorView.swift in Sources */,
+				E63A13F534A6416D8D904B2B /* AnalyticsDashboardView.swift in Sources */,
+				238F5D2FC1A54A459DBC6004 /* BrandSeedData.swift in Sources */,
+				4A183D2E26344E1B9CEEDB1B /* BrandSwitcherView.swift in Sources */,
+				B255C9952B4F3A37A27CFB2D /* AnonymousMetricTests.swift in Sources */,
+				428253AFABC7DC3D89DD9FE9 /* BrandActivationParamsTests.swift in Sources */,
+				4A872B9A717C0CB1D3CF8116 /* CatModelTests.swift in Sources */,
+				596EAC61B8DEDE46A02408A0 /* CatWeightLossTests.swift in Sources */,
+				5382C1C8D883432E3257B11A /* PortionCalculatorTests.swift in Sources */,
+                AB89F06219D74F45A59B2195 /* Retailer.swift in Sources */,
+                780B95BB905F49FA9CCE2F16 /* ReorderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3FE332D242F7D1B5832C843D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 699F0D6FBABCA3EAD0B1DDFC /* CatWeightLoss */;
+			targetProxy = A5BF8E3B041942FA9910A474 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1DB78A2A195F93558E98EEB5 /* Debug */ = {
@@ -399,6 +527,23 @@
 				SWIFT_VERSION = 5.9;
 			};
 			name = Release;
+		};
+		293BD847680518097D619DEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.catweightloss.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CatWeightLoss.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CatWeightLoss";
+			};
+			name = Debug;
 		};
 		653F5D0F72222633C813F44A /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -485,6 +630,23 @@
 			};
 			name = Release;
 		};
+		EC14FFD22E7C4711B4B70E54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.catweightloss.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CatWeightLoss.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CatWeightLoss";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -502,6 +664,15 @@
 			buildConfigurations = (
 				653F5D0F72222633C813F44A /* Debug */,
 				2026A70536DD15720618A799 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F66725E4992E8E70156A1477 /* Build configuration list for PBXNativeTarget "CatWeightLossTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				293BD847680518097D619DEE /* Debug */,
+				EC14FFD22E7C4711B4B70E54 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

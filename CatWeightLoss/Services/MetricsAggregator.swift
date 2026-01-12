@@ -118,6 +118,48 @@ class MetricsAggregator {
         context.insert(metric)
     }
 
+    // MARK: - Reorder Metrics (Monetization)
+
+    /// Record when reorder screen is viewed
+    func recordReorderViewed(brandId: String, skuId: String, in context: ModelContext) {
+        let metric = AnonymousMetric(
+            brandId: brandId,
+            skuId: skuId,
+            metricType: .reorderViewed,
+            value: 1,
+            deviceHash: deviceHash
+        )
+        context.insert(metric)
+    }
+
+    /// Record when user clicks through to a retailer
+    func recordReorderClick(
+        brandId: String,
+        skuId: String,
+        retailerId: String,
+        in context: ModelContext
+    ) {
+        // Record the click event
+        let clickMetric = AnonymousMetric(
+            brandId: brandId,
+            skuId: skuId,
+            metricType: .reorderClick,
+            value: 1,
+            deviceHash: deviceHash
+        )
+        context.insert(clickMetric)
+
+        // Record which retailer (for attribution analysis)
+        let retailerMetric = AnonymousMetric(
+            brandId: brandId,
+            skuId: skuId,
+            metricType: .reorderRetailer,
+            value: Double(retailerId.hashValue % 1000),  // Anonymized retailer identifier
+            deviceHash: deviceHash
+        )
+        context.insert(retailerMetric)
+    }
+
     // MARK: - Aggregation
 
     /// Generate aggregated report for a brand/SKU

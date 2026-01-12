@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Weight Companion - One Pager</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 11px;
+            line-height: 1.4;
+            color: #1a1a1a;
+            background: white;
+            padding: 0.5in;
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+
+        @media print {
+            body {
+                padding: 0.4in;
+                font-size: 10px;
+            }
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #FF6B35;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #004E64;
+            letter-spacing: -1px;
+            margin-bottom: 5px;
+        }
+
+        .tagline {
+            font-size: 14px;
+            font-weight: 500;
+            color: #FF6B35;
+        }
+
+        .section {
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: 12px;
+            font-weight: 700;
+            color: #004E64;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            padding-bottom: 4px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .problem-box {
+            background: #f8f9fa;
+            padding: 12px 15px;
+            border-left: 4px solid #FF6B35;
+            margin-bottom: 16px;
+        }
+
+        .problem-box strong {
+            color: #004E64;
+        }
+
+        .flow-diagram {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 12px 0;
+        }
+
+        .flow-step {
+            text-align: center;
+            flex: 1;
+        }
+
+        .flow-icon {
+            width: 40px;
+            height: 40px;
+            background: #FF6B35;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 6px;
+            color: white;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .flow-label {
+            font-size: 9px;
+            font-weight: 600;
+            color: #004E64;
+        }
+
+        .flow-sublabel {
+            font-size: 8px;
+            color: #666;
+        }
+
+        .flow-arrow {
+            color: #ccc;
+            font-size: 20px;
+            margin: 0 5px;
+        }
+
+        .two-column {
+            display: flex;
+            gap: 20px;
+        }
+
+        .column {
+            flex: 1;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 10px;
+        }
+
+        th {
+            background: #004E64;
+            color: white;
+            padding: 8px 10px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 8px 10px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .risk-table td:first-child {
+            font-weight: 600;
+            color: #004E64;
+            width: 25%;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #004E64 0%, #006d8a 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 16px 0;
+        }
+
+        .highlight-box .quote {
+            font-size: 14px;
+            font-weight: 600;
+            font-style: italic;
+            margin-bottom: 6px;
+        }
+
+        .highlight-box .attribution {
+            font-size: 9px;
+            opacity: 0.9;
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .value-card {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 6px;
+            border-top: 3px solid #FF6B35;
+        }
+
+        .value-card h4 {
+            color: #004E64;
+            font-size: 11px;
+            margin-bottom: 6px;
+        }
+
+        .value-card ul {
+            margin: 0;
+            padding-left: 16px;
+            font-size: 9px;
+            color: #444;
+        }
+
+        .value-card li {
+            margin-bottom: 3px;
+        }
+
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin: 15px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 10%;
+            right: 10%;
+            height: 3px;
+            background: #FF6B35;
+        }
+
+        .timeline-step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            flex: 1;
+        }
+
+        .timeline-dot {
+            width: 30px;
+            height: 30px;
+            background: white;
+            border: 3px solid #FF6B35;
+            border-radius: 50%;
+            margin: 0 auto 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: 700;
+            color: #FF6B35;
+        }
+
+        .timeline-label {
+            font-size: 9px;
+            font-weight: 600;
+            color: #004E64;
+        }
+
+        .timeline-time {
+            font-size: 8px;
+            color: #888;
+        }
+
+        .footer {
+            text-align: center;
+            padding-top: 15px;
+            border-top: 2px solid #004E64;
+            margin-top: 15px;
+        }
+
+        .cta {
+            font-size: 13px;
+            font-weight: 600;
+            color: #004E64;
+            margin-bottom: 8px;
+        }
+
+        .contact {
+            font-size: 11px;
+            color: #FF6B35;
+            font-weight: 500;
+        }
+
+        .contact-note {
+            font-size: 9px;
+            color: #888;
+            margin-top: 4px;
+        }
+
+        .metrics-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .metric-box {
+            flex: 1;
+            background: #f8f9fa;
+            padding: 10px;
+            text-align: center;
+            border-radius: 6px;
+        }
+
+        .metric-name {
+            font-size: 9px;
+            color: #666;
+            margin-bottom: 3px;
+        }
+
+        .metric-desc {
+            font-size: 8px;
+            color: #004E64;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">CAT WEIGHT COMPANION</div>
+        <div class="tagline">Turn Weight Management Packaging Into a Retention Engine</div>
+    </div>
+
+    <div class="problem-box">
+        <strong>Your customer relationship ends at checkout.</strong> Every bag of weight management cat food represents a lost opportunity—no engagement, no proof of efficacy, no data, no loyalty mechanism. Your competitors are about to solve this. Will you be first?
+    </div>
+
+    <div class="section">
+        <div class="section-title">The Solution</div>
+        <p style="margin-bottom: 10px;"><strong>A QR code on your packaging. 90 seconds to engagement.</strong></p>
+
+        <div class="flow-diagram">
+            <div class="flow-step">
+                <div class="flow-icon">1</div>
+                <div class="flow-label">SCAN QR</div>
+                <div class="flow-sublabel">On packaging</div>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">
+                <div class="flow-icon">2</div>
+                <div class="flow-label">ONE-TAP INSTALL</div>
+                <div class="flow-sublabel">Via QR code</div>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">
+                <div class="flow-icon">3</div>
+                <div class="flow-label">YOUR BRAND</div>
+                <div class="flow-sublabel">Colors & products</div>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">
+                <div class="flow-icon">4</div>
+                <div class="flow-label">ENGAGED</div>
+                <div class="flow-sublabel">Customer retained</div>
+            </div>
+        </div>
+
+        <p style="text-align: center; color: #666; font-size: 10px;"><strong>One-tap install via QR. No account creation. No friction.</strong></p>
+    </div>
+
+    <div class="two-column">
+        <div class="column">
+            <div class="section">
+                <div class="section-title">Why Legal Will Love This</div>
+                <table class="risk-table">
+                    <tr>
+                        <td>Medical Liability</td>
+                        <td>No weight values stored. No feeding recommendations. No health claims.</td>
+                    </tr>
+                    <tr>
+                        <td>Data Breach</td>
+                        <td>Zero servers. All data on user's device. Nothing to hack.</td>
+                    </tr>
+                    <tr>
+                        <td>Scope Creep</td>
+                        <td>Frozen features. No cloud. No social. No vet integration. Ever.</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="section">
+                <div class="section-title">Implementation Timeline</div>
+                <div class="timeline">
+                    <div class="timeline-step">
+                        <div class="timeline-dot">1</div>
+                        <div class="timeline-label">Legal Review</div>
+                        <div class="timeline-time">Week 1-2</div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-dot">2</div>
+                        <div class="timeline-label">Brand Setup</div>
+                        <div class="timeline-time">Week 3-4</div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-dot">3</div>
+                        <div class="timeline-label">App Store</div>
+                        <div class="timeline-time">Week 5-8</div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-dot">4</div>
+                        <div class="timeline-label">Pilot Launch</div>
+                        <div class="timeline-time">Week 8-12</div>
+                    </div>
+                </div>
+                <p style="text-align: center; font-size: 9px; color: #666; margin-top: 8px;">Marketing deliverable—not a software project.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="value-grid">
+        <div class="value-card">
+            <h4>For Your CMO</h4>
+            <ul>
+                <li>First-mover advantage in category</li>
+                <li>Engagement metrics for retailer negotiations</li>
+                <li>Differentiation in a commoditized market</li>
+                <li>"X% of buyers tracked their cat's progress"</li>
+            </ul>
+        </div>
+        <div class="value-card">
+            <h4>For Your CFO</h4>
+            <ul>
+                <li>8-12 week implementation (not 18 months)</li>
+                <li>No IT project—pure marketing deliverable</li>
+                <li>Aggregate data only—no PII liability</li>
+                <li>Pilot structure to prove ROI before scale</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="metrics-row">
+        <div class="metric-box">
+            <div class="metric-name">Activation Rate</div>
+            <div class="metric-desc">QR scans per unit sold</div>
+        </div>
+        <div class="metric-box">
+            <div class="metric-name">Completion Rate</div>
+            <div class="metric-desc">Setup completions</div>
+        </div>
+        <div class="metric-box">
+            <div class="metric-name">3+ Entry Rate</div>
+            <div class="metric-desc">Engaged users</div>
+        </div>
+        <div class="metric-box">
+            <div class="metric-name">Progress Distribution</div>
+            <div class="metric-desc">Aggregate success rates</div>
+        </div>
+    </div>
+
+    <div class="highlight-box">
+        <div class="quote">"Scan this to track your cat's weight with the food you just bought."</div>
+        <div class="attribution">11 words. That's the entire store associate training.</div>
+    </div>
+
+    <div class="footer">
+        <div class="cta">Ready to see it with your brand?</div>
+        <div class="contact">sasha@catweightqr.com | (555) 123-4567</div>
+        <div class="contact-note">15 minutes. Your brand. Live demo.</div>
+    </div>
+</body>
+</html>

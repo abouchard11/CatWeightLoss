@@ -53,6 +53,11 @@ enum MetricType: String, CaseIterable {
     // Retention signals
     case entriesCount = "entries_count"
     case daysActive = "days_active"
+
+    // Reorder metrics (monetization)
+    case reorderViewed = "reorder_viewed"
+    case reorderClick = "reorder_click"
+    case reorderRetailer = "reorder_retailer"  // Which retailer was selected
 }
 
 // MARK: - Aggregated Report (for export)

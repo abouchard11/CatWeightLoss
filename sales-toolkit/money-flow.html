@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works | PetFlow</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Money Flow Specific Styles */
+        .money-hero {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-top: calc(80px + var(--space-4xl));
+            position: relative;
+        }
+
+        .money-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(212, 165, 116, 0.08), transparent);
+            z-index: 0;
+        }
+
+        .money-hero > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .money-hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: var(--space-lg);
+        }
+
+        .money-hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+        }
+
+        /* Flow Diagram */
+        .flow-section {
+            padding: var(--space-4xl) 0;
+            background: var(--bg-primary);
+        }
+
+        .flow-diagram {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: var(--space-4xl) 0;
+        }
+
+        /* Central Platform */
+        .platform-hub {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(145deg, var(--bg-tertiary), var(--bg-secondary));
+            border: 2px solid var(--accent-gold);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            box-shadow: 0 0 80px rgba(212, 165, 116, 0.2);
+        }
+
+        .platform-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            margin-bottom: var(--space-xs);
+        }
+
+        .platform-name {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-style: italic;
+            color: var(--accent-gold);
+        }
+
+        .platform-role {
+            font-size: 0.8125rem;
+            color: var(--text-secondary);
+            margin-top: var(--space-xs);
+        }
+
+        /* Stakeholder Nodes */
+        .stakeholder {
+            position: absolute;
+            width: 180px;
+            padding: var(--space-lg);
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            text-align: center;
+            transition: all 0.3s var(--ease-out);
+        }
+
+        .stakeholder:hover {
+            transform: scale(1.05);
+            border-color: var(--accent-gold);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .stakeholder-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--space-sm);
+        }
+
+        .stakeholder-name {
+            font-weight: 600;
+            margin-bottom: var(--space-xs);
+        }
+
+        .stakeholder-desc {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* Positions */
+        .stakeholder.brand {
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .stakeholder.user {
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .stakeholder.chewy {
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+        }
+
+        .stakeholder.operator {
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+
+        /* Connection Lines */
+        .connections {
+            position: absolute;
+            inset: 0;
+            z-index: 5;
+        }
+
+        .connection {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .connection-line {
+            stroke: var(--accent-gold);
+            stroke-width: 2;
+            fill: none;
+            stroke-dasharray: 8 4;
+            animation: dashFlow 1s linear infinite;
+        }
+
+        @keyframes dashFlow {
+            to { stroke-dashoffset: -12; }
+        }
+
+        .connection-label {
+            position: absolute;
+            padding: var(--space-xs) var(--space-sm);
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-subtle);
+            border-radius: 6px;
+            font-size: 0.6875rem;
+            color: var(--accent-gold);
+            white-space: nowrap;
+        }
+
+        /* Money Flow Animation */
+        .money-particle {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            box-shadow: 0 0 20px var(--accent-gold);
+            animation: flowParticle 3s linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes flowParticle {
+            0% { opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        /* Flow Diagram Container */
+        .flow-container {
+            position: relative;
+            height: 600px;
+            margin: var(--space-4xl) 0;
+        }
+
+        /* SVG Connections */
+        .flow-svg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .flow-path {
+            fill: none;
+            stroke: var(--accent-gold);
+            stroke-width: 2;
+            stroke-dasharray: 8 4;
+            opacity: 0.5;
+        }
+
+        .flow-path.animated {
+            animation: dashFlow 1s linear infinite;
+        }
+
+        /* Value Exchange Cards */
+        .value-section {
+            padding: var(--space-4xl) 0;
+            background: var(--bg-secondary);
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-xl);
+            margin-top: var(--space-3xl);
+        }
+
+        .value-card {
+            padding: var(--space-2xl);
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            transition: all 0.3s var(--ease-out);
+        }
+
+        .value-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-gold);
+        }
+
+        .value-card-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-lg);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .value-card-icon {
+            font-size: 2rem;
+        }
+
+        .value-card-title {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+        }
+
+        .value-list {
+            list-style: none;
+        }
+
+        .value-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-sm);
+            font-size: 0.9375rem;
+            color: var(--text-secondary);
+        }
+
+        .value-list li::before {
+            content: '→';
+            color: var(--accent-gold);
+            flex-shrink: 0;
+        }
+
+        .value-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: var(--space-lg) 0;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .value-divider::before,
+        .value-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border-subtle);
+            margin: 0 var(--space-md);
+        }
+
+        /* Numbers Section */
+        .numbers-section {
+            padding: var(--space-4xl) 0;
+        }
+
+        .numbers-header {
+            text-align: center;
+            margin-bottom: var(--space-3xl);
+        }
+
+        .numbers-table {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .numbers-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            padding: var(--space-lg) var(--space-xl);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .numbers-row:last-child {
+            border-bottom: none;
+        }
+
+        .numbers-row.header {
+            background: var(--bg-tertiary);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .numbers-row.total {
+            background: rgba(212, 165, 116, 0.1);
+            font-weight: 600;
+        }
+
+        .numbers-row.total .numbers-value {
+            color: var(--accent-gold);
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+        }
+
+        .numbers-label {
+            color: var(--text-secondary);
+        }
+
+        .numbers-value {
+            text-align: right;
+        }
+
+        .numbers-note {
+            text-align: right;
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+        }
+
+        /* Toll Booth Visual */
+        .tollbooth-section {
+            padding: var(--space-4xl) 0;
+            background: var(--bg-secondary);
+        }
+
+        .tollbooth-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-3xl);
+            margin-top: var(--space-3xl);
+        }
+
+        .tollbooth-side {
+            text-align: center;
+            padding: var(--space-2xl);
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            width: 200px;
+        }
+
+        .tollbooth-side-icon {
+            font-size: 3rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .tollbooth-side-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: var(--space-xs);
+        }
+
+        .tollbooth-side-name {
+            font-weight: 600;
+        }
+
+        .tollbooth-center {
+            position: relative;
+            width: 300px;
+            padding: var(--space-3xl);
+            background: linear-gradient(145deg, var(--bg-tertiary), var(--bg-card));
+            border: 2px solid var(--accent-gold);
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .tollbooth-icon {
+            font-size: 4rem;
+            margin-bottom: var(--space-lg);
+        }
+
+        .tollbooth-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            margin-bottom: var(--space-md);
+        }
+
+        .tollbooth-desc {
+            font-size: 0.9375rem;
+            color: var(--text-secondary);
+        }
+
+        .tollbooth-arrow {
+            font-size: 2rem;
+            color: var(--accent-gold);
+        }
+
+        @media (max-width: 1024px) {
+            .flow-container {
+                height: auto;
+                padding: var(--space-4xl) 0;
+            }
+
+            .platform-hub {
+                position: relative;
+                top: auto;
+                left: auto;
+                transform: none;
+                margin: var(--space-3xl) auto;
+            }
+
+            .stakeholder {
+                position: relative;
+                top: auto !important;
+                left: auto !important;
+                right: auto !important;
+                bottom: auto !important;
+                transform: none !important;
+                margin: var(--space-lg) auto;
+            }
+
+            .flow-svg {
+                display: none;
+            }
+
+            .value-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tollbooth-visual {
+                flex-direction: column;
+            }
+
+            .tollbooth-arrow {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-brand">
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 40 40" fill="none">
+                        <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 20 L20 12 L28 20 L20 28 Z" fill="currentColor" opacity="0.3"/>
+                        <circle cx="20" cy="20" r="6" fill="currentColor"/>
+                    </svg>
+                </div>
+                <span class="logo-text">PetFlow</span>
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="money-flow.html" class="nav-link active">How It Works</a>
+            <a href="dashboard.html" class="nav-link">Dashboard</a>
+            <a href="app.html" class="nav-link">The App</a>
+            <a href="investors.html" class="nav-link">Investors</a>
+        </div>
+        <a href="#contact" class="nav-cta">Get Started</a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="money-hero">
+        <h1>The <span class="accent">Toll Booth</span> Model</h1>
+        <p>You own the road between purchase and repurchase. Everyone pays to pass.</p>
+    </section>
+
+    <!-- Flow Diagram -->
+    <section class="flow-section">
+        <div class="section-container">
+            <div class="flow-container">
+                <!-- SVG Connection Lines -->
+                <svg class="flow-svg" viewBox="0 0 1000 600">
+                    <!-- Brand to Platform -->
+                    <path class="flow-path animated" d="M500,100 L500,220" />
+                    <!-- Platform to Chewy -->
+                    <path class="flow-path animated" d="M600,300 L820,300" style="animation-delay: 0.5s"/>
+                    <!-- User to Platform -->
+                    <path class="flow-path animated" d="M500,380 L500,500" style="animation-delay: 1s"/>
+                    <!-- Operator to Platform -->
+                    <path class="flow-path animated" d="M180,300 L400,300" style="animation-delay: 1.5s"/>
+
+                    <!-- Money flow indicators -->
+                    <circle r="6" fill="#d4a574">
+                        <animateMotion dur="2s" repeatCount="indefinite" path="M500,100 L500,220" />
+                    </circle>
+                    <circle r="6" fill="#d4a574">
+                        <animateMotion dur="2s" repeatCount="indefinite" path="M820,300 L600,300" begin="1s"/>
+                    </circle>
+                </svg>
+
+                <!-- Brand Node -->
+                <div class="stakeholder brand">
+                    <div class="stakeholder-icon">🏢</div>
+                    <div class="stakeholder-name">Pet Food Brand</div>
+                    <div class="stakeholder-desc">Pays platform fee</div>
+                </div>
+
+                <!-- Central Platform -->
+                <div class="platform-hub">
+                    <div class="platform-label">You Own This</div>
+                    <div class="platform-name">PetFlow</div>
+                    <div class="platform-role">The Routing Layer</div>
+                </div>
+
+                <!-- Chewy Node -->
+                <div class="stakeholder chewy">
+                    <div class="stakeholder-icon">🛒</div>
+                    <div class="stakeholder-name">Chewy</div>
+                    <div class="stakeholder-desc">Pays affiliate rev</div>
+                </div>
+
+                <!-- User Node -->
+                <div class="stakeholder user">
+                    <div class="stakeholder-icon">🐱</div>
+                    <div class="stakeholder-name">Pet Owner</div>
+                    <div class="stakeholder-desc">Pays nothing</div>
+                </div>
+
+                <!-- Operator Node -->
+                <div class="stakeholder operator">
+                    <div class="stakeholder-icon">⚙️</div>
+                    <div class="stakeholder-name">Tech Operator</div>
+                    <div class="stakeholder-desc">You pay ops fee</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Exchange -->
+    <section class="value-section">
+        <div class="section-container">
+            <h2 class="section-title" style="text-align: center;">What Everyone Gets</h2>
+
+            <div class="value-grid">
+                <!-- Brand Card -->
+                <div class="value-card">
+                    <div class="value-card-header">
+                        <div class="value-card-icon">🏢</div>
+                        <div class="value-card-title">Brand Gets</div>
+                    </div>
+                    <ul class="value-list">
+                        <li>Post-purchase engagement</li>
+                        <li>Behavioral data (anonymous)</li>
+                        <li>Retention lift</li>
+                        <li>Reduced churn to Amazon</li>
+                        <li>Differentiation on shelf</li>
+                    </ul>
+                    <div class="value-divider">Pays You</div>
+                    <ul class="value-list">
+                        <li>Setup fee: $25-75K</li>
+                        <li>Monthly: $2-6K/mo</li>
+                    </ul>
+                </div>
+
+                <!-- User Card -->
+                <div class="value-card">
+                    <div class="value-card-header">
+                        <div class="value-card-icon">🐱</div>
+                        <div class="value-card-title">User Gets</div>
+                    </div>
+                    <ul class="value-list">
+                        <li>Easy weight tracking</li>
+                        <li>Feeding guidance</li>
+                        <li>Reorder convenience</li>
+                        <li>No login required</li>
+                        <li>Free forever</li>
+                    </ul>
+                    <div class="value-divider">Pays You</div>
+                    <ul class="value-list">
+                        <li style="color: var(--accent-gold);">$0 — They're the product flow</li>
+                    </ul>
+                </div>
+
+                <!-- Chewy Card -->
+                <div class="value-card">
+                    <div class="value-card-header">
+                        <div class="value-card-icon">🛒</div>
+                        <div class="value-card-title">Chewy Gets</div>
+                    </div>
+                    <ul class="value-list">
+                        <li>Zero-CAC traffic</li>
+                        <li>High-intent buyers</li>
+                        <li>SKU-locked customers</li>
+                        <li>No comparison shopping</li>
+                        <li>Repeat by design</li>
+                    </ul>
+                    <div class="value-divider">Pays You</div>
+                    <ul class="value-list">
+                        <li>Affiliate: 4-12% per order</li>
+                        <li>Exclusivity premium: +$$</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Numbers -->
+    <section class="numbers-section">
+        <div class="section-container">
+            <div class="numbers-header">
+                <h2 class="section-title">Unit Economics <span class="accent">(Per Brand)</span></h2>
+            </div>
+
+            <div class="numbers-table">
+                <div class="numbers-row header">
+                    <div>Revenue Source</div>
+                    <div class="numbers-value">Amount</div>
+                    <div class="numbers-note">Frequency</div>
+                </div>
+                <div class="numbers-row">
+                    <div class="numbers-label">Setup Fee</div>
+                    <div class="numbers-value">$25K - $75K</div>
+                    <div class="numbers-note">One-time</div>
+                </div>
+                <div class="numbers-row">
+                    <div class="numbers-label">Platform Fee</div>
+                    <div class="numbers-value">$2K - $6K</div>
+                    <div class="numbers-note">Monthly</div>
+                </div>
+                <div class="numbers-row">
+                    <div class="numbers-label">Affiliate Revenue</div>
+                    <div class="numbers-value">$10K - $50K</div>
+                    <div class="numbers-note">Yearly (scales)</div>
+                </div>
+                <div class="numbers-row">
+                    <div class="numbers-label" style="color: var(--error);">Tech Operator Fee</div>
+                    <div class="numbers-value" style="color: var(--error);">-$18K - $36K</div>
+                    <div class="numbers-note">Yearly</div>
+                </div>
+                <div class="numbers-row total">
+                    <div class="numbers-label">Year 1 Net (per brand)</div>
+                    <div class="numbers-value">$40K - $160K</div>
+                    <div class="numbers-note">82-95% margin</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Toll Booth Visual -->
+    <section class="tollbooth-section">
+        <div class="section-container">
+            <h2 class="section-title" style="text-align: center;">The Toll Booth Position</h2>
+            <p class="section-subtitle" style="text-align: center; margin: 0 auto;">
+                You don't own the origin. You don't own the destination. You own the road.
+            </p>
+
+            <div class="tollbooth-visual">
+                <div class="tollbooth-side">
+                    <div class="tollbooth-side-icon">🏢</div>
+                    <div class="tollbooth-side-label">Origin</div>
+                    <div class="tollbooth-side-name">Brand's Packaging</div>
+                </div>
+
+                <div class="tollbooth-arrow">→</div>
+
+                <div class="tollbooth-center">
+                    <div class="tollbooth-icon">🚧</div>
+                    <div class="tollbooth-title">Your Toll Booth</div>
+                    <div class="tollbooth-desc">Control the routing. Collect from both sides. Touch nothing else.</div>
+                </div>
+
+                <div class="tollbooth-arrow">→</div>
+
+                <div class="tollbooth-side">
+                    <div class="tollbooth-side-icon">🛒</div>
+                    <div class="tollbooth-side-label">Destination</div>
+                    <div class="tollbooth-side-name">Chewy Checkout</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="contact">
+        <div class="cta-bg">
+            <div class="cta-gradient"></div>
+        </div>
+        <div class="section-container">
+            <div class="cta-content">
+                <h2 class="cta-title">
+                    Ready to own the<br>
+                    <span class="accent">routing layer?</span>
+                </h2>
+                <p class="cta-text">
+                    15-minute demo. See the money flow in action.
+                </p>
+                <a href="mailto:hello@petflow.io" class="btn btn-primary btn-large">
+                    <span>Schedule Demo</span>
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="section-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <svg viewBox="0 0 40 40" fill="none">
+                                <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2"/>
+                                <path d="M12 20 L20 12 L28 20 L20 28 Z" fill="currentColor" opacity="0.3"/>
+                                <circle cx="20" cy="20" r="6" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span class="logo-text">PetFlow</span>
+                    </div>
+                    <p class="footer-tagline">The post-purchase routing layer.</p>
+                </div>
+
+                <div class="footer-links">
+                    <a href="money-flow.html">How It Works</a>
+                    <a href="dashboard.html">Dashboard</a>
+                    <a href="app.html">The App</a>
+                    <a href="investors.html">Investors</a>
+                </div>
+
+                <div class="footer-legal">
+                    <p>© 2026 PetFlow. Patent Pending.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
