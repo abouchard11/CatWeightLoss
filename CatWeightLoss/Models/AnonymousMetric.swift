@@ -91,15 +91,24 @@ struct AggregatedMetricsReport: Codable {
 // MARK: - Device Hashing
 
 extension AnonymousMetric {
+    private static let fallbackHashKey = "anon_device_hash_fallback"
+
     /// Generate anonymous device hash using SHA-256 (cryptographically secure, not reversible)
     static func generateDeviceHash() -> String {
         // Use identifierForVendor hashed with SHA-256
         // This changes if app is uninstalled, providing additional privacy
         guard let vendorId = UIDevice.current.identifierForVendor?.uuidString else {
-            // Fallback: generate random hash for this session
+            // Fallback: use cached hash or generate and cache a new one
+            if let cachedHash = UserDefaults.standard.string(forKey: fallbackHashKey) {
+                return cachedHash
+            }
+
+            // Generate new fallback hash and cache it
             let randomData = Data((0..<32).map { _ in UInt8.random(in: 0...255) })
             let fallbackHash = SHA256.hash(data: randomData)
-            return fallbackHash.compactMap { String(format: "%02x", $0) }.joined().prefix(16).description
+            let hashString = fallbackHash.compactMap { String(format: "%02x", $0) }.joined().prefix(16).description
+            UserDefaults.standard.set(hashString, forKey: fallbackHashKey)
+            return hashString
         }
 
         // SHA-256 hash of vendor ID (true cryptographic one-way hash)
