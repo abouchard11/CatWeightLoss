@@ -23,7 +23,7 @@ None
 **Plans**: 2 plans
 
 Plans:
-- [ ] 01-01: Replace fatalError with graceful error recovery in ModelContainer init
+- [x] 01-01: Replace fatalError with graceful error recovery in ModelContainer init
 - [ ] 01-02: Add CatWeightLossTests target to project.yml
 
 ### Phase 2: Core Tests
@@ -50,6 +50,6 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/2 | Not started | - |
+| 1. Foundation | 1/2 | In progress | - |
 | 2. Core Tests | 0/2 | Not started | - |
 | 3. Polish | 0/2 | Not started | - |
