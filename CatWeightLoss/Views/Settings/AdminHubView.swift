@@ -70,9 +70,21 @@ struct AdminHubView: View {
                 // Demo Data
                 Section {
                     Button {
+                        seedDemoCat()
+                    } label: {
+                        Label("Seed Demo Cat (Mittens)", systemImage: "cat")
+                    }
+
+                    Button {
                         MetricsAggregator.shared.seedDemoMetrics(in: modelContext)
                     } label: {
                         Label("Seed Demo Analytics Data", systemImage: "chart.line.uptrend.xyaxis")
+                    }
+
+                    Button(role: .destructive) {
+                        clearDemoCat()
+                    } label: {
+                        Label("Clear Demo Cat", systemImage: "trash")
                     }
 
                     Button(role: .destructive) {
@@ -83,7 +95,7 @@ struct AdminHubView: View {
                 } header: {
                     Text("Demo Data")
                 } footer: {
-                    Text("Seed realistic analytics data spanning 30 days for dashboard demos.")
+                    Text("Seed demo cat with weight history and analytics data for presentations.")
                 }
 
                 // B2B Tools
@@ -157,6 +169,59 @@ struct AdminHubView: View {
             .sheet(isPresented: $showingAnalytics) {
                 AnalyticsDashboardView()
             }
+        }
+    }
+
+    // MARK: - Demo Cat Seeding
+
+    private func seedDemoCat() {
+        // Create demo cat "Mittens" with realistic weight loss journey
+        let mittens = Cat(
+            name: "Mittens",
+            breed: "Domestic Shorthair",
+            birthDate: Calendar.current.date(byAdding: .year, value: -5, to: Date()),
+            startWeight: 14.0,
+            targetWeight: 10.0,
+            weightUnit: .lbs,
+            dailyActivityMinutes: 20
+        )
+        modelContext.insert(mittens)
+
+        // Add weight entries showing gradual progress over 30 days
+        let calendar = Calendar.current
+        var currentWeight = 14.0
+
+        for daysAgo in stride(from: 28, through: 0, by: -3) {
+            guard let entryDate = calendar.date(byAdding: .day, value: -daysAgo, to: Date()) else { continue }
+
+            // Simulate gradual weight loss with some variation
+            let dailyLoss = Double.random(in: 0.05...0.15)
+            currentWeight = max(mittens.targetWeight, currentWeight - dailyLoss * 3)
+
+            let entry = WeightEntry(
+                weight: currentWeight + Double.random(in: -0.1...0.1),
+                date: entryDate,
+                notes: daysAgo == 0 ? "Looking great!" : nil
+            )
+            mittens.addWeightEntry(entry)
+        }
+
+        print("[AdminHub] Seeded demo cat: Mittens with \(mittens.weightEntries.count) weight entries")
+    }
+
+    private func clearDemoCat() {
+        let descriptor = FetchDescriptor<Cat>(
+            predicate: #Predicate { $0.name == "Mittens" }
+        )
+
+        do {
+            let cats = try modelContext.fetch(descriptor)
+            for cat in cats {
+                modelContext.delete(cat)
+            }
+            print("[AdminHub] Cleared \(cats.count) demo cat(s)")
+        } catch {
+            print("[AdminHub] Failed to clear demo cat: \(error.localizedDescription)")
         }
     }
 

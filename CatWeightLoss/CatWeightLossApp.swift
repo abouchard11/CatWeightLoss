@@ -90,8 +90,10 @@ struct RootView: View {
         Group {
             if let cat = activeCat ?? cats.first {
                 // Main dashboard for existing cat
-                CatDetailView(cat: cat)
-                    .environment(\.brandConfig, brandService.activeBrandConfig)
+                NavigationStack {
+                    CatDetailView(cat: cat)
+                        .environment(\.brandConfig, brandService.activeBrandConfig)
+                }
             } else if let config = brandService.activeBrandConfig ?? brandConfigs.first {
                 // Have brand but no cat - show setup
                 if showingSplash {
