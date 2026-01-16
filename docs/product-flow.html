@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <title>Cat Weight Companion - Product Flow</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #F8FAFC;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .flow-container {
+            width: 1100px;
+            padding: 48px;
+        }
+
+        .flow-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .flow-title {
+            font-size: 32px;
+            font-weight: 800;
+            color: #0F172A;
+            margin-bottom: 8px;
+        }
+
+        .flow-subtitle {
+            font-size: 18px;
+            color: #64748B;
+        }
+
+        .flow-steps {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .flow-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+
+        .step-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #0EA5E9 0%, #0284C7 100%);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 48px;
+            box-shadow: 0 10px 40px rgba(14, 165, 233, 0.3);
+        }
+
+        .step-icon.green {
+            background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
+            box-shadow: 0 10px 40px rgba(34, 197, 94, 0.3);
+        }
+
+        .step-icon.purple {
+            background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+            box-shadow: 0 10px 40px rgba(139, 92, 246, 0.3);
+        }
+
+        .step-icon.orange {
+            background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+            box-shadow: 0 10px 40px rgba(249, 115, 22, 0.3);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #0F172A;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 700;
+            z-index: 2;
+        }
+
+        .step-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0F172A;
+            margin-bottom: 8px;
+        }
+
+        .step-desc {
+            font-size: 14px;
+            color: #64748B;
+            line-height: 1.5;
+        }
+
+        .arrow {
+            position: absolute;
+            right: -36px;
+            top: 60px;
+            font-size: 32px;
+            color: #CBD5E1;
+        }
+
+        .flow-step:last-child .arrow {
+            display: none;
+        }
+
+        .benefits {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            margin-top: 48px;
+            padding-top: 48px;
+            border-top: 2px dashed #E2E8F0;
+        }
+
+        .benefit {
+            text-align: center;
+        }
+
+        .benefit-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(14, 165, 233, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 12px;
+            font-size: 24px;
+        }
+
+        .benefit-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #0F172A;
+            margin-bottom: 4px;
+        }
+
+        .benefit-value {
+            font-size: 24px;
+            font-weight: 800;
+            color: #0EA5E9;
+        }
+    </style>
+</head>
+<body>
+    <div class="flow-container">
+        <div class="flow-header">
+            <h1 class="flow-title">How Cat Weight Companion Works</h1>
+            <p class="flow-subtitle">From packaging to reorder in 4 simple steps</p>
+        </div>
+
+        <div class="flow-steps">
+            <div class="flow-step">
+                <div class="step-number">1</div>
+                <div class="step-icon">📦</div>
+                <div class="step-title">QR on Packaging</div>
+                <div class="step-desc">Customer buys your food. QR code on every bag links to your branded app.</div>
+                <div class="arrow">→</div>
+            </div>
+
+            <div class="flow-step">
+                <div class="step-number">2</div>
+                <div class="step-icon purple">📱</div>
+                <div class="step-title">Branded App</div>
+                <div class="step-desc">Customer scans QR. Gets your white-labeled app with your branding.</div>
+                <div class="arrow">→</div>
+            </div>
+
+            <div class="flow-step">
+                <div class="step-number">3</div>
+                <div class="step-icon orange">⚖️</div>
+                <div class="step-title">Weight Tracking</div>
+                <div class="step-desc">Customer tracks cat's weight weekly. You get outcome data proving efficacy.</div>
+                <div class="arrow">→</div>
+            </div>
+
+            <div class="flow-step">
+                <div class="step-number">4</div>
+                <div class="step-icon green">🛒</div>
+                <div class="step-title">One-Tap Reorder</div>
+                <div class="step-desc">Smart reminder when food is low. Reorder flows through your affiliate link.</div>
+            </div>
+        </div>
+
+        <div class="benefits">
+            <div class="benefit">
+                <div class="benefit-icon">📊</div>
+                <div class="benefit-title">ROI MODEL</div>
+                <div class="benefit-value">125%+</div>
+            </div>
+            <div class="benefit">
+                <div class="benefit-icon">💰</div>
+                <div class="benefit-title">SETUP FEE</div>
+                <div class="benefit-value">$0</div>
+            </div>
+            <div class="benefit">
+                <div class="benefit-icon">📅</div>
+                <div class="benefit-title">PILOT LENGTH</div>
+                <div class="benefit-value">90 Days</div>
+            </div>
+            <div class="benefit">
+                <div class="benefit-icon">🏷️</div>
+                <div class="benefit-title">PER ACTIVATION</div>
+                <div class="benefit-value">$2-5</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

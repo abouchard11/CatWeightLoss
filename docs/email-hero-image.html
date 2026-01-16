@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=800, initial-scale=1.0">
+    <title>Cat Weight Companion - Email Hero</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .email-hero {
+            width: 800px;
+            background: linear-gradient(135deg, #0EA5E9 0%, #0284C7 50%, #0369A1 100%);
+            border-radius: 24px;
+            padding: 48px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .email-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 48px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-title {
+            color: white;
+            font-size: 36px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .hero-subtitle {
+            color: rgba(255,255,255,0.9);
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 24px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 32px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            color: white;
+            font-size: 32px;
+            font-weight: 800;
+        }
+
+        .stat-label {
+            color: rgba(255,255,255,0.8);
+            font-size: 12px;
+            font-weight: 500;
+            margin-top: 4px;
+        }
+
+        .hero-phone {
+            width: 220px;
+            flex-shrink: 0;
+        }
+
+        .phone-frame {
+            background: white;
+            border-radius: 32px;
+            padding: 12px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+        }
+
+        .phone-screen {
+            background: #F8FAFC;
+            border-radius: 24px;
+            overflow: hidden;
+        }
+
+        .phone-status {
+            background: white;
+            padding: 8px 16px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+            font-weight: 600;
+            color: #0F172A;
+        }
+
+        .phone-header {
+            background: white;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .phone-logo {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .phone-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #0F172A;
+        }
+
+        .phone-content {
+            padding: 16px;
+        }
+
+        .weight-card {
+            background: white;
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+
+        .weight-label {
+            font-size: 10px;
+            color: #64748B;
+            margin-bottom: 4px;
+        }
+
+        .weight-value {
+            font-size: 28px;
+            font-weight: 800;
+            color: #0F172A;
+        }
+
+        .weight-unit {
+            font-size: 14px;
+            font-weight: 500;
+            color: #64748B;
+        }
+
+        .weight-change {
+            display: inline-block;
+            background: rgba(34, 197, 94, 0.1);
+            color: #22C55E;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 8px;
+            border-radius: 12px;
+            margin-top: 8px;
+        }
+
+        .trend-mini {
+            height: 40px;
+            display: flex;
+            align-items: flex-end;
+            gap: 4px;
+            margin-top: 12px;
+        }
+
+        .trend-bar {
+            flex: 1;
+            background: #0EA5E9;
+            border-radius: 4px 4px 0 0;
+            opacity: 0.3;
+        }
+
+        .trend-bar:last-child {
+            opacity: 1;
+        }
+
+        .reorder-btn {
+            background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 12px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .flow-arrow {
+            position: absolute;
+            right: 240px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .flow-arrow svg {
+            width: 40px;
+            height: 40px;
+            fill: rgba(255,255,255,0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="email-hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">WHITE-LABEL iOS APP</div>
+                <h1 class="hero-title">Turn Every Bag Into<br>a Retention Channel</h1>
+                <p class="hero-subtitle">
+                    QR on packaging → Branded app → Weight tracking → One-tap reorder
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-value">125%+</div>
+                        <div class="stat-label">ROI MODEL</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">$0</div>
+                        <div class="stat-label">SETUP FEE</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">90</div>
+                        <div class="stat-label">DAY PILOT</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-phone">
+                <div class="phone-frame">
+                    <div class="phone-screen">
+                        <div class="phone-status">
+                            <span>9:41</span>
+                            <span>⚡</span>
+                        </div>
+                        <div class="phone-header">
+                            <img src="../assets/app-logo.png" alt="Logo" class="phone-logo">
+                            <span class="phone-title">Cat Weight</span>
+                        </div>
+                        <div class="phone-content">
+                            <div class="weight-card">
+                                <div class="weight-label">Current Weight</div>
+                                <div class="weight-value">11.2 <span class="weight-unit">lbs</span></div>
+                                <div class="weight-change">↓ 0.4 lbs this month</div>
+                                <div class="trend-mini">
+                                    <div class="trend-bar" style="height: 100%"></div>
+                                    <div class="trend-bar" style="height: 85%"></div>
+                                    <div class="trend-bar" style="height: 90%"></div>
+                                    <div class="trend-bar" style="height: 75%"></div>
+                                    <div class="trend-bar" style="height: 70%"></div>
+                                    <div class="trend-bar" style="height: 65%"></div>
+                                </div>
+                            </div>
+                            <div class="reorder-btn">
+                                🛒 Reorder Now — 3 Days Left
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
