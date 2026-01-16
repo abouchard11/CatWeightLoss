@@ -184,6 +184,15 @@ struct ActivityLogView: View {
         session.cat = cat
         cat.activitySessions.append(session)
 
+        // Firebase Analytics: activity logged
+        if let config = brandConfig {
+            AnalyticsService.shared.logActivityLogged(
+                brandId: config.brandId,
+                activityType: activityType.rawValue,
+                durationMinutes: durationMinutes
+            )
+        }
+
         dismiss()
     }
 }

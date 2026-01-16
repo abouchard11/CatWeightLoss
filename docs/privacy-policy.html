@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Privacy Policy for Cat Weight Tracker - Your cat's health data stays on your device.">
+    <title>Privacy Policy - Cat Weight Tracker</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-text: #1d1d1f;
+            --color-text-secondary: #6e6e73;
+            --color-background: #ffffff;
+            --color-surface: #f5f5f7;
+            --color-border: #d2d2d7;
+            --color-accent: #0071e3;
+            --color-accent-hover: #0077ed;
+            --font-stack: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            --max-width: 740px;
+        }
+
+        html {
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-stack);
+            color: var(--color-text);
+            background-color: var(--color-background);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: var(--color-background);
+            border-bottom: 1px solid var(--color-border);
+            padding: 16px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .header-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .brand-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--color-text);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(180deg, var(--color-surface) 0%, var(--color-background) 100%);
+            padding: 64px 24px 48px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+            color: var(--color-text);
+        }
+
+        .hero .subtitle {
+            font-size: 18px;
+            color: var(--color-text-secondary);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .last-updated {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 6px 14px;
+            background: var(--color-background);
+            border: 1px solid var(--color-border);
+            border-radius: 20px;
+            font-size: 13px;
+            color: var(--color-text-secondary);
+        }
+
+        /* Main Content */
+        main {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 48px 24px 80px;
+        }
+
+        /* Introduction */
+        .intro {
+            font-size: 17px;
+            color: var(--color-text-secondary);
+            margin-bottom: 48px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 48px;
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin-bottom: 20px;
+            color: var(--color-text);
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 24px 0 12px;
+            color: var(--color-text);
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: var(--color-text);
+        }
+
+        ul {
+            margin: 12px 0 16px 24px;
+            color: var(--color-text);
+        }
+
+        li {
+            margin-bottom: 8px;
+            padding-left: 4px;
+        }
+
+        /* Highlight Box */
+        .highlight {
+            background: var(--color-surface);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin: 20px 0;
+        }
+
+        .highlight p {
+            margin-bottom: 0;
+        }
+
+        .highlight strong {
+            color: var(--color-accent);
+        }
+
+        /* Info Cards */
+        .info-card {
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin: 16px 0;
+        }
+
+        .info-card h4 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--color-text);
+        }
+
+        .info-card p {
+            font-size: 15px;
+            color: var(--color-text-secondary);
+            margin-bottom: 0;
+        }
+
+        /* Links */
+        a {
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Divider */
+        .divider {
+            height: 1px;
+            background: var(--color-border);
+            margin: 48px 0;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-surface);
+            border-top: 1px solid var(--color-border);
+            padding: 40px 24px;
+        }
+
+        .footer-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-brand {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: 8px;
+        }
+
+        .footer-text {
+            font-size: 13px;
+            color: var(--color-text-secondary);
+            margin-bottom: 4px;
+        }
+
+        .footer-contact {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .footer-contact a {
+            font-size: 14px;
+        }
+
+        /* Privacy Badge */
+        .privacy-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            margin: 24px 0;
+        }
+
+        .privacy-badge svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .hero {
+                padding: 48px 20px 36px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero .subtitle {
+                font-size: 16px;
+            }
+
+            main {
+                padding: 32px 20px 64px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            h3 {
+                font-size: 17px;
+            }
+
+            section {
+                margin-bottom: 36px;
+            }
+
+            .highlight {
+                padding: 16px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="white"/>
+                </svg>
+            </div>
+            <span class="brand-name">Cat Weight Tracker</span>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Privacy Policy</h1>
+        <p class="subtitle">Your cat's health data stays on your device. We believe privacy is a fundamental right.</p>
+        <span class="last-updated">Last Updated: January 15, 2026</span>
+    </section>
+
+    <main>
+        <p class="intro">
+            This Privacy Policy describes how Cat Weight Tracker ("we," "our," or "the App") collects, uses, and protects information when you use our iOS application.
+        </p>
+
+        <div class="privacy-badge">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+            </svg>
+            <span>All personal data stays on your device</span>
+        </div>
+
+        <section>
+            <h2>1. Information We Collect</h2>
+
+            <h3>1.1 User-Provided Data</h3>
+            <p>The App allows you to track your cat's weight loss journey by recording:</p>
+            <ul>
+                <li>Weight measurements</li>
+                <li>Feeding schedules</li>
+                <li>Activity logs</li>
+                <li>Photos (stored locally on your device)</li>
+                <li>Notes and observations</li>
+            </ul>
+
+            <div class="highlight">
+                <p><strong>Important:</strong> All user-provided data is stored locally on your device only. We do not transmit, store, or access this data on any remote server.</p>
+            </div>
+
+            <h3>1.2 Automatically Collected Data</h3>
+            <p>We collect limited, anonymized analytics data through Firebase Analytics:</p>
+            <ul>
+                <li>Anonymous device identifier (assigned by Firebase)</li>
+                <li>Device type and iOS version</li>
+                <li>App usage patterns (screens viewed, features used)</li>
+                <li>Performance metrics (app crashes, load times)</li>
+                <li>General location (country/region level only, no precise location)</li>
+            </ul>
+
+            <div class="highlight">
+                <p><strong>No Personally Identifiable Information (PII) is collected.</strong> We do not collect names, email addresses, phone numbers, precise location data, or any information that could identify you personally.</p>
+            </div>
+
+            <h3>1.3 QR Code Activation</h3>
+            <p>When you activate the App using a QR code:</p>
+            <ul>
+                <li>An anonymous activation token is processed locally</li>
+                <li>The token associates your app instance with a specific pet food brand partnership</li>
+                <li>No personal information is transmitted during activation</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>2. How We Use Information</h2>
+
+            <h3>2.1 Local Data Usage</h3>
+            <p>Data you enter (weight, feeding schedules, etc.) is used solely to:</p>
+            <ul>
+                <li>Display your cat's progress within the App</li>
+                <li>Generate charts and insights on your device</li>
+                <li>Provide feeding recommendations based on your inputs</li>
+            </ul>
+
+            <h3>2.2 Analytics Usage</h3>
+            <p>Anonymous analytics data is used to:</p>
+            <ul>
+                <li>Understand how users interact with the App</li>
+                <li>Identify and fix technical issues</li>
+                <li>Improve app performance and user experience</li>
+                <li>Aggregate usage statistics for white-label partners</li>
+            </ul>
+            <p>Analytics data cannot be used to identify individual users.</p>
+        </section>
+
+        <section>
+            <h2>3. Data Storage and Security</h2>
+
+            <h3>3.1 Local Storage</h3>
+            <p>All personal data (weight entries, photos, notes) is stored locally on your device using iOS's secure SwiftData framework. This data:</p>
+            <ul>
+                <li>Never leaves your device</li>
+                <li>Is protected by iOS sandboxing</li>
+                <li>Is encrypted with your device's hardware encryption</li>
+                <li>Is deleted when you delete the App</li>
+            </ul>
+
+            <h3>3.2 No Cloud Backup</h3>
+            <p>We do not provide cloud backup or sync services. If you:</p>
+            <ul>
+                <li>Delete the App, all local data is permanently deleted</li>
+                <li>Switch devices, data does not transfer automatically</li>
+                <li>Users are responsible for backing up their device via iCloud or iTunes if desired</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>4. Third-Party Services</h2>
+
+            <h3>4.1 Firebase Analytics</h3>
+            <p>We use Google Firebase Analytics to collect anonymized usage data. Firebase may:</p>
+            <ul>
+                <li>Assign an anonymous identifier to your app instance</li>
+                <li>Collect device and usage information as described above</li>
+                <li>Store analytics data on Google's servers</li>
+            </ul>
+            <p>Firebase's data practices are governed by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</p>
+
+            <h3>4.2 No Other Third Parties</h3>
+            <p>We do not share, sell, or disclose any data to third parties except as required by law.</p>
+        </section>
+
+        <section>
+            <h2>5. Your Data Rights</h2>
+
+            <h3>5.1 Access and Deletion</h3>
+            <div class="info-card">
+                <h4>Access</h4>
+                <p>All your data is accessible within the App at any time.</p>
+            </div>
+            <div class="info-card">
+                <h4>Deletion</h4>
+                <p>Delete individual entries within the App, or uninstall the App to remove all data.</p>
+            </div>
+            <div class="info-card">
+                <h4>Control</h4>
+                <p>You have complete control over what data you enter and retain.</p>
+            </div>
+
+            <h3>5.2 Analytics Opt-Out</h3>
+            <p>You can limit analytics collection through your iOS device settings:</p>
+            <ul>
+                <li>Go to Settings > Privacy & Security > Analytics & Improvements</li>
+                <li>Disable "Share iPhone Analytics" to limit system-level analytics</li>
+                <li>Note: This is a device-wide setting and affects all apps</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>6. Children's Privacy</h2>
+            <p>The App is not directed at children under 13. We do not knowingly collect data from children. The App is designed for adult pet owners to track their cat's health information.</p>
+        </section>
+
+        <section>
+            <h2>7. International Users and Data Transfers</h2>
+
+            <h3>7.1 GDPR Compliance (European Users)</h3>
+            <p>If you are located in the European Economic Area (EEA):</p>
+            <ul>
+                <li><strong>Legal Basis:</strong> We process data based on your consent (by using the App) and legitimate interests (improving the App)</li>
+                <li><strong>Data Minimization:</strong> We collect only essential anonymized data</li>
+                <li><strong>Right to Access:</strong> You can view all your data within the App</li>
+                <li><strong>Right to Erasure:</strong> Delete the App to remove all local data</li>
+                <li><strong>Right to Object:</strong> Disable analytics through iOS settings</li>
+                <li><strong>Data Transfers:</strong> Analytics data may be transferred to Google servers in the US under standard contractual clauses</li>
+            </ul>
+
+            <h3>7.2 CCPA Compliance (California Users)</h3>
+            <p>If you are a California resident:</p>
+            <ul>
+                <li><strong>No Sale of Data:</strong> We do not sell personal information</li>
+                <li><strong>Categories Collected:</strong> Anonymous device identifiers and usage analytics only</li>
+                <li><strong>Purpose:</strong> App improvement and performance monitoring</li>
+                <li><strong>Right to Delete:</strong> Uninstall the App to delete all local data</li>
+                <li><strong>Right to Know:</strong> This policy describes all data collection practices</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>8. Changes to This Privacy Policy</h2>
+            <p>We may update this Privacy Policy periodically. Changes will be posted within the App and on our website. Continued use of the App after changes constitutes acceptance of the updated policy.</p>
+        </section>
+
+        <section>
+            <h2>9. Data Retention</h2>
+            <ul>
+                <li><strong>Local Data:</strong> Retained on your device until you delete it or uninstall the App</li>
+                <li><strong>Analytics Data:</strong> Retained by Firebase for up to 14 months, then automatically deleted</li>
+                <li><strong>Activation Tokens:</strong> Processed at activation only, not stored long-term</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>10. Security Measures</h2>
+            <p>We implement security measures including:</p>
+            <ul>
+                <li>iOS sandboxing and hardware encryption for local data</li>
+                <li>HTTPS encryption for analytics transmission</li>
+                <li>No storage of sensitive data on remote servers</li>
+                <li>Anonymous identifiers only (no PII)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>11. Contact Information</h2>
+            <p>If you have questions about this Privacy Policy or data practices, please contact us.</p>
+            <p>For white-label partners and enterprise inquiries, please contact your brand representative or our business development team.</p>
+        </section>
+
+        <div class="divider"></div>
+
+        <div class="highlight">
+            <p><strong>Your Privacy Matters:</strong> We are committed to transparency and protecting your privacy. This App is designed to keep your data on your device, under your control, at all times.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p class="footer-brand">Cat Weight Tracker</p>
+            <p class="footer-text">Last updated: January 2026</p>
+            <p class="footer-text">All personal data stays on your device.</p>
+            <div class="footer-contact">
+                <a href="mailto:support@example.com">Contact Support</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

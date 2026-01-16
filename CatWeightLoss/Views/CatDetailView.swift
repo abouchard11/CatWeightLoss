@@ -22,6 +22,16 @@ struct CatDetailView: View {
                 // Header Card
                 headerCard
 
+                #if DEBUG
+                // Admin Hub button
+                Button {
+                    showingAdminHub = true
+                } label: {
+                    Label("Admin Hub", systemImage: "gearshape.2")
+                }
+                .buttonStyle(.bordered)
+                #endif
+
                 // Quick Stats
                 quickStats
 

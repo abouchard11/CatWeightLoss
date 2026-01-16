@@ -1,11 +1,17 @@
 import SwiftUI
 import SwiftData
+import FirebaseCore
 
 @main
 struct CatWeightLossApp: App {
     @State private var brandService = BrandConfigService.shared
     @State private var sharedModelContainer: ModelContainer?
     @State private var databaseError: Error?
+
+    init() {
+        // Initialize Firebase
+        FirebaseApp.configure()
+    }
 
     var body: some Scene {
         WindowGroup {
@@ -144,6 +150,9 @@ struct RootView: View {
                 skuId: config.defaultSKUId,
                 in: modelContext
             )
+
+            // Firebase Analytics: app opened
+            AnalyticsService.shared.logAppOpened(brandId: config.brandId)
         }
     }
 

@@ -162,6 +162,7 @@ struct MealScheduleRow: View {
 struct AddMealView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.brandConfig) private var brandConfig
 
     @Bindable var cat: Cat
 
@@ -243,6 +244,14 @@ struct AddMealView: View {
         )
         schedule.cat = cat
         cat.feedingSchedules.append(schedule)
+
+        // Firebase Analytics: feeding schedule created
+        if let config = brandConfig {
+            AnalyticsService.shared.logFeedingScheduleCreated(
+                brandId: config.brandId
+            )
+        }
+
         dismiss()
     }
 }

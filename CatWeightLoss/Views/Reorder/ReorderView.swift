@@ -53,6 +53,19 @@ struct ReorderView: View {
                     Button("Cancel") { dismiss() }
                 }
             }
+            .onAppear {
+                // Firebase Analytics: reorder screen viewed
+                let skuId = brandConfig.defaultSKUId
+                MetricsAggregator.shared.recordReorderViewed(
+                    brandId: brandConfig.brandId,
+                    skuId: skuId,
+                    in: modelContext
+                )
+                AnalyticsService.shared.logReorderViewed(
+                    brandId: brandConfig.brandId,
+                    skuId: skuId
+                )
+            }
             .safeAreaInset(edge: .bottom) {
                 // Order Button
                 VStack(spacing: 12) {
@@ -107,6 +120,13 @@ struct ReorderView: View {
             skuId: skuId,
             retailerId: retailer.id,
             in: modelContext
+        )
+
+        // Firebase Analytics: reorder clicked
+        AnalyticsService.shared.logReorderClicked(
+            brandId: brandConfig.brandId,
+            skuId: skuId,
+            retailer: retailer.name
         )
 
         // Open retailer URL

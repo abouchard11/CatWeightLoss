@@ -140,6 +140,21 @@ struct WeightLogView: View {
                 count: cat.weightEntries.count,
                 in: modelContext
             )
+
+            // Firebase Analytics: weight logged with trend
+            if let lastWeight = lastEntry?.weight {
+                let trend = WeightTrend.from(current: weightValue, previous: lastWeight)
+                AnalyticsService.shared.logWeightLogged(
+                    brandId: config.brandId,
+                    trendDirection: trend
+                )
+            } else {
+                // First entry, treat as stable
+                AnalyticsService.shared.logWeightLogged(
+                    brandId: config.brandId,
+                    trendDirection: .stable
+                )
+            }
         }
 
         dismiss()

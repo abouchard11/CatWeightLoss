@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "978414745159",
+    "project_id": "catweightloss",
+    "storage_bucket": "catweightloss.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:978414745159:android:64aa11293b0994b8456362",
+        "android_client_info": {
+          "package_name": "com.catweightloss.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuBcxBvJtrHSVcxTMQoG5Cgp8rldRQndI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

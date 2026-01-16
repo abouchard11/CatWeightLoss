@@ -103,6 +103,12 @@ class BrandConfigService {
             in: context
         )
 
+        // Firebase Analytics: brand activated
+        AnalyticsService.shared.logBrandActivated(
+            brandId: config.brandId,
+            skuId: params.skuId
+        )
+
         // Clear pending
         pendingActivation = nil
 

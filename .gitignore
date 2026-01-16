@@ -29,6 +29,9 @@ Carthage/Build/
 *.env
 *.local
 
+# Firebase
+GoogleService-Info.plist
+
 # PowerPoint files
 *.pptx
 ~$*

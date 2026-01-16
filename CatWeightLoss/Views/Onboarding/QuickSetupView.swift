@@ -197,6 +197,12 @@ struct QuickSetupView: View {
             in: modelContext
         )
 
+        // Firebase Analytics: setup completed
+        AnalyticsService.shared.logSetupCompleted(
+            brandId: brandConfig.brandId,
+            skuId: brandConfig.defaultSKUId
+        )
+
         onComplete(cat)
     }
 }
