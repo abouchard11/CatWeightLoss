@@ -1,7 +1,8 @@
 {
   "mode": "yolo",
-  "depth": "quick",
+  "depth": "comprehensive",
+  "parallelization": "enabled",
   "version": "1.0.0",
   "created": "2026-01-12",
-  "project": "CatWeightLoss Stability & Testing"
+  "project": "CatWeightLoss"
 }

@@ -5,17 +5,17 @@
 See: .planning/PROJECT.md (updated 2026-01-12)
 
 **Core value:** White-label B2B platform for pet food brands
-**Current focus:** Phase 7 — Demo Polish
+**Current focus:** Phase 9 — Xcode Firebase Integration
 
 ## Current Position
 
-Milestone: 2 of 2 (B2B Monetization) ✓ COMPLETE
-Phase: 8 of 8 (All Complete)
-Plan: All plans executed
-Status: All phases complete
-Last activity: 2026-01-12 — Completed Phase 7 (Demo Polish)
+Milestone: 3 of 3 (Go-to-Market)
+Phase: 9 of 18 (Xcode Firebase Integration)
+Plan: Not started
+Status: Ready to execute
+Last activity: 2026-01-15 — Milestone 3 created (10 phases, comprehensive depth)
 
-Progress: ██████████ 100% (M1 complete, M2 complete)
+Progress: ████████░░░░░░░░░░░░ 44% (M1 ✓, M2 ✓, M3 starting)
 
 ## Performance Metrics
 
@@ -95,13 +95,27 @@ Completed 2026-01-12:
 - AdminHubView extended with demo data controls
 - BRAND-ADMIN-SPECIFICATION.md documentation
 
+### Pre-Milestone 3 Work (2026-01-15)
+
+Completed before milestone creation:
+- Firebase Analytics integration (AnalyticsService.swift)
+- Firebase Console: iOS + Android apps registered
+- Config files: GoogleService-Info.plist, google-services.json
+- App Store metadata (4K char description, keywords)
+- Privacy policy (Markdown + HTML landing page)
+- Sales toolkit (8 docs: emails, one-pager, ROI model, LOI)
+- Smalls contacts found (CEO Matt Michaelson, COO Nate Kredich, etc.)
+- First outreach email drafted
+- Google Drive backup created
+- All pushed to GitHub
+
 ### Deferred Issues
 
 None.
 
 ### Pending Todos
 
-None - Milestone 2 complete.
+None - ready for Phase 9 planning.
 
 ### Blockers/Concerns
 
