@@ -3,34 +3,36 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9D612D1BF954466792B7135A /* AdminHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB502E9D43A498DAD2EA4E7 /* AdminHubView.swift */; };
-		FD4F2FC910AC432FA97A16D4 /* QRCodeGeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0864B2DA3F4F8E85F46C6E /* QRCodeGeneratorView.swift */; };
-		E63A13F534A6416D8D904B2B /* AnalyticsDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94503218F0B04C9FB46AB6B3 /* AnalyticsDashboardView.swift */; };
-		238F5D2FC1A54A459DBC6004 /* BrandSeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AB6D24AED64876A85FA43B /* BrandSeedData.swift */; };
-		4A183D2E26344E1B9CEEDB1B /* BrandSwitcherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3819823577F463BBE1ABD02 /* BrandSwitcherView.swift */; };
-		A1B2C3D4E5F64789ABCD1234 /* AnalyticsDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E5F6A7B8C9D0E1F2A3B4C5 /* AnalyticsDashboardView.swift */; };
-		AB89F06219D74F45A59B2195 /* Retailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB6B7E228A646C0A64C4DBB /* Retailer.swift */; };
-		780B95BB905F49FA9CCE2F16 /* ReorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35089827C47549CBA4E45EAB /* ReorderView.swift */; };
 		0D239C1B547710C4FA954230 /* DateFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EA7AADC3C353E1DD9387FB /* DateFormatting.swift */; };
 		17749D069276486385764283 /* PortionCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD603BE224595B63568FECFB /* PortionCalculator.swift */; };
 		1AAAB9ED2C30C0C48A90DADC /* ActivityHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF932E784289EC04B755212 /* ActivityHistoryView.swift */; };
+		238F5D2FC1A54A459DBC6004 /* BrandSeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AB6D24AED64876A85FA43B /* BrandSeedData.swift */; };
 		272D38949B8C41491A7AA538 /* ActivitySession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7450F1D65498198AD0B8B8F7 /* ActivitySession.swift */; };
 		34F20DA548963E711345C1EC /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F133E527F53400CD130D9F78 /* ActionButton.swift */; };
 		3704029EC126CC989D329E6B /* BrandSplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4BECA82F6C6719D7226D8 /* BrandSplashView.swift */; };
 		3BA5ACDFBC1E1F6C3C812B0B /* CatCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12D2BAECD9F7A7C87310966 /* CatCard.swift */; };
 		428253AFABC7DC3D89DD9FE9 /* BrandActivationParamsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9046DA2386FA3A8E6F64E7CA /* BrandActivationParamsTests.swift */; };
+		462A6CFD2F15AE4300753A47 /* AdminHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB502E9D43A498DAD2EA4E7 /* AdminHubView.swift */; };
+		462A6CFE2F15AE4300753A47 /* QRCodeGeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0864B2DA3F4F8E85F46C6E /* QRCodeGeneratorView.swift */; };
+		462A6CFF2F15AE4300753A47 /* AnalyticsDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94503218F0B04C9FB46AB6B3 /* AnalyticsDashboardView.swift */; };
+		462A6D002F15AE4300753A47 /* BrandSeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AB6D24AED64876A85FA43B /* BrandSeedData.swift */; };
+		462A6D012F15AE4300753A47 /* BrandSwitcherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3819823577F463BBE1ABD02 /* BrandSwitcherView.swift */; };
+		462A6D022F15AE4300753A47 /* Retailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB6B7E228A646C0A64C4DBB /* Retailer.swift */; };
+		462A6D032F15AE4300753A47 /* ReorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35089827C47549CBA4E45EAB /* ReorderView.swift */; };
 		48EFEF236FE3266C660D418A /* StatCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A4B2B4AE58000B2D8667C /* StatCard.swift */; };
 		49F3D250C843C82547B79E7C /* CatDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE753AB985E15A339BAD7C5 /* CatDetailView.swift */; };
+		4A183D2E26344E1B9CEEDB1B /* BrandSwitcherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3819823577F463BBE1ABD02 /* BrandSwitcherView.swift */; };
 		4A872B9A717C0CB1D3CF8116 /* CatModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6291211E05FA6DE8E2D768C3 /* CatModelTests.swift */; };
 		5382C1C8D883432E3257B11A /* PortionCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790D613F60430339BA83D7B5 /* PortionCalculatorTests.swift */; };
 		596EAC61B8DEDE46A02408A0 /* CatWeightLossTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2810795617DAC3DF5F2156F8 /* CatWeightLossTests.swift */; };
 		604B9F705E105A910B36B32D /* BrandConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD44C49B4CBF637A06CBD070 /* BrandConfiguration.swift */; };
 		6B4B3D477215503102302043 /* AnonymousMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD4D371D2037F775E614F21 /* AnonymousMetric.swift */; };
 		75617A34CD43B05A29493BE6 /* Cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7506E9F2586DE967B4328744 /* Cat.swift */; };
+		780B95BB905F49FA9CCE2F16 /* ReorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35089827C47549CBA4E45EAB /* ReorderView.swift */; };
 		7B095C263BC13129FD9113B3 /* QuickSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2B32D62D94C6C686AC87E6 /* QuickSetupView.swift */; };
 		7E0CA0BF0A3BA0D61C6D1A95 /* FeedingSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8A8ED42B05F4738BC8D6F9 /* FeedingSchedule.swift */; };
 		7F7813F6985D42EB67220674 /* ActivityLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F26D164434411BDCF654B6 /* ActivityLogView.swift */; };
@@ -38,19 +40,24 @@
 		89C8085AAD79798A66D2CC04 /* CatWeightLossApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B911CFAE8B28CDC4D5C778D5 /* CatWeightLossApp.swift */; };
 		92914C87D6F759E541CEC603 /* WeightTrendIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02677A0ABD6F050D60D67BE2 /* WeightTrendIndicator.swift */; };
 		9BD34A1F502DD68EFD7E6087 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171E684AD5B0DF895C89B2F9 /* Enums.swift */; };
+		9D612D1BF954466792B7135A /* AdminHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB502E9D43A498DAD2EA4E7 /* AdminHubView.swift */; };
+		A1B2C3D4E5F64789ABCD1234 /* AnalyticsDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E5F6A7B8C9D0E1F2A3B4C5 /* AnalyticsDashboardView.swift */; };
 		A27838F488E118A6A7FED429 /* WeightHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329911AE9966A1FB69973795 /* WeightHistoryView.swift */; };
 		A682144AA75ABBD8D3078688 /* ProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839B0D4F02271B400A10D7B3 /* ProgressRing.swift */; };
 		A9A754D1398BE14512FE7D85 /* FoodSKU.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5277E209FCD71803BE7BB86 /* FoodSKU.swift */; };
+		AB89F06219D74F45A59B2195 /* Retailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB6B7E228A646C0A64C4DBB /* Retailer.swift */; };
 		ADC329558B1F8568CC9E1F21 /* FeedingPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C73EB961BE3E4C15CB0987 /* FeedingPlanView.swift */; };
 		B255C9952B4F3A37A27CFB2D /* AnonymousMetricTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FA20D9689FC4C04AABAF3C /* AnonymousMetricTests.swift */; };
 		BAB7C0F800B7BF5C0C3C394A /* WeightEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B122CAFB3264DBCAD69ABF /* WeightEntry.swift */; };
 		CC59D9EE7489BA847FF05918 /* PortionCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73E85C43A9D366598DA75D7 /* PortionCalculatorView.swift */; };
 		DC3B15FB1716CED8DCE31B37 /* WeightChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37374614D6001E15D3988D72 /* WeightChartView.swift */; };
+		E63A13F534A6416D8D904B2B /* AnalyticsDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94503218F0B04C9FB46AB6B3 /* AnalyticsDashboardView.swift */; };
 		EB4716863F7E7C94F6EFF325 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F24D6CE4EEA788E90CAED3B /* Assets.xcassets */; };
 		EF40AFAB64F5BDA50219FE09 /* MetricsAggregator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9F11D7A92004DB83BB7221 /* MetricsAggregator.swift */; };
 		F00044275E89D501DE4894DD /* BrandConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D03BDFE2641262C8C79825 /* BrandConfigService.swift */; };
 		F10ABFAD27893B452EA1645E /* WeightLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B763D5237CDC1F7F4F7FB32A /* WeightLogView.swift */; };
 		FD43A0DA71C69F782BE19576 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142F7BDCD86E4B59B3D5080 /* ViewModifiers.swift */; };
+		FD4F2FC910AC432FA97A16D4 /* QRCodeGeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0864B2DA3F4F8E85F46C6E /* QRCodeGeneratorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,25 +71,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EAB502E9D43A498DAD2EA4E7 /* AdminHubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminHubView.swift; sourceTree = "<group>"; };
-		5E0864B2DA3F4F8E85F46C6E /* QRCodeGeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeGeneratorView.swift; sourceTree = "<group>"; };
-		94503218F0B04C9FB46AB6B3 /* AnalyticsDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsDashboardView.swift; sourceTree = "<group>"; };
-		C6AB6D24AED64876A85FA43B /* BrandSeedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandSeedData.swift; sourceTree = "<group>"; };
-		D4E5F6A7B8C9D0E1F2A3B4C5 /* AnalyticsDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsDashboardView.swift; sourceTree = "<group>"; };
-		E3819823577F463BBE1ABD02 /* BrandSwitcherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandSwitcherView.swift; sourceTree = "<group>"; };
-		0EB6B7E228A646C0A64C4DBB /* Retailer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Retailer.swift; sourceTree = "<group>"; };
-		35089827C47549CBA4E45EAB /* ReorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderView.swift; sourceTree = "<group>"; };
 		0142F7BDCD86E4B59B3D5080 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		02677A0ABD6F050D60D67BE2 /* WeightTrendIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightTrendIndicator.swift; sourceTree = "<group>"; };
 		0CE753AB985E15A339BAD7C5 /* CatDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDetailView.swift; sourceTree = "<group>"; };
+		0EB6B7E228A646C0A64C4DBB /* Retailer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Retailer.swift; sourceTree = "<group>"; };
 		10C4BECA82F6C6719D7226D8 /* BrandSplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandSplashView.swift; sourceTree = "<group>"; };
 		118CC865A866409AC112A73F /* DatabaseErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseErrorView.swift; sourceTree = "<group>"; };
 		171E684AD5B0DF895C89B2F9 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		2810795617DAC3DF5F2156F8 /* CatWeightLossTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatWeightLossTests.swift; sourceTree = "<group>"; };
 		329911AE9966A1FB69973795 /* WeightHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightHistoryView.swift; sourceTree = "<group>"; };
 		34F26D164434411BDCF654B6 /* ActivityLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLogView.swift; sourceTree = "<group>"; };
+		35089827C47549CBA4E45EAB /* ReorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderView.swift; sourceTree = "<group>"; };
 		37374614D6001E15D3988D72 /* WeightChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightChartView.swift; sourceTree = "<group>"; };
 		55C73EB961BE3E4C15CB0987 /* FeedingPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedingPlanView.swift; sourceTree = "<group>"; };
+		5E0864B2DA3F4F8E85F46C6E /* QRCodeGeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeGeneratorView.swift; sourceTree = "<group>"; };
 		6291211E05FA6DE8E2D768C3 /* CatModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatModelTests.swift; sourceTree = "<group>"; };
 		6BD4D371D2037F775E614F21 /* AnonymousMetric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnonymousMetric.swift; sourceTree = "<group>"; };
 		6E2B32D62D94C6C686AC87E6 /* QuickSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSetupView.swift; sourceTree = "<group>"; };
@@ -92,9 +94,10 @@
 		790D613F60430339BA83D7B5 /* PortionCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortionCalculatorTests.swift; sourceTree = "<group>"; };
 		839B0D4F02271B400A10D7B3 /* ProgressRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRing.swift; sourceTree = "<group>"; };
 		9046DA2386FA3A8E6F64E7CA /* BrandActivationParamsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandActivationParamsTests.swift; sourceTree = "<group>"; };
-		93294A5299207FF59DC1FD8F /* CatWeightLoss.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = CatWeightLoss.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		93294A5299207FF59DC1FD8F /* CatWeightLoss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatWeightLoss.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		94503218F0B04C9FB46AB6B3 /* AnalyticsDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsDashboardView.swift; sourceTree = "<group>"; };
 		9E8A8ED42B05F4738BC8D6F9 /* FeedingSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedingSchedule.swift; sourceTree = "<group>"; };
-		A0CFA17DCC5EBA9933C3BBFD /* CatWeightLossTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = CatWeightLossTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0CFA17DCC5EBA9933C3BBFD /* CatWeightLossTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatWeightLossTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE9F11D7A92004DB83BB7221 /* MetricsAggregator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsAggregator.swift; sourceTree = "<group>"; };
 		B4EA7AADC3C353E1DD9387FB /* DateFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatting.swift; sourceTree = "<group>"; };
 		B763D5237CDC1F7F4F7FB32A /* WeightLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightLogView.swift; sourceTree = "<group>"; };
@@ -103,11 +106,15 @@
 		BBF932E784289EC04B755212 /* ActivityHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityHistoryView.swift; sourceTree = "<group>"; };
 		BD603BE224595B63568FECFB /* PortionCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortionCalculator.swift; sourceTree = "<group>"; };
 		C12D2BAECD9F7A7C87310966 /* CatCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatCard.swift; sourceTree = "<group>"; };
+		C6AB6D24AED64876A85FA43B /* BrandSeedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandSeedData.swift; sourceTree = "<group>"; };
 		CD44C49B4CBF637A06CBD070 /* BrandConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandConfiguration.swift; sourceTree = "<group>"; };
 		CE5548CB266784BF6759F01A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D0B122CAFB3264DBCAD69ABF /* WeightEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightEntry.swift; sourceTree = "<group>"; };
 		D0FA20D9689FC4C04AABAF3C /* AnonymousMetricTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnonymousMetricTests.swift; sourceTree = "<group>"; };
+		D4E5F6A7B8C9D0E1F2A3B4C5 /* AnalyticsDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsDashboardView.swift; sourceTree = "<group>"; };
 		D73E85C43A9D366598DA75D7 /* PortionCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortionCalculatorView.swift; sourceTree = "<group>"; };
+		E3819823577F463BBE1ABD02 /* BrandSwitcherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandSwitcherView.swift; sourceTree = "<group>"; };
+		EAB502E9D43A498DAD2EA4E7 /* AdminHubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminHubView.swift; sourceTree = "<group>"; };
 		F133E527F53400CD130D9F78 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		F3D03BDFE2641262C8C79825 /* BrandConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandConfigService.swift; sourceTree = "<group>"; };
 		F5277E209FCD71803BE7BB86 /* FoodSKU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSKU.swift; sourceTree = "<group>"; };
@@ -133,7 +140,7 @@
 				9E8A8ED42B05F4738BC8D6F9 /* FeedingSchedule.swift */,
 				F5277E209FCD71803BE7BB86 /* FoodSKU.swift */,
 				D0B122CAFB3264DBCAD69ABF /* WeightEntry.swift */,
-                0EB6B7E228A646C0A64C4DBB /* Retailer.swift */,
+				0EB6B7E228A646C0A64C4DBB /* Retailer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -321,6 +328,7 @@
 			);
 			name = CatWeightLoss;
 			packageProductDependencies = (
+				462A6D052F1A073500753A47 /* FirebaseAnalytics */,
 			);
 			productName = CatWeightLoss;
 			productReference = 93294A5299207FF59DC1FD8F /* CatWeightLoss.app */;
@@ -334,14 +342,6 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1500;
-				TargetAttributes = {
-					2149E687C4EDA57CF629554C = {
-						DevelopmentTeam = "";
-					};
-					699F0D6FBABCA3EAD0B1DDFC = {
-						DevelopmentTeam = "";
-					};
-				};
 			};
 			buildConfigurationList = 94AD92CFE00E9BD8D0004FA6 /* Build configuration list for PBXProject "CatWeightLoss" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -353,7 +353,9 @@
 			);
 			mainGroup = C9CB4F86A8BE0986BDF4856B;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
+			packageReferences = (
+				462A6D042F1A073500753A47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -415,8 +417,8 @@
 				A27838F488E118A6A7FED429 /* WeightHistoryView.swift in Sources */,
 				F10ABFAD27893B452EA1645E /* WeightLogView.swift in Sources */,
 				92914C87D6F759E541CEC603 /* WeightTrendIndicator.swift in Sources */,
-                AB89F06219D74F45A59B2195 /* Retailer.swift in Sources */,
-                780B95BB905F49FA9CCE2F16 /* ReorderView.swift in Sources */,
+				AB89F06219D74F45A59B2195 /* Retailer.swift in Sources */,
+				780B95BB905F49FA9CCE2F16 /* ReorderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,18 +426,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D612D1BF954466792B7135A /* AdminHubView.swift in Sources */,
-				FD4F2FC910AC432FA97A16D4 /* QRCodeGeneratorView.swift in Sources */,
-				E63A13F534A6416D8D904B2B /* AnalyticsDashboardView.swift in Sources */,
-				238F5D2FC1A54A459DBC6004 /* BrandSeedData.swift in Sources */,
-				4A183D2E26344E1B9CEEDB1B /* BrandSwitcherView.swift in Sources */,
+				462A6CFD2F15AE4300753A47 /* AdminHubView.swift in Sources */,
+				462A6CFE2F15AE4300753A47 /* QRCodeGeneratorView.swift in Sources */,
+				462A6CFF2F15AE4300753A47 /* AnalyticsDashboardView.swift in Sources */,
+				462A6D002F15AE4300753A47 /* BrandSeedData.swift in Sources */,
+				462A6D012F15AE4300753A47 /* BrandSwitcherView.swift in Sources */,
 				B255C9952B4F3A37A27CFB2D /* AnonymousMetricTests.swift in Sources */,
 				428253AFABC7DC3D89DD9FE9 /* BrandActivationParamsTests.swift in Sources */,
 				4A872B9A717C0CB1D3CF8116 /* CatModelTests.swift in Sources */,
 				596EAC61B8DEDE46A02408A0 /* CatWeightLossTests.swift in Sources */,
 				5382C1C8D883432E3257B11A /* PortionCalculatorTests.swift in Sources */,
-                AB89F06219D74F45A59B2195 /* Retailer.swift in Sources */,
-                780B95BB905F49FA9CCE2F16 /* ReorderView.swift in Sources */,
+				462A6D022F15AE4300753A47 /* Retailer.swift in Sources */,
+				462A6D032F15AE4300753A47 /* ReorderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +458,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6VK8YY2QUW;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = CatWeightLoss/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -532,6 +535,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 6VK8YY2QUW;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -617,6 +621,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6VK8YY2QUW;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = CatWeightLoss/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -634,6 +639,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 6VK8YY2QUW;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -678,6 +684,25 @@
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		462A6D042F1A073500753A47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.8.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		462A6D052F1A073500753A47 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 462A6D042F1A073500753A47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 52A4286902BBB2EF28215798 /* Project object */;
 }
