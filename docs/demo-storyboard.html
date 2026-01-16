@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Weight Companion - Customer Journey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #FDF8F3;
+            --warm-white: #FFFFFF;
+            --coral: #E8735A;
+            --coral-light: #FFEEE9;
+            --teal: #2D8B7A;
+            --teal-light: #E6F5F2;
+            --charcoal: #2C2C2C;
+            --slate: #5A5A5A;
+            --muted: #8B8B8B;
+            --border: #E8E4DF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--cream);
+            color: var(--charcoal);
+            min-height: 100vh;
+            padding: 48px 40px;
+        }
+
+        @media print {
+            body {
+                padding: 24px;
+                background: white;
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 56px;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--coral), var(--teal));
+            border-radius: 2px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--coral) 0%, var(--teal) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 4px 12px rgba(232, 115, 90, 0.25);
+        }
+
+        .logo-text {
+            font-family: 'Fraunces', serif;
+            font-size: 28px;
+            font-weight: 500;
+            letter-spacing: -0.5px;
+            color: var(--charcoal);
+        }
+
+        .subtitle {
+            font-family: 'Fraunces', serif;
+            font-size: 20px;
+            font-weight: 300;
+            color: var(--slate);
+            font-style: italic;
+            margin-top: 8px;
+        }
+
+        .tagline {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 8px 20px;
+            background: var(--warm-white);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        /* Storyboard Grid */
+        .storyboard {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        @media (max-width: 900px) {
+            .storyboard {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .storyboard {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Panel Card */
+        .panel {
+            background: var(--warm-white);
+            border-radius: 20px;
+            padding: 32px 28px;
+            position: relative;
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .panel:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+        }
+
+        @media print {
+            .panel:hover {
+                transform: none;
+                box-shadow: none;
+            }
+        }
+
+        /* Panel Number */
+        .panel-number {
+            position: absolute;
+            top: -12px;
+            left: 24px;
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--coral) 0%, #D4624D 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Fraunces', serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: white;
+            box-shadow: 0 4px 12px rgba(232, 115, 90, 0.35);
+        }
+
+        .panel:nth-child(even) .panel-number {
+            background: linear-gradient(135deg, var(--teal) 0%, #237A6A 100%);
+            box-shadow: 0 4px 12px rgba(45, 139, 122, 0.35);
+        }
+
+        /* Icon Container */
+        .icon-container {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 24px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            position: relative;
+        }
+
+        .panel:nth-child(odd) .icon-container {
+            background: var(--coral-light);
+        }
+
+        .panel:nth-child(even) .icon-container {
+            background: var(--teal-light);
+        }
+
+        /* Decorative dots */
+        .icon-container::before {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            top: -4px;
+            right: -4px;
+        }
+
+        .panel:nth-child(odd) .icon-container::before {
+            background: var(--coral);
+            opacity: 0.4;
+        }
+
+        .panel:nth-child(even) .icon-container::before {
+            background: var(--teal);
+            opacity: 0.4;
+        }
+
+        /* Panel Content */
+        .panel-title {
+            font-family: 'Fraunces', serif;
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--charcoal);
+            text-align: center;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .panel-description {
+            font-size: 14px;
+            color: var(--slate);
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        /* Flow Connector */
+        .flow-indicator {
+            display: none;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 56px;
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-text {
+            font-size: 13px;
+            color: var(--muted);
+            margin-bottom: 16px;
+        }
+
+        .benefits {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .benefit {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--charcoal);
+        }
+
+        .benefit-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--teal-light);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .benefit:nth-child(2) .benefit-icon {
+            background: var(--coral-light);
+        }
+
+        /* Print Styles */
+        @media print {
+            .panel {
+                break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+
+            .header::before {
+                background: var(--coral);
+            }
+
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <div class="logo-icon">🐱</div>
+                <span class="logo-text">Cat Weight Companion</span>
+            </div>
+            <p class="subtitle">The Customer Journey</p>
+            <span class="tagline">From Purchase to Reorder</span>
+        </header>
+
+        <div class="storyboard">
+            <!-- Panel 1 -->
+            <div class="panel">
+                <div class="panel-number">1</div>
+                <div class="icon-container">🛒</div>
+                <h3 class="panel-title">Customer Buys Food</h3>
+                <p class="panel-description">Customer purchases their preferred cat food brand. Each bag features a unique QR code on the packaging.</p>
+            </div>
+
+            <!-- Panel 2 -->
+            <div class="panel">
+                <div class="panel-number">2</div>
+                <div class="icon-container">📱</div>
+                <h3 class="panel-title">Scans QR Code</h3>
+                <p class="panel-description">Using their smartphone camera, the customer scans the QR code to instantly access the companion app.</p>
+            </div>
+
+            <!-- Panel 3 -->
+            <div class="panel">
+                <div class="panel-number">3</div>
+                <div class="icon-container">✨</div>
+                <h3 class="panel-title">Sees Brand Splash</h3>
+                <p class="panel-description">A branded welcome screen appears with the food brand's logo and personalized health tracking features.</p>
+            </div>
+
+            <!-- Panel 4 -->
+            <div class="panel">
+                <div class="panel-number">4</div>
+                <div class="icon-container">⚖️</div>
+                <h3 class="panel-title">Tracks Weight</h3>
+                <p class="panel-description">Customer weighs their cat and logs the data. The app tracks progress and provides health insights over time.</p>
+            </div>
+
+            <!-- Panel 5 -->
+            <div class="panel">
+                <div class="panel-number">5</div>
+                <div class="icon-container">🔔</div>
+                <h3 class="panel-title">Gets Smart Reminder</h3>
+                <p class="panel-description">Based on feeding data and bag size, the app sends a timely notification when it's time to reorder food.</p>
+            </div>
+
+            <!-- Panel 6 -->
+            <div class="panel">
+                <div class="panel-number">6</div>
+                <div class="icon-container">🎉</div>
+                <h3 class="panel-title">One-Tap Reorder</h3>
+                <p class="panel-description">With a single tap, the customer reorders their preferred food. Seamless checkout drives brand loyalty.</p>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p class="footer-text">Driving engagement, retention, and repeat purchases through pet health</p>
+            <div class="benefits">
+                <div class="benefit">
+                    <span class="benefit-icon">📊</span>
+                    <span>Data-Driven Insights</span>
+                </div>
+                <div class="benefit">
+                    <span class="benefit-icon">🔄</span>
+                    <span>Automated Reorders</span>
+                </div>
+                <div class="benefit">
+                    <span class="benefit-icon">💚</span>
+                    <span>Brand Loyalty</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Weight Companion - Before vs After</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --without-primary: #8B2635;
+            --without-secondary: #C4A484;
+            --without-bg: #F5F0EB;
+            --without-muted: #9A9A9A;
+            --without-dark: #2D2A26;
+
+            --with-primary: #0D5C4D;
+            --with-secondary: #34D399;
+            --with-accent: #10B981;
+            --with-bg: #F0FDF9;
+            --with-dark: #064E3B;
+
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B7280;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: linear-gradient(135deg, #FAFAFA 0%, #F5F5F5 100%);
+            min-height: 100vh;
+            padding: 60px 40px;
+            color: var(--text-primary);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .header h1 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 3.5rem;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+
+        .header h1 span {
+            font-style: italic;
+            color: var(--with-primary);
+        }
+
+        .header p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-bottom: 60px;
+        }
+
+        .column {
+            border-radius: 24px;
+            padding: 48px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .column::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.03;
+            pointer-events: none;
+        }
+
+        .without {
+            background: linear-gradient(180deg, var(--without-bg) 0%, #EDE8E3 100%);
+            border: 1px solid rgba(139, 38, 53, 0.1);
+        }
+
+        .without::before {
+            background: repeating-linear-gradient(
+                -45deg,
+                var(--without-dark),
+                var(--without-dark) 1px,
+                transparent 1px,
+                transparent 8px
+            );
+        }
+
+        .with {
+            background: linear-gradient(180deg, var(--with-bg) 0%, #ECFDF5 100%);
+            border: 1px solid rgba(13, 92, 77, 0.15);
+            box-shadow: 0 4px 40px rgba(16, 185, 129, 0.08);
+        }
+
+        .with::before {
+            background: radial-gradient(circle at 80% 20%, var(--with-accent) 0%, transparent 50%);
+            opacity: 0.05;
+        }
+
+        .column-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 40px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .without .status-badge {
+            background: rgba(139, 38, 53, 0.1);
+            color: var(--without-primary);
+        }
+
+        .with .status-badge {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--with-dark);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .without .status-dot {
+            background: var(--without-primary);
+        }
+
+        .with .status-dot {
+            background: var(--with-accent);
+            box-shadow: 0 0 8px var(--with-accent);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.1); }
+        }
+
+        .column-title {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.75rem;
+            font-weight: 400;
+        }
+
+        .without .column-title {
+            color: var(--without-dark);
+        }
+
+        .with .column-title {
+            color: var(--with-dark);
+        }
+
+        .journey {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            position: relative;
+        }
+
+        .step {
+            display: flex;
+            gap: 20px;
+            position: relative;
+            padding: 24px 0;
+        }
+
+        .step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 24px;
+            top: 72px;
+            bottom: 0;
+            width: 2px;
+        }
+
+        .without .step:not(:last-child)::after {
+            background: linear-gradient(180deg, var(--without-muted) 0%, transparent 100%);
+            opacity: 0.3;
+        }
+
+        .with .step:not(:last-child)::after {
+            background: linear-gradient(180deg, var(--with-accent) 0%, rgba(52, 211, 153, 0.2) 100%);
+        }
+
+        .step-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.25rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .without .step-icon {
+            background: white;
+            border: 1px solid rgba(0,0,0,0.08);
+            color: var(--without-muted);
+        }
+
+        .with .step-icon {
+            background: linear-gradient(135deg, var(--with-primary) 0%, var(--with-dark) 100%);
+            color: white;
+            box-shadow: 0 4px 12px rgba(13, 92, 77, 0.25);
+        }
+
+        .step-content {
+            flex: 1;
+            padding-top: 4px;
+        }
+
+        .step-title {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 6px;
+        }
+
+        .without .step-title {
+            color: var(--without-dark);
+        }
+
+        .with .step-title {
+            color: var(--with-dark);
+        }
+
+        .step-description {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+
+        .with .step-description {
+            color: var(--with-primary);
+            opacity: 0.8;
+        }
+
+        .arrow-indicator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 0;
+            color: var(--without-muted);
+            opacity: 0.4;
+        }
+
+        .with .arrow-indicator {
+            color: var(--with-accent);
+            opacity: 1;
+        }
+
+        .stats-section {
+            background: linear-gradient(135deg, var(--with-dark) 0%, #042F2E 100%);
+            border-radius: 24px;
+            padding: 48px 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(52, 211, 153, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .stats-section::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: 10%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .stats-label {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.5rem;
+            color: rgba(255,255,255,0.9);
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stats-grid {
+            display: flex;
+            gap: 64px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-family: 'Instrument Serif', serif;
+            font-size: 3.5rem;
+            font-weight: 400;
+            color: var(--with-secondary);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 48px;
+            padding-top: 32px;
+        }
+
+        .logo-mark {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--with-primary) 0%, var(--with-dark) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.25rem;
+        }
+
+        /* Subtle animation for the "with" column */
+        .with .step {
+            animation: fadeSlideIn 0.6s ease-out backwards;
+        }
+
+        .with .step:nth-child(1) { animation-delay: 0.1s; }
+        .with .step:nth-child(2) { animation-delay: 0.2s; }
+        .with .step:nth-child(3) { animation-delay: 0.3s; }
+        .with .step:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes fadeSlideIn {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Transform Your Customer <span>Journey</span></h1>
+            <p>See how Cat Weight Companion turns one-time buyers into engaged, loyal customers</p>
+        </header>
+
+        <div class="comparison">
+            <!-- WITHOUT Column -->
+            <div class="column without">
+                <div class="column-header">
+                    <span class="status-badge">
+                        <span class="status-dot"></span>
+                        Current State
+                    </span>
+                    <h2 class="column-title">Without Cat Weight Companion</h2>
+                </div>
+
+                <div class="journey">
+                    <div class="step">
+                        <div class="step-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Food Delivered</h3>
+                            <p class="step-description">Order arrives at customer's door. Transaction complete.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M8 12h8"/>
+                            </svg>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Customer Disappears</h3>
+                            <p class="step-description">No engagement touchpoints between orders. Radio silence.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                <circle cx="12" cy="12" r="3"/>
+                                <line x1="1" y1="1" x2="23" y2="23"/>
+                            </svg>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Blind to Consumption</h3>
+                            <p class="step-description">No visibility into feeding patterns or product usage rates.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                                <line x1="12" y1="17" x2="12.01" y2="17"/>
+                            </svg>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Hope They Reorder</h3>
+                            <p class="step-description">Cross fingers and wait. Maybe they'll come back. Maybe not.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WITH Column -->
+            <div class="column with">
+                <div class="column-header">
+                    <span class="status-badge">
+                        <span class="status-dot"></span>
+                        With Platform
+                    </span>
+                    <h2 class="column-title">With Cat Weight Companion</h2>
+                </div>
+
+                <div class="journey">
+                    <div class="step">
+                        <div class="step-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Food Delivered + App Onboarding</h3>
+                            <p class="step-description">QR code in package invites weight tracking. Engagement begins immediately.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                            </svg>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Weekly Weight Touchpoints</h3>
+                            <p class="step-description">Pet owners track progress weekly. Your brand stays top-of-mind.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                <path d="M2 17l10 5 10-5"/>
+                                <path d="M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Smart Reorder Predictions</h3>
+                            <p class="step-description">AI predicts when food runs low based on cat weight and feeding data.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="1" x2="12" y2="23"/>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                            </svg>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Attributed Reorders via Affiliate</h3>
+                            <p class="step-description">Track every conversion. Measure ROI with precision attribution.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-section">
+            <span class="stats-label">Projected Impact</span>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-value">3x</div>
+                    <div class="stat-label">Customer Engagement</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">20%+</div>
+                    <div class="stat-label">Reorder Lift Potential</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">100%</div>
+                    <div class="stat-label">Attribution Clarity</div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="logo-mark">
+                <div class="logo-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                </div>
+                Cat Weight Companion
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

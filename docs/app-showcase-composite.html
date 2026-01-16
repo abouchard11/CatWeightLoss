@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1400, initial-scale=1.0">
+    <title>Cat Weight Companion - App Showcase</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0EA5E9;
+            --primary-dark: #0284C7;
+            --success: #22C55E;
+            --warning: #F97316;
+            --activity: #8B5CF6;
+            --surface: #F8FAFC;
+            --dark-slate: #0F172A;
+            --slate-800: #1E293B;
+            --muted: #64748B;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(165deg, #0F172A 0%, #1E293B 40%, #0F172A 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Ambient background effects */
+        body::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -30%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(ellipse, rgba(14, 165, 233, 0.08) 0%, transparent 60%);
+            animation: drift 20s ease-in-out infinite;
+        }
+
+        body::after {
+            content: '';
+            position: absolute;
+            bottom: -40%;
+            right: -20%;
+            width: 70%;
+            height: 120%;
+            background: radial-gradient(ellipse, rgba(139, 92, 246, 0.06) 0%, transparent 60%);
+            animation: drift 25s ease-in-out infinite reverse;
+        }
+
+        @keyframes drift {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(30px, 20px) rotate(2deg); }
+        }
+
+        /* Noise texture overlay */
+        .noise-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        .showcase-container {
+            position: relative;
+            z-index: 1;
+            width: 1300px;
+            text-align: center;
+        }
+
+        /* Header */
+        .showcase-header {
+            margin-bottom: 64px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .brand-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 8px 16px;
+            border-radius: 100px;
+            margin-bottom: 24px;
+            backdrop-filter: blur(10px);
+        }
+
+        .brand-badge i {
+            color: var(--primary);
+        }
+
+        .brand-badge span {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .showcase-title {
+            font-family: 'Instrument Serif', serif;
+            font-size: 72px;
+            font-weight: 400;
+            color: white;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        .showcase-title span {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--activity) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .showcase-tagline {
+            font-size: 28px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+        }
+
+        .showcase-tagline .dot {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: var(--primary);
+            border-radius: 50%;
+            margin: 0 16px;
+            vertical-align: middle;
+        }
+
+        /* Phone Mockups Container */
+        .phones-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 48px;
+            perspective: 2000px;
+        }
+
+        /* Individual Phone */
+        .phone-wrapper {
+            position: relative;
+            animation: floatIn 1.2s ease-out backwards;
+        }
+
+        .phone-wrapper:nth-child(1) { animation-delay: 0.2s; }
+        .phone-wrapper:nth-child(2) { animation-delay: 0.4s; }
+        .phone-wrapper:nth-child(3) { animation-delay: 0.6s; }
+
+        @keyframes floatIn {
+            from {
+                opacity: 0;
+                transform: translateY(60px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .phone-wrapper.center {
+            transform: translateY(-20px);
+        }
+
+        .phone-wrapper.center .phone-device {
+            transform: scale(1.05);
+        }
+
+        .phone-label {
+            position: absolute;
+            bottom: -48px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 8px 20px;
+            border-radius: 100px;
+            white-space: nowrap;
+            backdrop-filter: blur(10px);
+        }
+
+        .phone-label span {
+            font-size: 13px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.8);
+            letter-spacing: 0.02em;
+        }
+
+        .phone-label i {
+            margin-right: 8px;
+            font-size: 12px;
+        }
+
+        .phone-label i.weight { color: var(--primary); }
+        .phone-label i.activity { color: var(--activity); }
+        .phone-label i.reorder { color: var(--success); }
+
+        /* Phone Device */
+        .phone-device {
+            width: 280px;
+            height: 580px;
+            background: #000;
+            border-radius: 44px;
+            padding: 12px;
+            box-shadow:
+                0 50px 100px -20px rgba(0, 0, 0, 0.6),
+                0 30px 60px -10px rgba(0, 0, 0, 0.4),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.1),
+                0 0 0 2px #1a1a1a;
+            position: relative;
+            transition: transform 0.4s ease;
+        }
+
+        .phone-device::before {
+            content: '';
+            position: absolute;
+            top: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90px;
+            height: 28px;
+            background: #000;
+            border-radius: 20px;
+            z-index: 10;
+        }
+
+        .phone-wrapper:hover .phone-device {
+            transform: translateY(-8px);
+        }
+
+        .phone-wrapper.center:hover .phone-device {
+            transform: scale(1.05) translateY(-8px);
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: var(--surface);
+            border-radius: 34px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Screen Content Styling */
+        .screen-content {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        /* Status Bar */
+        .status-bar {
+            height: 44px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+            padding-top: 8px;
+        }
+
+        .status-time {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--dark-slate);
+        }
+
+        .status-icons {
+            display: flex;
+            gap: 4px;
+            font-size: 12px;
+            color: var(--dark-slate);
+        }
+
+        /* Screen Header */
+        .screen-header {
+            background: white;
+            padding: 8px 16px 16px;
+        }
+
+        .screen-header h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--dark-slate);
+        }
+
+        .screen-header p {
+            font-size: 11px;
+            color: var(--muted);
+        }
+
+        /* Content Area */
+        .content-area {
+            padding: 12px;
+            background: var(--surface);
+            height: calc(100% - 130px);
+            overflow: hidden;
+        }
+
+        /* Cards */
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 14px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .card-small {
+            padding: 10px 12px;
+        }
+
+        /* Weight Dashboard Screen */
+        .weight-hero {
+            text-align: center;
+            padding: 16px 0;
+        }
+
+        .weight-current {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--dark-slate);
+            line-height: 1;
+        }
+
+        .weight-current span {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--muted);
+        }
+
+        .weight-change {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: rgba(34, 197, 94, 0.1);
+            color: var(--success);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        .weight-chart {
+            height: 80px;
+            background: linear-gradient(to bottom, rgba(14, 165, 233, 0.1), transparent);
+            border-radius: 12px;
+            margin-top: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chart-line {
+            position: absolute;
+            bottom: 20px;
+            left: 10px;
+            right: 10px;
+            height: 2px;
+        }
+
+        .chart-svg {
+            width: 100%;
+            height: 60px;
+            position: absolute;
+            bottom: 10px;
+        }
+
+        .goal-indicator {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .goal-label {
+            font-size: 11px;
+            color: var(--muted);
+        }
+
+        .goal-value {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* Activity Screen */
+        .activity-ring-container {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .activity-ring {
+            width: 72px;
+            height: 72px;
+            position: relative;
+        }
+
+        .activity-ring svg {
+            transform: rotate(-90deg);
+        }
+
+        .ring-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--activity);
+        }
+
+        .activity-stats {
+            flex: 1;
+        }
+
+        .activity-title {
+            font-size: 11px;
+            color: var(--muted);
+            margin-bottom: 4px;
+        }
+
+        .activity-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--dark-slate);
+        }
+
+        .activity-value span {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .activity-goal {
+            font-size: 11px;
+            color: var(--success);
+            margin-top: 4px;
+        }
+
+        .timer-display {
+            text-align: center;
+            padding: 16px 0;
+        }
+
+        .timer-value {
+            font-size: 40px;
+            font-weight: 700;
+            color: var(--dark-slate);
+            letter-spacing: -0.02em;
+        }
+
+        .timer-btn {
+            background: var(--activity);
+            color: white;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 12px;
+            width: 100%;
+        }
+
+        .activity-chips {
+            display: flex;
+            gap: 6px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+
+        .chip {
+            padding: 6px 10px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .chip.active {
+            background: var(--activity);
+            color: white;
+        }
+
+        .chip.inactive {
+            background: rgba(0,0,0,0.05);
+            color: var(--muted);
+        }
+
+        /* Reorder Screen */
+        .urgency-banner {
+            background: linear-gradient(135deg, var(--warning), #EA580C);
+            color: white;
+            padding: 12px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .urgency-icon {
+            width: 36px;
+            height: 36px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .urgency-text {
+            flex: 1;
+        }
+
+        .urgency-text strong {
+            display: block;
+            font-size: 13px;
+        }
+
+        .urgency-text span {
+            font-size: 11px;
+            opacity: 0.9;
+        }
+
+        .product-card {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .product-img {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #F1F5F9, #E2E8F0);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--muted);
+        }
+
+        .product-info {
+            flex: 1;
+        }
+
+        .product-brand {
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+        }
+
+        .product-name {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--dark-slate);
+        }
+
+        .product-size {
+            font-size: 11px;
+            color: var(--muted);
+        }
+
+        .retailer-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .retailer-logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: white;
+            font-size: 14px;
+        }
+
+        .retailer-logo.chewy { background: #1C49C2; }
+        .retailer-logo.amazon { background: #FF9900; }
+        .retailer-logo.direct { background: linear-gradient(135deg, var(--success), #16A34A); }
+
+        .retailer-info {
+            flex: 1;
+        }
+
+        .retailer-name {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--dark-slate);
+        }
+
+        .retailer-price {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .retailer-badge {
+            font-size: 9px;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            margin-left: 6px;
+        }
+
+        .badge-prime {
+            background: #232F3E;
+            color: white;
+        }
+
+        .badge-discount {
+            background: var(--success);
+            color: white;
+        }
+
+        /* Bottom Nav */
+        .bottom-nav {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            background: white;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 0 16px;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            color: var(--muted);
+            font-size: 10px;
+        }
+
+        .nav-item i {
+            font-size: 18px;
+        }
+
+        .nav-item.active {
+            color: var(--primary);
+        }
+
+        .nav-item.active.activity-nav {
+            color: var(--activity);
+        }
+
+        .nav-item.active.reorder-nav {
+            color: var(--success);
+        }
+
+        /* Footer */
+        .showcase-footer {
+            margin-top: 80px;
+            animation: fadeInUp 1s ease-out 0.8s backwards;
+        }
+
+        .feature-badges {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 24px;
+        }
+
+        .feature-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .feature-badge i {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: var(--primary);
+        }
+
+        .feature-badge span {
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .cta-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(14, 165, 233, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(14, 165, 233, 0.4);
+        }
+
+        .cta-secondary {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="noise-overlay"></div>
+
+    <div class="showcase-container">
+        <!-- Header -->
+        <div class="showcase-header">
+            <div class="brand-badge">
+                <i class="fas fa-cat"></i>
+                <span>Cat Weight Companion</span>
+            </div>
+            <h1 class="showcase-title">Your Cat's <span>Healthiest</span> Life</h1>
+            <p class="showcase-tagline">
+                Track <span class="dot"></span> Engage <span class="dot"></span> Reorder
+            </p>
+        </div>
+
+        <!-- Phone Mockups -->
+        <div class="phones-container">
+            <!-- Weight Dashboard Phone -->
+            <div class="phone-wrapper">
+                <div class="phone-device">
+                    <div class="phone-screen">
+                        <div class="screen-content">
+                            <div class="status-bar">
+                                <span class="status-time">9:41</span>
+                                <div class="status-icons">
+                                    <i class="fas fa-signal"></i>
+                                    <i class="fas fa-wifi"></i>
+                                    <i class="fas fa-battery-full"></i>
+                                </div>
+                            </div>
+                            <div class="screen-header">
+                                <h2>Weight Dashboard</h2>
+                                <p>Luna's Progress</p>
+                            </div>
+                            <div class="content-area">
+                                <div class="card">
+                                    <div class="weight-hero">
+                                        <div class="weight-current">12.4 <span>lbs</span></div>
+                                        <div class="weight-change">
+                                            <i class="fas fa-arrow-down"></i> 0.6 lbs this month
+                                        </div>
+                                    </div>
+                                    <div class="weight-chart">
+                                        <svg class="chart-svg" viewBox="0 0 200 50" preserveAspectRatio="none">
+                                            <defs>
+                                                <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                                    <stop offset="0%" style="stop-color:#0EA5E9;stop-opacity:0.3" />
+                                                    <stop offset="100%" style="stop-color:#0EA5E9;stop-opacity:0" />
+                                                </linearGradient>
+                                            </defs>
+                                            <path d="M0,35 Q25,30 50,32 T100,25 T150,20 T200,15 L200,50 L0,50 Z" fill="url(#chartGradient)"/>
+                                            <path d="M0,35 Q25,30 50,32 T100,25 T150,20 T200,15" fill="none" stroke="#0EA5E9" stroke-width="2"/>
+                                            <circle cx="200" cy="15" r="4" fill="#0EA5E9"/>
+                                        </svg>
+                                    </div>
+                                    <div class="goal-indicator">
+                                        <span class="goal-label">Target Weight</span>
+                                        <span class="goal-value">11.5 lbs</span>
+                                    </div>
+                                </div>
+                                <div class="card card-small">
+                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                        <div>
+                                            <div style="font-size: 11px; color: var(--muted);">Weekly Weigh-in</div>
+                                            <div style="font-size: 13px; font-weight: 600; color: var(--dark-slate);">Due Tomorrow</div>
+                                        </div>
+                                        <div style="width: 40px; height: 40px; background: rgba(14, 165, 233, 0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                                            <i class="fas fa-bell" style="color: var(--primary);"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card card-small">
+                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                        <div>
+                                            <div style="font-size: 11px; color: var(--muted);">Progress</div>
+                                            <div style="font-size: 13px; font-weight: 600; color: var(--success);">67% to Goal</div>
+                                        </div>
+                                        <div style="width: 80px; height: 6px; background: #E2E8F0; border-radius: 3px; overflow: hidden;">
+                                            <div style="width: 67%; height: 100%; background: var(--success); border-radius: 3px;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bottom-nav">
+                                <div class="nav-item active">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>Weight</span>
+                                </div>
+                                <div class="nav-item">
+                                    <i class="fas fa-paw"></i>
+                                    <span>Activity</span>
+                                </div>
+                                <div class="nav-item">
+                                    <i class="fas fa-utensils"></i>
+                                    <span>Food</span>
+                                </div>
+                                <div class="nav-item">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span>Reorder</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="phone-label">
+                    <i class="fas fa-chart-line weight"></i>
+                    <span>Weight Dashboard</span>
+                </div>
+            </div>
+
+            <!-- Play Time Phone (Center - Featured) -->
+            <div class="phone-wrapper center">
+                <div class="phone-device">
+                    <div class="phone-screen">
+                        <div class="screen-content">
+                            <div class="status-bar">
+                                <span class="status-time">9:41</span>
+                                <div class="status-icons">
+                                    <i class="fas fa-signal"></i>
+                                    <i class="fas fa-wifi"></i>
+                                    <i class="fas fa-battery-full"></i>
+                                </div>
+                            </div>
+                            <div class="screen-header">
+                                <h2>Play Time</h2>
+                                <p>Keep Luna Active</p>
+                            </div>
+                            <div class="content-area">
+                                <div class="card">
+                                    <div class="activity-ring-container">
+                                        <div class="activity-ring">
+                                            <svg width="72" height="72" viewBox="0 0 72 72">
+                                                <circle cx="36" cy="36" r="30" fill="none" stroke="#E2E8F0" stroke-width="6"/>
+                                                <circle cx="36" cy="36" r="30" fill="none" stroke="#8B5CF6" stroke-width="6"
+                                                    stroke-dasharray="188" stroke-dashoffset="47" stroke-linecap="round"/>
+                                            </svg>
+                                            <span class="ring-center">75%</span>
+                                        </div>
+                                        <div class="activity-stats">
+                                            <div class="activity-title">Today's Activity</div>
+                                            <div class="activity-value">15 <span>min</span></div>
+                                            <div class="activity-goal"><i class="fas fa-check-circle"></i> 75% of goal</div>
+                                        </div>
+                                    </div>
+                                    <div class="activity-chips">
+                                        <span class="chip active"><i class="fas fa-bullseye"></i> Laser</span>
+                                        <span class="chip inactive"><i class="fas fa-feather"></i> Feather</span>
+                                        <span class="chip inactive"><i class="fas fa-running"></i> Chase</span>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="timer-display">
+                                        <div style="font-size: 11px; color: var(--muted); margin-bottom: 4px;">Session Timer</div>
+                                        <div class="timer-value">05:32</div>
+                                        <div style="font-size: 11px; color: var(--warning); margin-top: 4px;">~12 kcal burned</div>
+                                        <button class="timer-btn">
+                                            <i class="fas fa-pause"></i> Pause Session
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card card-small">
+                                    <div style="font-size: 11px; color: var(--muted); margin-bottom: 8px;">This Week</div>
+                                    <div style="display: flex; align-items: flex-end; height: 40px; gap: 6px;">
+                                        <div style="flex: 1; background: rgba(139, 92, 246, 0.3); border-radius: 3px; height: 40%;"></div>
+                                        <div style="flex: 1; background: rgba(139, 92, 246, 0.5); border-radius: 3px; height: 60%;"></div>
+                                        <div style="flex: 1; background: rgba(139, 92, 246, 0.7); border-radius: 3px; height: 80%;"></div>
+                                        <div style="flex: 1; background: rgba(139, 92, 246, 0.4); border-radius: 3px; height: 50%;"></div>
+                                        <div style="flex: 1; background: rgba(139, 92, 246, 0.6); border-radius: 3px; height: 70%;"></div>
+                                        <div style="flex: 1; background: rgba(139, 92, 246, 0.2); border-radius: 3px; height: 30%;"></div>
+                                        <div style="flex: 1; background: #8B5CF6; border-radius: 3px; height: 60%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bottom-nav">
+                                <div class="nav-item">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>Weight</span>
+                                </div>
+                                <div class="nav-item active activity-nav">
+                                    <i class="fas fa-paw"></i>
+                                    <span>Activity</span>
+                                </div>
+                                <div class="nav-item">
+                                    <i class="fas fa-utensils"></i>
+                                    <span>Food</span>
+                                </div>
+                                <div class="nav-item">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span>Reorder</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="phone-label">
+                    <i class="fas fa-paw activity"></i>
+                    <span>Play Time Tracker</span>
+                </div>
+            </div>
+
+            <!-- Reorder Phone -->
+            <div class="phone-wrapper">
+                <div class="phone-device">
+                    <div class="phone-screen">
+                        <div class="screen-content">
+                            <div class="status-bar">
+                                <span class="status-time">9:41</span>
+                                <div class="status-icons">
+                                    <i class="fas fa-signal"></i>
+                                    <i class="fas fa-wifi"></i>
+                                    <i class="fas fa-battery-full"></i>
+                                </div>
+                            </div>
+                            <div class="screen-header">
+                                <h2>Reorder Food</h2>
+                                <p>for Luna</p>
+                            </div>
+                            <div class="content-area">
+                                <div class="urgency-banner">
+                                    <div class="urgency-icon">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                    </div>
+                                    <div class="urgency-text">
+                                        <strong>Running Low!</strong>
+                                        <span>~3 days of food remaining</span>
+                                    </div>
+                                </div>
+                                <div class="card" style="margin-top: 10px;">
+                                    <div class="product-card">
+                                        <div class="product-img">
+                                            <i class="fas fa-box-open"></i>
+                                        </div>
+                                        <div class="product-info">
+                                            <div class="product-brand">Premium Brand</div>
+                                            <div class="product-name">Adult Indoor Formula</div>
+                                            <div class="product-size">12 lb bag</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="font-size: 11px; color: var(--muted); margin: 12px 0 8px;">Buy from your preferred retailer</div>
+                                <div class="retailer-btn">
+                                    <div class="retailer-logo chewy">C</div>
+                                    <div class="retailer-info">
+                                        <div class="retailer-name">Buy on Chewy</div>
+                                        <div class="retailer-price">$42.99 <span class="retailer-badge" style="background: rgba(34, 197, 94, 0.1); color: var(--success);">Free Ship</span></div>
+                                    </div>
+                                </div>
+                                <div class="retailer-btn">
+                                    <div class="retailer-logo amazon"><i class="fab fa-amazon"></i></div>
+                                    <div class="retailer-info">
+                                        <div class="retailer-name">Buy on Amazon</div>
+                                        <div class="retailer-price">$44.99 <span class="retailer-badge badge-prime">Prime</span></div>
+                                    </div>
+                                </div>
+                                <div class="retailer-btn" style="border: 2px solid var(--success);">
+                                    <div class="retailer-logo direct"><i class="fas fa-store"></i></div>
+                                    <div class="retailer-info">
+                                        <div class="retailer-name">Buy Direct</div>
+                                        <div class="retailer-price" style="color: var(--success);">$38.69 <span class="retailer-badge badge-discount">10% OFF</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bottom-nav">
+                                <div class="nav-item">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>Weight</span>
+                                </div>
+                                <div class="nav-item">
+                                    <i class="fas fa-paw"></i>
+                                    <span>Activity</span>
+                                </div>
+                                <div class="nav-item">
+                                    <i class="fas fa-utensils"></i>
+                                    <span>Food</span>
+                                </div>
+                                <div class="nav-item active reorder-nav">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span>Reorder</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="phone-label">
+                    <i class="fas fa-shopping-cart reorder"></i>
+                    <span>One-Tap Reorder</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="showcase-footer">
+            <div class="feature-badges">
+                <div class="feature-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>White-Label Ready</span>
+                </div>
+                <div class="feature-badge">
+                    <i class="fas fa-chart-pie"></i>
+                    <span>Outcome Analytics</span>
+                </div>
+                <div class="feature-badge">
+                    <i class="fas fa-link"></i>
+                    <span>Affiliate Integration</span>
+                </div>
+                <div class="feature-badge">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>iOS & Android</span>
+                </div>
+            </div>
+            <div class="cta-section">
+                <a href="#" class="cta-btn">
+                    <i class="fas fa-play-circle"></i>
+                    Request Demo
+                </a>
+                <span class="cta-secondary">or contact sales@catweightcompanion.com</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
