@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Weight Companion - Sales One-Pager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e2e8f0;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .page {
+            width: 8.5in;
+            height: 11in;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        @media print {
+            body { background: none; }
+            .page { margin: 0; box-shadow: none; height: 100%; width: 100%; }
+        }
+        .step-arrow::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -16px;
+            transform: translateY(-50%);
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+            border-left: 8px solid #cbd5e1;
+        }
+        .step-card:last-child .step-arrow::after {
+            display: none;
+        }
+        .bg-grid-pattern {
+            background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="py-10 flex justify-center text-slate-800">
+    <div class="page shadow-2xl">
+        <!-- Header -->
+        <div class="bg-gradient-to-r from-slate-800 to-slate-900 text-white px-8 py-6">
+            <div class="flex justify-between items-start">
+                <div>
+                    <span class="inline-block bg-sky-500 text-white text-xs font-semibold px-3 py-1 rounded-full mb-3">WHITE-LABEL iOS APP</span>
+                    <h1 class="text-3xl font-bold tracking-tight">Cat Weight Companion</h1>
+                    <p class="text-lg text-slate-300 mt-1">Turn Your Packaging Into a <span class="text-sky-400 font-semibold">Retention Channel</span></p>
+                </div>
+                <div class="text-6xl text-sky-400 opacity-80">
+                    <i class="fas fa-cat"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 px-8 py-5 bg-grid-pattern">
+            <!-- How It Works -->
+            <div class="mb-5">
+                <h2 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">How It Works</h2>
+                <div class="flex justify-between items-center gap-2">
+                    <div class="step-card flex-1 bg-white rounded-lg border border-slate-200 p-4 text-center relative">
+                        <div class="w-12 h-12 bg-slate-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                            <i class="fas fa-qrcode text-xl text-slate-600"></i>
+                        </div>
+                        <p class="font-semibold text-sm text-slate-800">QR on Packaging</p>
+                        <p class="text-xs text-slate-500">Customer scans</p>
+                        <div class="step-arrow"></div>
+                    </div>
+                    <div class="step-card flex-1 bg-white rounded-lg border border-slate-200 p-4 text-center relative">
+                        <div class="w-12 h-12 bg-slate-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                            <i class="fas fa-mobile-alt text-xl text-slate-600"></i>
+                        </div>
+                        <p class="font-semibold text-sm text-slate-800">Your Branded App</p>
+                        <p class="text-xs text-slate-500">Your logo & colors</p>
+                        <div class="step-arrow"></div>
+                    </div>
+                    <div class="step-card flex-1 bg-white rounded-lg border border-slate-200 p-4 text-center relative">
+                        <div class="w-12 h-12 bg-slate-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                            <i class="fas fa-weight text-xl text-slate-600"></i>
+                        </div>
+                        <p class="font-semibold text-sm text-slate-800">Weight Tracking</p>
+                        <p class="text-xs text-slate-500">+ Portion calculator</p>
+                        <div class="step-arrow"></div>
+                    </div>
+                    <div class="step-card flex-1 bg-white rounded-lg border border-slate-200 p-4 text-center relative">
+                        <div class="w-12 h-12 bg-slate-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                            <i class="fas fa-shopping-cart text-xl text-sky-500"></i>
+                        </div>
+                        <p class="font-semibold text-sm text-slate-800">One-Tap Reorder</p>
+                        <p class="text-xs text-slate-500">Your affiliate link</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Two Columns -->
+            <div class="grid grid-cols-2 gap-4 mb-5">
+                <!-- What You Get -->
+                <div class="bg-white rounded-lg border border-slate-200 p-4">
+                    <div class="flex items-center gap-2 mb-3">
+                        <div class="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center">
+                            <i class="fas fa-check text-white text-xs"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-800">What You Get</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check text-emerald-500 mt-1 text-xs"></i>
+                            <div><span class="font-semibold">Engagement data</span><br><span class="text-slate-500 text-xs">On every customer who scans packaging</span></div>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check text-emerald-500 mt-1 text-xs"></i>
+                            <div><span class="font-semibold">Reorder attribution</span><br><span class="text-slate-500 text-xs">Link to Chewy, Petco, or your D2C site</span></div>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check text-emerald-500 mt-1 text-xs"></i>
+                            <div><span class="font-semibold">Brand touchpoint</span><br><span class="text-slate-500 text-xs">Daily utility between purchases</span></div>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check text-emerald-500 mt-1 text-xs"></i>
+                            <div><span class="font-semibold">Portion Calculator</span><br><span class="text-slate-500 text-xs">Calibrated to YOUR food's specific calories</span></div>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check text-emerald-500 mt-1 text-xs"></i>
+                            <div><span class="font-semibold">Analytics dashboard</span><br><span class="text-slate-500 text-xs">Detailed breakdown by SKU & region</span></div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- What You Don't Get -->
+                <div class="bg-slate-50 rounded-lg border border-slate-200 p-4">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-2">
+                            <div class="w-6 h-6 bg-slate-400 rounded-full flex items-center justify-center">
+                                <i class="fas fa-times text-white text-xs"></i>
+                            </div>
+                            <h3 class="font-bold text-slate-600">What You Don't Get</h3>
+                        </div>
+                        <span class="text-xs text-slate-400">(By Design)</span>
+                    </div>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-times text-slate-400 mt-1 text-xs"></i>
+                            <div><span class="font-semibold text-slate-600">Medical liability</span><br><span class="text-xs">Strictly a tracking tool only</span></div>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-times text-slate-400 mt-1 text-xs"></i>
+                            <div><span class="font-semibold text-slate-600">Data breach risk</span><br><span class="text-xs">100% of data stays on user's device</span></div>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-times text-slate-400 mt-1 text-xs"></i>
+                            <div><span class="font-semibold text-slate-600">IT project scope</span><br><span class="text-xs">No backend needed. Plug & play.</span></div>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-times text-slate-400 mt-1 text-xs"></i>
+                            <div><span class="font-semibold text-slate-600">Ongoing dev burden</span><br><span class="text-xs">We maintain & update it for you</span></div>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-times text-slate-400 mt-1 text-xs"></i>
+                            <div><span class="font-semibold text-slate-600">Third-party data sharing</span><br><span class="text-xs">Zero. None. Nada.</span></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Timeline -->
+            <div class="mb-5">
+                <h2 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Implementation Timeline</h2>
+                <div class="bg-white rounded-lg border border-slate-200 p-4">
+                    <div class="flex items-center justify-between relative">
+                        <div class="absolute top-3 left-0 right-0 h-0.5 bg-gradient-to-r from-slate-200 via-sky-300 to-sky-500"></div>
+                        <div class="flex-1 text-center relative z-10">
+                            <div class="w-3 h-3 bg-slate-300 rounded-full mx-auto mb-2"></div>
+                            <p class="text-xs font-semibold text-slate-600">WEEK 1-2</p>
+                            <p class="text-xs text-slate-500">Brand Config</p>
+                        </div>
+                        <div class="flex-1 text-center relative z-10">
+                            <div class="w-3 h-3 bg-slate-400 rounded-full mx-auto mb-2"></div>
+                            <p class="text-xs font-semibold text-slate-600">WEEK 3-4</p>
+                            <p class="text-xs text-slate-500">QR Generation</p>
+                        </div>
+                        <div class="flex-1 text-center relative z-10">
+                            <div class="w-3 h-3 bg-sky-400 rounded-full mx-auto mb-2"></div>
+                            <p class="text-xs font-semibold text-slate-600">WEEK 5-6</p>
+                            <p class="text-xs text-slate-500">Internal Review</p>
+                        </div>
+                        <div class="flex-1 text-center relative z-10">
+                            <div class="w-3 h-3 bg-sky-500 rounded-full mx-auto mb-2"></div>
+                            <p class="text-xs font-semibold text-slate-600">WEEK 7-8</p>
+                            <p class="text-xs text-slate-500">Packaging Plan</p>
+                        </div>
+                        <div class="flex-1 text-center relative z-10">
+                            <div class="w-3 h-3 bg-sky-600 rounded-full mx-auto mb-2"></div>
+                            <p class="text-xs font-semibold text-sky-600">WEEK 9-12</p>
+                            <p class="text-xs text-slate-500">Soft Launch</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Row -->
+            <div class="bg-slate-800 rounded-lg p-4 mb-5 grid grid-cols-4 gap-4 text-center text-white">
+                <div>
+                    <p class="text-2xl font-bold text-sky-400">0</p>
+                    <p class="text-xs text-slate-400 uppercase">External Dependencies</p>
+                </div>
+                <div>
+                    <p class="text-2xl font-bold text-sky-400">8-12</p>
+                    <p class="text-xs text-slate-400 uppercase">Weeks to Launch</p>
+                </div>
+                <div>
+                    <p class="text-2xl font-bold text-sky-400">100%</p>
+                    <p class="text-xs text-slate-400 uppercase">On-Device Data</p>
+                </div>
+                <div>
+                    <p class="text-2xl font-bold text-sky-400">iOS 17+</p>
+                    <p class="text-xs text-slate-400 uppercase">Native SwiftUI</p>
+                </div>
+            </div>
+
+            <!-- Pilot + CTA Row -->
+            <div class="flex gap-4">
+                <!-- Pilot Box -->
+                <div class="flex-1 bg-amber-50 border-2 border-amber-200 rounded-lg p-4 relative">
+                    <span class="absolute -top-3 left-4 bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full">LIMITED OPPORTUNITY</span>
+                    <div class="flex items-start gap-3 mt-2">
+                        <div class="w-8 h-8 bg-amber-400 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-star text-white text-sm"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-800">90-Day Pilot Program</h3>
+                            <p class="text-sm text-slate-600">Reduced setup fee. Clear success metrics or walk away.<br><span class="text-amber-600 font-semibold">One premium brand per category.</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="w-64 bg-slate-100 rounded-lg p-4 text-right">
+                    <p class="text-xs text-slate-500 uppercase mb-2">See It With Your Branding</p>
+                    <a href="#" class="inline-block bg-sky-500 hover:bg-sky-600 text-white font-semibold px-4 py-2 rounded-lg text-sm transition-colors">
+                        Book 15-Minute Demo <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                    <p class="text-sm font-semibold text-slate-700 mt-2">Sasha Labbe</p>
+                    <p class="text-xs text-slate-500">sasha@catweightcompanion.com</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="bg-slate-100 px-8 py-3 text-center border-t border-slate-200">
+            <p class="text-xs text-slate-500"><span class="font-semibold text-slate-700">Cat Weight Companion</span> — Your brand. Your customers. Zero liability.</p>
+        </div>
+    </div>
+</body>
+</html>

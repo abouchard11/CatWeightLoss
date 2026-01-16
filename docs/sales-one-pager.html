@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Weight Companion - One Pager</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            color: #1e293b;
+            line-height: 1.5;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.5in;
+            background: white;
+        }
+
+        /* For PDF printing */
+        @media print {
+            body {
+                padding: 0.25in;
+            }
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 3px solid #0ea5e9;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            color: #0ea5e9;
+            margin-bottom: 4px;
+        }
+
+        .header .tagline {
+            font-size: 18px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .header .subtitle {
+            font-size: 14px;
+            color: #94a3b8;
+            margin-top: 4px;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #0ea5e9;
+            margin-bottom: 10px;
+            padding-bottom: 4px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .flow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f8fafc;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+
+        .flow-step {
+            text-align: center;
+            flex: 1;
+        }
+
+        .flow-step .icon {
+            font-size: 24px;
+            margin-bottom: 4px;
+        }
+
+        .flow-step .label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .flow-step .desc {
+            font-size: 10px;
+            color: #64748b;
+        }
+
+        .flow-arrow {
+            color: #0ea5e9;
+            font-size: 20px;
+            padding: 0 8px;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .card {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .card h3 {
+            font-size: 13px;
+            color: #0ea5e9;
+            margin-bottom: 8px;
+        }
+
+        .card ul {
+            list-style: none;
+            font-size: 12px;
+        }
+
+        .card li {
+            padding: 4px 0;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .card li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #22c55e;
+            font-weight: bold;
+        }
+
+        .card.risk li::before {
+            content: "✗";
+            color: #ef4444;
+        }
+
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            background: linear-gradient(90deg, #0ea5e9 0%, #22c55e 100%);
+            border-radius: 8px;
+            padding: 12px 16px;
+            color: white;
+        }
+
+        .timeline-item {
+            text-align: center;
+            flex: 1;
+        }
+
+        .timeline-item .week {
+            font-size: 11px;
+            opacity: 0.8;
+        }
+
+        .timeline-item .milestone {
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .pilot-box {
+            background: #fef3c7;
+            border: 2px solid #f59e0b;
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .pilot-box h3 {
+            color: #b45309;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .pilot-box p {
+            font-size: 12px;
+            color: #78350f;
+        }
+
+        .pilot-box .highlight {
+            font-weight: 600;
+        }
+
+        .cta {
+            background: #0ea5e9;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 16px;
+        }
+
+        .cta h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .cta p {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        .cta .contact {
+            margin-top: 12px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 16px;
+            padding-top: 12px;
+            border-top: 1px solid #e2e8f0;
+            font-size: 12px;
+            color: #94a3b8;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            padding: 12px 0;
+        }
+
+        .stat {
+            flex: 1;
+        }
+
+        .stat .number {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0ea5e9;
+        }
+
+        .stat .label {
+            font-size: 10px;
+            color: #64748b;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Cat Weight Companion</h1>
+        <div class="tagline">Turn Your Packaging Into a Retention Channel</div>
+        <div class="subtitle">White-label iOS app for pet food brands</div>
+    </div>
+
+    <div class="section">
+        <h2>How It Works</h2>
+        <div class="flow">
+            <div class="flow-step">
+                <div class="icon">📱</div>
+                <div class="label">QR on Packaging</div>
+                <div class="desc">Customer scans</div>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">
+                <div class="icon">🎨</div>
+                <div class="label">Your Branded App</div>
+                <div class="desc">Your logo & colors</div>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">
+                <div class="icon">📊</div>
+                <div class="label">Weight Tracking</div>
+                <div class="desc">+ Portion calculator</div>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">
+                <div class="icon">🛒</div>
+                <div class="label">One-Tap Reorder</div>
+                <div class="desc">Your affiliate link</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section two-col">
+        <div class="card">
+            <h3>What You Get</h3>
+            <ul>
+                <li>Engagement data on every customer who scans</li>
+                <li>Reorder attribution (Chewy, Petco, your site)</li>
+                <li>Brand touchpoint between purchases</li>
+                <li>Portion calculator with YOUR food's calories</li>
+                <li>Analytics dashboard by SKU</li>
+            </ul>
+        </div>
+        <div class="card risk">
+            <h3>What You Don't Get (By Design)</h3>
+            <ul>
+                <li>Medical liability — tracking tool only</li>
+                <li>Data breach risk — all data on device</li>
+                <li>IT project scope — no backend needed</li>
+                <li>Ongoing dev burden — we maintain it</li>
+                <li>Third-party data sharing — zero</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Implementation Timeline</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="week">Week 1-2</div>
+                <div class="milestone">Brand Config</div>
+            </div>
+            <div class="timeline-item">
+                <div class="week">Week 3-4</div>
+                <div class="milestone">QR Generation</div>
+            </div>
+            <div class="timeline-item">
+                <div class="week">Week 5-6</div>
+                <div class="milestone">Internal Review</div>
+            </div>
+            <div class="timeline-item">
+                <div class="week">Week 7-8</div>
+                <div class="milestone">Packaging Plan</div>
+            </div>
+            <div class="timeline-item">
+                <div class="week">Week 9-12</div>
+                <div class="milestone">Soft Launch</div>
+            </div>
+        </div>
+        <p style="text-align: center; font-size: 11px; color: #64748b; margin-top: 8px;">No backend integration required. No IT dependency.</p>
+    </div>
+
+    <div class="section">
+        <div class="stats">
+            <div class="stat">
+                <div class="number">0</div>
+                <div class="label">External Dependencies</div>
+            </div>
+            <div class="stat">
+                <div class="number">8-12</div>
+                <div class="label">Weeks to Launch</div>
+            </div>
+            <div class="stat">
+                <div class="number">100%</div>
+                <div class="label">On-Device Data</div>
+            </div>
+            <div class="stat">
+                <div class="number">iOS 17+</div>
+                <div class="label">Native SwiftUI</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="pilot-box">
+            <h3>90-Day Pilot Offer</h3>
+            <p>
+                <span class="highlight">Limited risk:</span> 1-3 SKUs to start, reduced setup fee, clear success metrics.<br>
+                Walk away if it doesn't perform. We're offering pilot terms to <span class="highlight">one premium brand per category</span>.
+            </p>
+        </div>
+    </div>
+
+    <div class="cta">
+        <h3>15-Minute Demo</h3>
+        <p>I'll show you the app with your branding already loaded.</p>
+        <div class="contact">
+            [Your Name] · [your@email.com] · [Your Phone]
+        </div>
+    </div>
+
+    <div class="footer">
+        <strong>Cat Weight Companion</strong> — Your brand. Your customers. Zero liability.
+    </div>
+</body>
+</html>
