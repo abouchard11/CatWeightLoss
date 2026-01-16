@@ -104,6 +104,7 @@ Ship the app and close first design partner deal.
 
 - [ ] **Phase 9: Ship to App Store** - Firebase SDK + TestFlight + Submit
 - [ ] **Phase 10: Deploy Web Assets** - GitHub Pages privacy policy live
+- [x] **Phase 10.1: Brand Visual Refresh** - Unified color scheme via Stitch + HTML ✓
 - [ ] **Phase 11: Smalls Campaign** - Execute outreach, track responses
 - [ ] **Phase 12: Close First Pilot** - Demo → LOI → Signature
 
@@ -132,6 +133,34 @@ Tasks:
 - [ ] Enable GitHub Pages on repo (docs/ folder)
 - [ ] Verify privacy-policy.html accessible
 - [ ] Update App Store Connect URLs
+
+#### Phase 10.1: Brand Visual Refresh ✓ COMPLETE
+**Goal**: Unify app screens and sales PDF with consistent color scheme from DESIGN_SPECS.md
+**Depends on**: Phase 10 (web assets deployed)
+**Research**: Yes (Google Stitch for app UI)
+**Plans**: 2 plans
+
+Tasks:
+- [x] Use Google Stitch to generate app UI mockups with unified color scheme
+- [x] Redesign sales one-pager HTML with design spec colors (CSS variables)
+- [x] Export assets and integrate into codebase (screenshots saved)
+- [ ] Update existing SwiftUI views to match new design language (deferred)
+
+**Deliverables:**
+- docs/cat-weight-home-stitch.png (Home Dashboard)
+- docs/cat-weight-screens-stitch.png (Log Weight, Insights)
+- docs/cat-weight-all-screens-stitch.png (All 3 screens)
+- docs/sales-one-pager-final.html (redesigned with CSS variables)
+
+**Color Scheme Applied (from DESIGN_SPECS.md):**
+- Primary: #0EA5E9 (Sky Blue)
+- Success: #22C55E (Green)
+- Warning: #F97316 (Orange)
+- Purple Accent: #8B5CF6
+- Surface: #F8FAFC
+- Dark Slate: #0F172A
+
+---
 
 #### Phase 11: Smalls Campaign
 **Goal**: Execute outreach to Smalls, get response

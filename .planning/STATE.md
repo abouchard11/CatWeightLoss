@@ -5,15 +5,15 @@
 See: .planning/PROJECT.md (updated 2026-01-12)
 
 **Core value:** White-label B2B platform for pet food brands
-**Current focus:** Phase 9+10 — Ship to App Store + Deploy Web Assets (PARALLEL)
+**Current focus:** Phase 11 — Smalls Campaign (ready to execute)
 
 ## Current Position
 
 Milestone: 3 of 3 (Go-to-Market)
-Phase: 10 ✓, 9 blocked (awaiting Apple Developer), 11 ready
+Phase: 10 ✓, 10.1 ✓, 9 blocked (awaiting Apple Developer), 11 ready
 Plan: Phase 11 (Smalls Campaign) ready to execute
 Status: ⏸️ AWAITING APPLE DEV ACCOUNT
-Last activity: 2026-01-16 — Demo ready, patent drafted, outreach prepped
+Last activity: 2026-01-16 — Brand visual refresh complete, app screens + sales PDF unified
 
 Progress: ████████░░░░░░░░░░░░ 67% (M1 ✓, M2 ✓, M3 executing)
 
@@ -109,6 +109,12 @@ Completed before milestone creation:
 - Google Drive backup created
 - All pushed to GitHub
 
+### Roadmap Evolution
+
+- Phase 10.1 inserted after Phase 10: Brand Visual Refresh (URGENT) ✓ COMPLETE
+  - Unify app and sales PDF with DESIGN_SPECS.md color scheme
+  - Tools: Google Stitch (app UI) + direct HTML editing (PDF)
+
 ### Deferred Issues
 
 None.
@@ -124,6 +130,13 @@ None.
 - Firebase SPM added to Xcode project
 - GoogleService-Info.plist configured
 - BLOCKED: No Apple Developer account ($99/year)
+
+**Phase 10.1: Brand Visual Refresh** ✓
+- App screens generated in Google Stitch with unified color scheme
+- 3 screens: Home Dashboard, Log Weight, Weight Insights
+- Sales one-pager HTML redesigned with DESIGN_SPECS.md colors
+- CSS variables for exact color spec compliance
+- Screenshots saved: docs/cat-weight-*-stitch.png
 
 **Pre-Phase 11 Work:**
 - Provisional patent application drafted (docs/PROVISIONAL_PATENT_APPLICATION.md)
