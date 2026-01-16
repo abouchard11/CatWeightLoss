@@ -10,10 +10,10 @@ See: .planning/PROJECT.md (updated 2026-01-12)
 ## Current Position
 
 Milestone: 3 of 3 (Go-to-Market)
-Phase: 9+10 of 12 (Ship to App Store + Deploy Web Assets) — PARALLEL
-Plan: Executing now
-Status: 🚀 EXECUTING
-Last activity: 2026-01-15 — Collapsed to 4 phases, executing immediately
+Phase: 10 ✓, 9 blocked (awaiting Apple Developer), 11 ready
+Plan: Phase 11 (Smalls Campaign) ready to execute
+Status: ⏸️ AWAITING APPLE DEV ACCOUNT
+Last activity: 2026-01-16 — Demo ready, patent drafted, outreach prepped
 
 Progress: ████████░░░░░░░░░░░░ 67% (M1 ✓, M2 ✓, M3 executing)
 
@@ -113,9 +113,28 @@ Completed before milestone creation:
 
 None.
 
+### Milestone 3 Progress (2026-01-16)
+
+**Phase 10: Deploy Web Assets** ✓
+- GitHub repo made public
+- GitHub Pages enabled (docs/ folder)
+- Privacy policy LIVE: https://abouchard11.github.io/CatWeightLoss/privacy-policy.html
+
+**Phase 9: Ship to App Store** — BLOCKED
+- Firebase SPM added to Xcode project
+- GoogleService-Info.plist configured
+- BLOCKED: No Apple Developer account ($99/year)
+
+**Pre-Phase 11 Work:**
+- Provisional patent application drafted (docs/PROVISIONAL_PATENT_APPLICATION.md)
+- Smalls outreach finalized (sales-toolkit/SMALLS_OUTREACH_READY.md)
+- Demo readiness verified
+
 ### Pending Todos
 
-None - ready for Phase 9 planning.
+- File provisional patent at USPTO ($320 micro entity)
+- Enroll in Apple Developer Program ($99/year)
+- Execute Phase 11: Send Smalls campaign emails
 
 ### Blockers/Concerns
 
