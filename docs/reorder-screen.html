@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=375, initial-scale=1.0">
+    <title>Cat Weight Companion - Reorder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0EA5E9;
+            --success: #22C55E;
+            --warning: #F97316;
+            --surface: #F8FAFC;
+            --dark-slate: #0F172A;
+            --muted: #64748B;
+        }
+        body { font-family: 'Inter', sans-serif; background: #1a1a2e; }
+        .phone-frame {
+            width: 375px;
+            height: 812px;
+            background: var(--surface);
+            border-radius: 40px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            margin: 20px auto;
+            position: relative;
+        }
+        .retailer-btn {
+            transition: all 0.2s;
+        }
+        .retailer-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .urgency-pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        .deep-link-indicator {
+            position: relative;
+        }
+        .deep-link-indicator::after {
+            content: 'DEEP LINK';
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--primary);
+            color: white;
+            font-size: 8px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+    <div class="phone-frame">
+        <!-- Status Bar -->
+        <div class="h-12 bg-white flex items-center justify-between px-6 pt-2">
+            <span class="text-sm font-semibold">9:41</span>
+            <div class="flex gap-1">
+                <i class="fas fa-signal text-xs"></i>
+                <i class="fas fa-wifi text-xs"></i>
+                <i class="fas fa-battery-full text-xs"></i>
+            </div>
+        </div>
+
+        <!-- Header with Brand Logo -->
+        <div class="bg-white px-4 pb-4">
+            <div class="flex items-center gap-3">
+                <button class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center">
+                    <i class="fas fa-arrow-left text-gray-600"></i>
+                </button>
+                <div class="flex-1">
+                    <h1 class="text-xl font-bold" style="color: var(--dark-slate);">Reorder Food</h1>
+                    <p class="text-xs" style="color: var(--muted);">for Luna</p>
+                </div>
+                <!-- Brand Logo Placeholder -->
+                <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, var(--primary), #0284C7);">
+                    <i class="fas fa-cat text-white text-xl"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="px-4 py-4 space-y-4 overflow-y-auto" style="height: calc(100% - 140px); background: var(--surface);">
+
+            <!-- Urgency Banner (Dynamic) -->
+            <div class="urgency-pulse rounded-2xl p-4" style="background: linear-gradient(135deg, var(--warning), #EA580C);">
+                <div class="flex items-center gap-3 text-white">
+                    <div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
+                        <i class="fas fa-exclamation-triangle text-xl"></i>
+                    </div>
+                    <div class="flex-1">
+                        <p class="font-bold">Running Low!</p>
+                        <p class="text-sm opacity-90">~3 days of food remaining</p>
+                    </div>
+                    <i class="fas fa-chevron-right opacity-60"></i>
+                </div>
+            </div>
+
+            <!-- Current Product Card -->
+            <div class="bg-white rounded-2xl p-4 shadow-sm">
+                <div class="flex gap-4">
+                    <!-- Product Image Placeholder -->
+                    <div class="w-24 h-24 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, #F8FAFC, #E2E8F0);">
+                        <i class="fas fa-box-open text-3xl" style="color: var(--muted);"></i>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-xs font-medium" style="color: var(--primary);">[Brand Name]</p>
+                        <p class="font-bold mt-1" style="color: var(--dark-slate);">Adult Indoor Cat Formula</p>
+                        <p class="text-sm" style="color: var(--muted);">12 lb bag</p>
+                        <div class="flex items-center gap-2 mt-2">
+                            <span class="text-xs px-2 py-1 rounded-full" style="background: rgba(34, 197, 94, 0.1); color: var(--success);">
+                                <i class="fas fa-leaf mr-1"></i>Grain-Free
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 pt-4 border-t border-gray-100">
+                    <div class="flex justify-between text-sm">
+                        <span style="color: var(--muted);">Last ordered</span>
+                        <span style="color: var(--dark-slate);">Dec 19, 2025</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Smart Reorder Info -->
+            <div class="bg-white rounded-2xl p-4 shadow-sm">
+                <div class="flex items-center gap-2 mb-3">
+                    <i class="fas fa-brain" style="color: var(--primary);"></i>
+                    <p class="font-medium text-sm" style="color: var(--dark-slate);">Smart Reorder</p>
+                </div>
+                <p class="text-sm" style="color: var(--muted);">
+                    Based on Luna's consumption rate, we recommend reordering every <span class="font-semibold" style="color: var(--dark-slate);">28 days</span>
+                </p>
+                <div class="mt-3 flex items-center gap-2 p-3 rounded-xl" style="background: rgba(14, 165, 233, 0.1);">
+                    <i class="fas fa-calendar-check" style="color: var(--primary);"></i>
+                    <span class="text-sm font-medium" style="color: var(--primary);">Next suggested order: Jan 16</span>
+                </div>
+            </div>
+
+            <!-- Retailer Options -->
+            <div>
+                <p class="text-sm font-medium mb-3" style="color: var(--muted);">Buy from your preferred retailer</p>
+
+                <!-- Chewy -->
+                <a href="catweighttracker://reorder?retailer=chewy&sku=BRAND-ADULT-12LB&affiliate=cwc2024" class="retailer-btn deep-link-indicator block bg-white rounded-2xl p-4 shadow-sm mb-3">
+                    <div class="flex items-center">
+                        <div class="w-14 h-14 rounded-xl flex items-center justify-center" style="background: #1C49C2;">
+                            <span class="text-white font-bold text-lg">C</span>
+                        </div>
+                        <div class="ml-4 flex-1">
+                            <p class="font-bold" style="color: var(--dark-slate);">Buy on Chewy</p>
+                            <div class="flex items-center gap-2 mt-1">
+                                <span class="text-lg font-bold" style="color: var(--primary);">$42.99</span>
+                                <span class="text-xs px-2 py-0.5 rounded-full" style="background: rgba(34, 197, 94, 0.1); color: var(--success);">Free Shipping</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-external-link-alt" style="color: var(--primary);"></i>
+                    </div>
+                </a>
+
+                <!-- Amazon -->
+                <a href="catweighttracker://reorder?retailer=amazon&sku=BRAND-ADULT-12LB&affiliate=cwc2024" class="retailer-btn deep-link-indicator block bg-white rounded-2xl p-4 shadow-sm mb-3">
+                    <div class="flex items-center">
+                        <div class="w-14 h-14 rounded-xl flex items-center justify-center" style="background: #FF9900;">
+                            <i class="fab fa-amazon text-white text-2xl"></i>
+                        </div>
+                        <div class="ml-4 flex-1">
+                            <p class="font-bold" style="color: var(--dark-slate);">Buy on Amazon</p>
+                            <div class="flex items-center gap-2 mt-1">
+                                <span class="text-lg font-bold" style="color: var(--primary);">$44.99</span>
+                                <span class="text-xs px-2 py-0.5 rounded-full" style="background: #232F3E; color: white;">
+                                    <i class="fab fa-amazon mr-1"></i>Prime
+                                </span>
+                            </div>
+                        </div>
+                        <i class="fas fa-external-link-alt" style="color: var(--primary);"></i>
+                    </div>
+                </a>
+
+                <!-- Buy Direct -->
+                <a href="catweighttracker://reorder?retailer=direct&sku=BRAND-ADULT-12LB&affiliate=cwc2024" class="retailer-btn deep-link-indicator block bg-white rounded-2xl p-4 shadow-sm border-2" style="border-color: var(--success);">
+                    <div class="flex items-center">
+                        <div class="w-14 h-14 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, var(--success), #16A34A);">
+                            <i class="fas fa-store text-white text-xl"></i>
+                        </div>
+                        <div class="ml-4 flex-1">
+                            <p class="font-bold" style="color: var(--dark-slate);">Buy Direct</p>
+                            <div class="flex items-center gap-2 mt-1">
+                                <span class="text-lg font-bold" style="color: var(--success);">$38.69</span>
+                                <span class="text-xs line-through" style="color: var(--muted);">$42.99</span>
+                                <span class="text-xs px-2 py-0.5 rounded-full font-bold" style="background: var(--success); color: white;">10% OFF</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-external-link-alt" style="color: var(--success);"></i>
+                    </div>
+                    <p class="text-xs mt-2 text-center" style="color: var(--success);">
+                        <i class="fas fa-crown mr-1"></i>Loyalty discount applied
+                    </p>
+                </a>
+            </div>
+
+            <!-- Set Reminder Button -->
+            <button class="w-full py-3 rounded-xl border-2 font-medium" style="border-color: var(--primary); color: var(--primary);">
+                <i class="fas fa-bell mr-2"></i>Set Reorder Reminder
+            </button>
+
+            <!-- Affiliate Disclosure -->
+            <p class="text-xs text-center" style="color: var(--muted);">
+                <i class="fas fa-info-circle mr-1"></i>Affiliate links help support the app at no extra cost to you
+            </p>
+
+        </div>
+
+        <!-- Bottom Nav -->
+        <div class="absolute bottom-0 left-0 right-0 h-20 bg-white border-t border-gray-100 flex items-center justify-around px-6">
+            <button class="flex flex-col items-center" style="color: var(--muted);">
+                <i class="fas fa-home text-xl"></i>
+                <span class="text-xs mt-1">Home</span>
+            </button>
+            <button class="flex flex-col items-center" style="color: var(--muted);">
+                <i class="fas fa-weight text-xl"></i>
+                <span class="text-xs mt-1">Weight</span>
+            </button>
+            <button class="flex flex-col items-center" style="color: var(--muted);">
+                <i class="fas fa-paw text-xl"></i>
+                <span class="text-xs mt-1">Activity</span>
+            </button>
+            <button class="flex flex-col items-center" style="color: var(--primary);">
+                <i class="fas fa-shopping-cart text-xl"></i>
+                <span class="text-xs mt-1 font-medium">Reorder</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Deep Link Schema Documentation -->
+    <div class="fixed bottom-4 right-4 bg-gray-900 text-white p-4 rounded-xl max-w-sm text-xs">
+        <p class="font-bold mb-2"><i class="fas fa-code mr-1"></i>Deep Link Schema:</p>
+        <code class="block bg-black/50 p-2 rounded mb-2">catweighttracker://reorder?retailer={chewy|amazon|direct}&sku={product_sku}&affiliate={code}</code>
+        <p class="opacity-70">Dynamic parameters injected from BrandConfiguration</p>
+    </div>
+</body>
+</html>
