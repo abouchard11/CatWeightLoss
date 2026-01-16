@@ -96,160 +96,66 @@ Tasks:
 
 ## Milestone 3: Go-to-Market (CURRENT)
 
-Ship the app to users and execute comprehensive B2B outreach campaign to pet food brands.
+Ship the app and close first design partner deal.
 
-**Depth:** Comprehensive (10 phases)
-**Parallelization:** Enabled (Phases 9-10 can run concurrent, 14-17 can run concurrent)
+**Depth:** Quick (4 phases) | **Parallelization:** Enabled
 
 ### Phases
 
-- [ ] **Phase 9: Xcode Firebase Integration** - Add Firebase SDK to Xcode project
-- [ ] **Phase 10: GitHub Pages Deployment** - Deploy privacy policy and support pages
-- [ ] **Phase 11: TestFlight Deployment** - Archive, upload, internal testing
-- [ ] **Phase 12: App Store Submission** - Submit for review, handle feedback
-- [ ] **Phase 13: Support Infrastructure** - FAQ, contact form, help docs
-- [ ] **Phase 14: Smalls Outreach Campaign** - Execute full 4-email sequence
-- [ ] **Phase 15: Tier 1 Brand Expansion** - Open Farm, Nulo, Raised Right, Weruva
-- [ ] **Phase 16: CRM & Pipeline Setup** - Track all outreach, responses, follow-ups
-- [ ] **Phase 17: Demo Recording** - Loom video walkthrough for async pitches
-- [ ] **Phase 18: Pilot Agreement Execution** - LOI → signed pilot with first brand
+- [ ] **Phase 9: Ship to App Store** - Firebase SDK + TestFlight + Submit
+- [ ] **Phase 10: Deploy Web Assets** - GitHub Pages privacy policy live
+- [ ] **Phase 11: Smalls Campaign** - Execute outreach, track responses
+- [ ] **Phase 12: Close First Pilot** - Demo → LOI → Signature
 
 ### Phase Details
 
-#### Phase 9: Xcode Firebase Integration
-**Goal**: Properly integrate Firebase SDK into Xcode project
+#### Phase 9: Ship to App Store
+**Goal**: Get app live on App Store
 **Depends on**: Milestone 2 complete
-**Research**: Unlikely (docs in FIREBASE_SPM_SETUP.md)
+**Research**: Unlikely
 **Plans**: 1 plan
 
 Tasks:
-- [ ] Add Firebase SPM packages to Xcode
-- [ ] Copy GoogleService-Info.plist to correct location
-- [ ] Initialize Firebase in AppDelegate/App
-- [ ] Verify Analytics events fire in Firebase Console
-- [ ] Test on real device
+- [ ] Add Firebase SPM to Xcode, verify GoogleService-Info.plist
+- [ ] Archive and upload to TestFlight
+- [ ] Quick device test
+- [ ] Submit to App Store with prepared metadata
+- [ ] Address review feedback if any
 
-#### Phase 10: GitHub Pages Deployment
-**Goal**: Deploy required web pages for App Store compliance
-**Depends on**: Nothing (can run parallel to Phase 9)
-**Research**: Unlikely (GitHub Pages standard)
+#### Phase 10: Deploy Web Assets
+**Goal**: Privacy policy URL live for App Store compliance
+**Depends on**: Nothing (parallel with Phase 9)
+**Research**: Unlikely
 **Plans**: 1 plan
 
 Tasks:
-- [ ] Enable GitHub Pages on CatWeightLoss repo
-- [ ] Configure docs/ folder as source
-- [ ] Deploy privacy-policy.html at /privacy
-- [ ] Verify live URL works
-- [ ] Update placeholder URLs in App Store metadata
+- [ ] Enable GitHub Pages on repo (docs/ folder)
+- [ ] Verify privacy-policy.html accessible
+- [ ] Update App Store Connect URLs
 
-#### Phase 11: TestFlight Deployment
-**Goal**: Get app running on TestFlight for internal testing
-**Depends on**: Phase 9
-**Research**: Unlikely (standard Xcode flow)
+#### Phase 11: Smalls Campaign
+**Goal**: Execute outreach to Smalls, get response
+**Depends on**: Phase 9 (app live adds credibility)
+**Research**: Unlikely (email drafted)
 **Plans**: 1 plan
 
 Tasks:
-- [ ] Create App Store Connect app record
-- [ ] Archive release build
-- [ ] Upload to App Store Connect
-- [ ] Add internal testers
-- [ ] Run through full app flow on device
+- [ ] Send Email 1 to Matt Michaelson + Melody Park
+- [ ] Track opens/clicks
+- [ ] Day 3/7/14 follow-ups per sequence
+- [ ] Handle any responses immediately
 
-#### Phase 12: App Store Submission
-**Goal**: Submit app for App Store review and get approved
-**Depends on**: Phase 10, Phase 11
-**Research**: Unlikely (metadata already prepared)
+#### Phase 12: Close First Pilot
+**Goal**: Signed design partner agreement
+**Depends on**: Phase 11 (need interested lead)
+**Research**: Unlikely (LOI ready)
 **Plans**: 1 plan
 
 Tasks:
-- [ ] Upload screenshots (6.7", 6.5", 5.5")
-- [ ] Fill in all App Store metadata
-- [ ] Set privacy policy and support URLs
-- [ ] Submit for review
-- [ ] Address any reviewer feedback
-
-#### Phase 13: Support Infrastructure
-**Goal**: Set up support channels for users and brands
-**Depends on**: Phase 10
-**Research**: Unlikely (simple web pages)
-**Plans**: 1 plan
-
-Tasks:
-- [ ] Create support.html with FAQ
-- [ ] Add contact form (Formspree/Tally)
-- [ ] Write help docs for common questions
-- [ ] Create brand inquiry contact flow
-- [ ] Deploy to GitHub Pages
-
-#### Phase 14: Smalls Outreach Campaign
-**Goal**: Execute complete outreach sequence to Smalls
-**Depends on**: Phase 12 (app live for credibility)
-**Research**: Unlikely (emails already drafted)
-**Plans**: 1 plan
-
-Tasks:
-- [ ] Personalize Email 1 with latest Smalls research
-- [ ] Send to Matt Michaelson (CEO) and Melody Park (Brand Marketing)
-- [ ] Track opens with email tracking tool
-- [ ] Day 3: Send Email 2 follow-up
-- [ ] Day 7: Send Email 3 (competitive angle)
-- [ ] Day 14: Send Email 4 (break-up)
-- [ ] Document all responses
-
-#### Phase 15: Tier 1 Brand Expansion
-**Goal**: Begin outreach to remaining Tier 1 brands
-**Depends on**: Phase 14 (learn from Smalls)
-**Research**: Likely (need to research each brand)
-**Plans**: 2 plans
-
-Tasks:
-- [ ] Research Open Farm (contacts, recent news, pain points)
-- [ ] Research Nulo (contacts, differentiators)
-- [ ] Research Raised Right (contacts, positioning)
-- [ ] Research Weruva (contacts, market position)
-- [ ] Customize email templates per brand
-- [ ] Begin outreach with 2-day stagger
-
-#### Phase 16: CRM & Pipeline Setup
-**Goal**: Establish systematic tracking for all outreach
-**Depends on**: Phase 14 (need data to track)
-**Research**: Unlikely (simple Notion/Sheets)
-**Plans**: 1 plan
-
-Tasks:
-- [ ] Create outreach tracker (brand, status, next action, notes)
-- [ ] Define pipeline stages (researched → contacted → replied → demo → pilot → signed)
-- [ ] Set up response templates for common objections
-- [ ] Create follow-up reminder system
-- [ ] Weekly pipeline review checklist
-
-#### Phase 17: Demo Recording
-**Goal**: Create async demo video for email pitches
-**Depends on**: Phase 12 (need live app)
-**Research**: Unlikely (Loom is straightforward)
-**Plans**: 1 plan
-
-Tasks:
-- [ ] Write demo script (from LOOM_SCRIPT.md)
-- [ ] Record 3-5 minute walkthrough
-- [ ] Show: QR scan → app activation → weight tracking → reorder flow
-- [ ] Highlight analytics dashboard for brands
-- [ ] Upload to Loom, get shareable link
-- [ ] Add to email sequence as "See it in action"
-
-#### Phase 18: Pilot Agreement Execution
-**Goal**: Sign first design partner pilot agreement
-**Depends on**: Phase 14-17 (need active conversations)
-**Research**: Unlikely (LOI template ready)
-**Plans**: 1 plan
-
-Tasks:
-- [ ] Identify warmest lead from outreach
-- [ ] Schedule demo call
-- [ ] Walk through ROI model with their numbers
-- [ ] Send LOI from PILOT_LOI_TEMPLATE.md
-- [ ] Negotiate terms if needed
-- [ ] Get signature and kick off onboarding
+- [ ] Schedule demo call with interested party
+- [ ] Walk through app + ROI model
+- [ ] Send LOI
+- [ ] Negotiate and close
 
 ---
 
@@ -259,4 +165,4 @@ Tasks:
 |-----------|--------|--------|
 | 1. Stability & Testing | 3/3 | ✓ Complete |
 | 2. B2B Monetization | 5/5 | ✓ Complete |
-| 3. Go-to-Market | 0/10 | 🚧 In Progress |
+| 3. Go-to-Market | 0/4 | 🚧 In Progress |

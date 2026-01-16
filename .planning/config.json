@@ -1,6 +1,6 @@
 {
   "mode": "yolo",
-  "depth": "comprehensive",
+  "depth": "quick",
   "parallelization": "enabled",
   "version": "1.0.0",
   "created": "2026-01-12",
